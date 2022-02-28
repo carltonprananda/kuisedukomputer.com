@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "464131542735",
+    "project_id": "flutter-compquiz-ta",
+    "storage_bucket": "flutter-compquiz-ta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464131542735:android:b1c7d681388e11f81fb1ba",
+        "android_client_info": {
+          "package_name": "com.example.flutter_quizlearnapp_concept"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464131542735-e7mhust5efllsnorgr67becgb0fe01qg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6OrqBA72ImXAG9tiNCLUNUea_-hnx8vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464131542735-e7mhust5efllsnorgr67becgb0fe01qg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
