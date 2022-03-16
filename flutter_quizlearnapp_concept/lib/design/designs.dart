@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:flutter_quizlearnapp_concept/models/models.dart';
+import 'package:flutter_quizlearnapp_concept/services/services.dart';
 part 'answertile.dart';
 part 'questiontile.dart';
 part 'truefalse.dart';
+part 'materi.dart';
+part 'highscoretile.dart';

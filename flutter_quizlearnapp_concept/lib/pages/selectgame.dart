@@ -13,8 +13,8 @@ class SelectGamePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Real Quiz Game"),
-                Text("Waktunya bermain"),
+                Text("Multi Round Game"),
+                Text("Uji kepahaman komputer dengan 3 babak yang berbeda"),
                 Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -28,6 +28,33 @@ class SelectGamePage extends StatelessWidget {
                                   totalsalah: 0,
                                   qindex: 0,
                                   timerplus: 0,
+                                  stage: "Multi Round - Komputer Dasar",
+                                  round: 1,
+                                )));
+                      },
+                          child: Card(
+                            child: ListTile(
+                              tileColor: Colors.greenAccent,
+                              title: Text(
+                                "Quiz Komputer Dasar",
+                                textAlign: TextAlign.center,
+                              ),
+                              subtitle: Text(
+                                "3 Round seputar Komputer Dasar",
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          )),
+                      InkWell(
+                          onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Tour1Screen(
+                                  pertanyaan: tourstage121,
+                                  gamescore: 0,
+                                  totalbenar: 0,
+                                  totalsalah: 0,
+                                  qindex: 0,
+                                  timerplus: 0,
                                   stage: "1",
                                 )));
                       },
@@ -35,26 +62,11 @@ class SelectGamePage extends StatelessWidget {
                             child: ListTile(
                               tileColor: Colors.greenAccent,
                               title: Text(
-                                "Basic Computer Quiz",
+                                "Quiz Sistem Operasi Komputer",
                                 textAlign: TextAlign.center,
                               ),
                               subtitle: Text(
-                                "3 Round seputar Komputer",
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          )),
-                      InkWell(
-                          onTap: null,
-                          child: Card(
-                            child: ListTile(
-                              tileColor: Colors.blueAccent,
-                              title: Text(
-                                "Advanced Computer Quiz",
-                                textAlign: TextAlign.center,
-                              ),
-                              subtitle: Text(
-                                "2 Round + 3 Jenis Quiz",
+                                "3 Quiz Tentang Seputar Sistem Operasi",
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -90,24 +102,24 @@ class SelectGamePage2 extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => GameplayScreen(
-                                  pertanyaan: questiontype1,
+                                  pertanyaan: tourstage111,
                                   gamescore: 0,
                                   totalbenar: 0,
                                   totalsalah: 0,
                                   qindex: 0,
                                   timerplus: 0,
-                                  user: "Dean",
+                                  stage: "0",
                                 )));
                       },
                       child: Card(
                         child: ListTile(
                           tileColor: Colors.blue,
                           title: Text(
-                            "Pilihan Ganda",
+                            "Komputer Dasar",
                             textAlign: TextAlign.center,
                           ),
                           subtitle: Text(
-                            "Pilih salah satu jawaban benar | 5 Pertanyaan",
+                            "Latihan Quiz Komputer Dasar | 10 Pertanyaan",
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -118,30 +130,88 @@ class SelectGamePage2 extends StatelessWidget {
                   child: InkWell(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => TruefalseScreen(
-                                  pertanyaan: truefalse1,
+                            builder: (context) => GameplayScreen(
+                                  pertanyaan: tourstage121,
                                   gamescore: 0,
                                   totalbenar: 0,
                                   totalsalah: 0,
                                   qindex: 0,
                                   timerplus: 0,
+                                  stage: "0",
                                 )));
                       },
                       child: Card(
                         child: ListTile(
                           tileColor: Colors.blue,
                           title: Text(
-                            "True or False",
+                            "Sistem Operasi",
                             textAlign: TextAlign.center,
                           ),
                           subtitle: Text(
-                            "Tebak benar atau salah | 5 Pertanyaan",
+                            "Latihan Kuis Sistem Operasi | 10 Pertanyaan",
                             textAlign: TextAlign.center,
                           ),
                         ),
                       )),
                 ),
-                
+               ConstrainedBox(
+                  constraints: new BoxConstraints(minHeight: 12.h),
+                  child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => GameplayScreen(
+                                  pertanyaan: tourstage122,
+                                  gamescore: 0,
+                                  totalbenar: 0,
+                                  totalsalah: 0,
+                                  qindex: 0,
+                                  timerplus: 0,
+                                  stage: "0",
+                                )));
+                      },
+                      child: Card(
+                        child: ListTile(
+                          tileColor: Colors.blue,
+                          title: Text(
+                            "Keamanan Komputer",
+                            textAlign: TextAlign.center,
+                          ),
+                          subtitle: Text(
+                            "Latihan Kuis Keamanan Komputer | 10 Pertanyaan",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      )),
+                ),
+                ConstrainedBox(
+                  constraints: new BoxConstraints(minHeight: 12.h),
+                  child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => GameplayScreen(
+                                  pertanyaan: tourstage221,
+                                  gamescore: 0,
+                                  totalbenar: 0,
+                                  totalsalah: 0,
+                                  qindex: 0,
+                                  timerplus: 0,
+                                  stage: "0",
+                                )));
+                      },
+                      child: Card(
+                        child: ListTile(
+                          tileColor: Colors.blue,
+                          title: Text(
+                            "Microsoft Windows",
+                            textAlign: TextAlign.center,
+                          ),
+                          subtitle: Text(
+                            "Latihan Kuis tentang Windows | 10 Pertanyaan",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      )),
+                ),
                ]
                 ),
               
@@ -160,6 +230,19 @@ class SelectPage extends StatefulWidget {
 }
 
 class _SelectPageState extends State<SelectPage> with SingleTickerProviderStateMixin{
+  static String name;
+  User auth = FirebaseAuth.instance.currentUser;
+  CollectionReference<Map<String, dynamic>> userCollection =
+      FirebaseFirestore.instance.collection("users");
+  bool isLoading;
+
+    void getUserUpdate() async {
+    userCollection.doc(auth.uid).snapshots().listen((event) {
+      name = event.data()['name'];
+      setState(() {});
+    });
+  }
+
   int indextab= 0;
   TabController tabController;
   @override

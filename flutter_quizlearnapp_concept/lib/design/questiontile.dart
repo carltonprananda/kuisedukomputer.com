@@ -13,12 +13,12 @@ class QTile extends StatelessWidget {
     return Card(
       color: Colors.transparent,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(5),
       ),
       child: ListTile(
           title: Text(pertanyaan,
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 13.sp,
                 color: Colors.blueAccent,
               ), textAlign: TextAlign.center,)),
     );

@@ -6,8 +6,11 @@ class ResultGame extends StatefulWidget {
     this.score,
     this.jawabanbenar,
     this.jawabansalah,
-    this.answertime, 
-    this.user, this.mode, this.stage,
+    this.answertime,
+    this.user,
+    this.mode,
+    this.stage,
+    this.pertanyaan,
   }) : super(key: key);
 
   final int score;
@@ -17,50 +20,68 @@ class ResultGame extends StatefulWidget {
   final int stage;
   final String user;
   final String mode;
+  final List<Question> pertanyaan;
 
   @override
   _ResultGameState createState() => _ResultGameState();
 }
 
 class _ResultGameState extends State<ResultGame> {
+  String name;
+  User auth = FirebaseAuth.instance.currentUser;
+  CollectionReference<Map<String, dynamic>> userCollection =
+      FirebaseFirestore.instance.collection("users");
+
+    void getUserUpdate() async {
+    userCollection.doc(auth.uid).snapshots().listen((event) {
+      name = event.data()['name'];
+      print("nama : " + name);
+      setState(() {});
+    });
+    }
+
+  List<Question> _pertanyaan = questiontype1;
   static double ratingnilai = 3, ratingkepahaman = 3;
-  static int persentasebenar = 0;
+  static int persentasebenar;
   static DateTime waktuselesai = DateTime.now();
   static int persenbenar() {
-    return persentasebenar ~/ 5 * 100;
+    return (persentasebenar ~/ 5) * 100;
   }
 
   static double hasilpersenbenar = persenbenar().toDouble();
 
-  static int persentasesalah = 0;
+  static int persentasesalah;
   static int persensalah() {
-    return persentasebenar ~/ 5 * 100;
+    return (persentasebenar ~/ 5) * 100;
   }
 
   static double hasilpersensalah = persensalah().toDouble();
 
   @override
   void initState() {
+    getUserUpdate();
     super.initState();
     persentasebenar = widget.jawabanbenar;
-    int persenbenar() {
-      return persentasebenar ~/ 5 * 100;
+    double persenbenar() {
+      return (persentasebenar / 10) * 100;
     }
-
+    print("persen benar" + persenbenar().toString());
     hasilpersenbenar = persenbenar().toDouble();
+    print("hasil persen benar" + hasilpersenbenar.toString());
     persentasesalah = widget.jawabansalah;
-    int persensalah() {
-      return persentasesalah ~/ 5 * 100;
+    double persensalah() {
+      return (persentasesalah / 10)  * 100;
     }
-
+    print("persen benar" + persenbenar().toString());
     hasilpersensalah = persensalah().toDouble();
+    print("hasil persen salah" + hasilpersensalah.toString());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(title: Text("Your Result"), automaticallyImplyLeading: false),
+          AppBar(title: Text(widget.mode), automaticallyImplyLeading: false),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -92,7 +113,7 @@ class _ResultGameState extends State<ResultGame> {
                 subtitle: Text('${widget.jawabansalah}'),
               ),
             ),
-            Text("Bagaimana Hasil Kami" + widget.user),
+            Text("Bagaimana Hasil Kami " + (name ?? '') + " ?"),
             RatingBar.builder(
               initialRating: ratingnilai,
               minRating: 1,
@@ -109,7 +130,7 @@ class _ResultGameState extends State<ResultGame> {
                 ratingnilai = rating;
               },
             ),
-            Text("Apakah Anda sudah paham setelah menjawab quiz ini"),
+            Text("Apakah " + (name ?? '') + " sudah paham setelah menjawab quiz ini?"),
             RatingBar.builder(
               initialRating: ratingkepahaman,
               minRating: 1,
@@ -126,76 +147,85 @@ class _ResultGameState extends State<ResultGame> {
                 ratingkepahaman = rating;
               },
             ),
-            Spacer(),
             ElevatedButton(
-                          onPressed: () async {
-                                if (ratingnilai == 0 || ratingkepahaman == 0 ) {
-                                  Fluttertoast.showToast(
-                                      msg: "Mohon berikan nilai :-)",
-                                      toastLength: Toast.LENGTH_SHORT,
-                                      gravity: ToastGravity.CENTER_RIGHT,
-                                      backgroundColor: Colors.black,
-                                      textColor: Colors.yellow,
-                                      fontSize: 16.0);
-                                } else {
-                                  HighScore highScore = HighScore(
-                                      "",
-                                      widget.score,
-                                      ratingnilai.toString(),
-                                      ratingkepahaman.toString(),
-                                      widget.user,
-                                      waktuselesai.toString(),
-                                      widget.stage.toString(),
-                                      widget.mode
-                                  );
-                                  bool result =
-                                      await HighScoreServices.addHighscore(
-                                          highScore);
-                                  if (result == true) {
-                                    Fluttertoast.showToast(
-                                        msg: "Rating penilaian telah disubmit :-)",
-                                        toastLength: Toast.LENGTH_SHORT,
-                                        gravity: ToastGravity.CENTER_RIGHT,
-                                        backgroundColor: Colors.black,
-                                        textColor: Colors.yellow,
-                                        fontSize: 16.0);
-                                  } else {
-                                    Fluttertoast.showToast(
-                                        msg: "Gagal :-)",
-                                        toastLength: Toast.LENGTH_SHORT,
-                                        gravity: ToastGravity.CENTER_RIGHT,
-                                        backgroundColor: Colors.red,
-                                        textColor: Colors.yellow,
-                                        fontSize: 16.0);
-                                  }
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => SelectPage()));
-                                }
-                          },
-                       child: Text("SUBMIT"),
-            ),
-            
-
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => GameplayScreen(
-                            pertanyaan: questiontype1,
-                            gamescore: 0,
-                            totalbenar: 0,
-                            totalsalah: 0,
-                            qindex: 0,
-                            timerplus: 0,
-                            user: "Dean",
-                          )));
-                },
-                child: Text("Play Again")),
-            ElevatedButton(
-                onPressed: () {
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size.fromHeight(40)
+              ),
+              onPressed: () async {
+                if (ratingnilai == 0 || ratingkepahaman == 0) {
+                  Fluttertoast.showToast(
+                      msg: "Mohon berikan nilai :-)",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.CENTER_RIGHT,
+                      backgroundColor: Colors.black,
+                      textColor: Colors.yellow,
+                      fontSize: 16.0);
+                } else {
+                  HighScore highScore = HighScore(
+                      "",
+                      widget.score,
+                      ratingnilai,
+                      ratingkepahaman,
+                      name,
+                      waktuselesai.toString(),
+                      widget.stage.toString(),
+                      widget.mode,
+                      widget.score);
+                  bool result = await HighScoreServices.addHighscore(highScore);
+                  if (result == true) {
+                    Fluttertoast.showToast(
+                        msg: "Rating penilaian dan skor telah disubmit :-)",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER_RIGHT,
+                        backgroundColor: Colors.black,
+                        textColor: Colors.yellow,
+                        fontSize: 16.0);
+                  } else {
+                    Fluttertoast.showToast(
+                        msg: "Gagal :-(",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.CENTER_RIGHT,
+                        backgroundColor: Colors.red,
+                        textColor: Colors.yellow,
+                        fontSize: 16.0);
+                  }
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => MenuPage()));
-                },
-                child: Text("Back")),
+                }
+              },
+              child: Text("SUBMIT"),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(context, MaterialPageRoute(
+                            builder: (context) => GameplayScreen(
+                                  pertanyaan: widget.pertanyaan,
+                                  gamescore: 0,
+                                  totalbenar: 0,
+                                  totalsalah: 0,
+                                  qindex: 0,
+                                  timerplus: 0,
+                                  user: "Dean",
+                                )));
+                      },
+                      child: Text("Ulang")),
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) {
+                          return MenuPage();
+                        }));
+                      },
+                      child: Text("Back")),
+                ),
+              ],
+            ),
           ]),
     );
   }
@@ -298,7 +328,7 @@ class _ResultGame2State extends State<ResultGame2> {
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(builder: (context) => MenuPage()), 
+                      MaterialPageRoute(builder: (context) => MenuPage()),
                       (Route route) => false);
                 },
                 child: Text("Back")),

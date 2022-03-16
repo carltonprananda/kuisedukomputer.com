@@ -9,7 +9,7 @@ class Tour1Screen extends StatefulWidget {
     this.totalsalah,
     this.timerplus,
     this.qindex,
-    this.stage, this.round, this.user,
+    this.stage, this.round, this.user, this.roundscore
   }) : super(key: key);
 
   final List<Question> pertanyaan;
@@ -21,6 +21,7 @@ class Tour1Screen extends StatefulWidget {
   final String stage;
   final int round;
   final String user;
+  final int roundscore;
   @override
   _Tour1ScreenState createState() => _Tour1ScreenState();
 }
@@ -32,6 +33,8 @@ class _Tour1ScreenState extends State<Tour1Screen> {
   Timer _timerplus;
   Timer _timerminus;
   static int _gamescore = 0;
+  static int _roundscore = 0;
+  static int _roundgame = 0;
   static int _totalbenar = 0;
   static int _totalsalah = 0;
   static int questionindex = 0;
@@ -59,12 +62,15 @@ class _Tour1ScreenState extends State<Tour1Screen> {
   void dispose() {
     _timerplus.cancel();
     _gamescore = 0;
+    _roundscore = 0;
     _totalbenar = 0;
     _totalsalah = 0;
     super.dispose();
   }
+  
 
   void toResultgame(BuildContext context) {
+  if (widget.round == 1){
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
         builder: (context) => new ResultTour(
@@ -72,11 +78,42 @@ class _Tour1ScreenState extends State<Tour1Screen> {
           jawabansalah: _totalsalah,
           score: _gamescore,
           answertime: _totaltime, 
-          stage: 1,
-          user: "Dean",
+          stage: widget.round,
+          mode: stage,
+          roundscore: _roundscore,
         ),
       ),
     );
+  }
+  if (widget.round == 2){
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => new ResultTour(
+          jawabanbenar: _totalbenar,
+          jawabansalah: _totalsalah,
+          score: _gamescore,
+          answertime: _totaltime, 
+          stage: widget.round,
+          mode: stage,
+          roundscore: _roundscore,
+        ),
+      ),
+    );
+  } 
+  if (widget.round == 3){
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => new ResultGame(
+          jawabanbenar: _totalbenar,
+          jawabansalah: _totalsalah,
+          score: _gamescore,
+          answertime: _totaltime, 
+          stage: widget.round,
+          mode: stage,
+        ),
+      ),
+    );
+  };
   }
 
   @override
@@ -107,7 +144,12 @@ class _Tour1ScreenState extends State<Tour1Screen> {
               style: TextStyle(fontSize: 10.sp),
             ),
             Text(
-              "Round 1/3",
+              "$_roundscore",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 10.sp),
+            ),
+            Text(
+              "Round $_roundgame /3",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 10.sp),
             ),
@@ -142,7 +184,7 @@ class _Tour1ScreenState extends State<Tour1Screen> {
 
                           Future.delayed(const Duration(milliseconds: 150), () {
                             if (questionindex ==
-                                4 /*widget.pertanyaan.length - 1*/) {
+                                10 /*widget.pertanyaan.length - 1*/) {
                               toResultgame(context);
                               _timerplus.cancel();
                               questionindex = 0; //mereset index

@@ -9,7 +9,7 @@ class GameplayScreen extends StatefulWidget {
     this.totalsalah,
     this.timerplus,
     this.qindex,
-    this.user
+    this.user, this.stage
   }) : super(key: key);
 
   final List<Question> pertanyaan;
@@ -19,6 +19,7 @@ class GameplayScreen extends StatefulWidget {
   final int timerplus;
   final int qindex;
   final String user;
+  final String stage;
   @override
   _GameplayScreenState createState() => _GameplayScreenState();
 }
@@ -36,6 +37,7 @@ class _GameplayScreenState extends State<GameplayScreen> {
   static var questionrandom = List<int>.generate(questiontype1.length, (i) => i)
     ..shuffle();
   static var questionrandomtake = questionrandom.take(10);
+  String stage = "Komputer Dasar";
 
   String myanswer = '';
   @override
@@ -64,13 +66,13 @@ class _GameplayScreenState extends State<GameplayScreen> {
   void toResultgame(BuildContext context) {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => new ResultGame(
+        builder: (context) => ResultGame(
           jawabanbenar: _totalbenar,
           jawabansalah: _totalsalah,
           score: _gamescore,
           answertime: _totaltime,
-          user: "Dean",
-          mode: "Single Round",
+          mode: stage,
+          pertanyaan: widget.pertanyaan,
         ),
       ),
     );
@@ -96,17 +98,12 @@ class _GameplayScreenState extends State<GameplayScreen> {
           children: <Widget>[
             Text(
               _totaltime.toString(),
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 10.sp),
-            ),
-            Text(
-              "Soal Anda $questionindex",
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.left,
               style: TextStyle(fontSize: 10.sp),
             ),
             Text(
               "Skor Anda $_gamescore",
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.right,
               style: TextStyle(fontSize: 10.sp),
             ),
             QTile(pertanyaan: getQuestion.question),
@@ -114,8 +111,8 @@ class _GameplayScreenState extends State<GameplayScreen> {
               child: ListView.builder(
                   itemCount: getQuestion.listanswers.length,
                   itemBuilder: (context, index) {
-                    int jawabanbenar = 100;
-                    int jawabansalah = -50;
+                    int jawabanbenar = 10;
+                    int jawabansalah = -5;
                     final jawaban = getQuestion.listanswers[index];
                     return ATile(
                         dipilih: jawaban == myanswer,
@@ -136,7 +133,7 @@ class _GameplayScreenState extends State<GameplayScreen> {
 
                           Future.delayed(const Duration(milliseconds: 150), () {
                             if (questionindex ==
-                                4 /*widget.pertanyaan.length - 1*/) {
+                                9 /*widget.pertanyaan.length - 1*/) {
                               toResultgame(context);
                               _timerplus.cancel();
                               questionindex = 0; //mereset index

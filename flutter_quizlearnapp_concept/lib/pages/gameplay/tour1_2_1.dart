@@ -74,6 +74,7 @@ class _Tour2ScreenState extends State<Tour2Screen> {
           answertime: _totaltime, 
           stage: 2,
           user: "Dean",
+          mode: stage,
         ),
       ),
     );

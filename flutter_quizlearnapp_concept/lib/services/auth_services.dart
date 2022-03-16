@@ -5,12 +5,12 @@ class AuthServices {
   static Reference ref;
   static UploadTask uploadTask;
   static final firestore = FirebaseFirestore.instance;
-  final CollectionReference users = firestore.collection('user');
+  final CollectionReference users = firestore.collection('users');
 
   static Future<String> signUp(String email, String password, String name,
-      String usia, String profesi) async {
+    String usia, String profesi) async {
     await Firebase.initializeApp();
-    String msg = "Berhasil Masuk";
+    String msg = "";
     try {
       UserCredential result = await auth.createUserWithEmailAndPassword(
           email: email, password: password);
@@ -18,7 +18,7 @@ class AuthServices {
           result.user.convertToUser(name: name, usia: usia, profesi: profesi);
       auth.signOut();
       await UserServices.updateUser(users);
-      msg = "Berhasil Masuk";
+      msg = "success";
     } catch (e) {
       msg = e.toString();
     }
@@ -28,15 +28,15 @@ class AuthServices {
 
   static Future<String> signIn(String email, String password) async {
     await Firebase.initializeApp();
-    String msg = "Berhasil Login";
+    String msg = "";
     try {
       await auth
           .signInWithEmailAndPassword(email: email, password: password)
           .whenComplete(
-            () => msg = "Berhasil Login",
+            () => msg = "success",
           );
     } catch (e) {
-      msg = e.toString();
+      msg = e.toString();//e.toString();
     }
     return msg;
   }
@@ -48,4 +48,9 @@ class AuthServices {
         );
     return result;
   }
+
+  static Future<User> getCurrentUser() async {
+	    User user = auth.currentUser;
+	    return user;
+	  }
 }

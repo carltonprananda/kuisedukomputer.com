@@ -19,8 +19,8 @@ class HighScoreServices {
       'username': highScore.username,
       'submitdate': highScore.submitdate,
       'round': highScore.round,
-      'mode': highScore.mode
-
+      'mode': highScore.mode,
+      'roundscore' : highScore.roundscore
     });
 
     if (productDoc.id != null) {

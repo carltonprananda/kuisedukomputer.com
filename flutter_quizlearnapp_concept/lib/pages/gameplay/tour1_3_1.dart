@@ -72,6 +72,7 @@ class _Tour3ScreenState extends State<Tour3Screen> {
           answertime: _totaltime,
           user: "Dean",
           stage: 3,
+          mode: stage,
         ),
       ),
     );
