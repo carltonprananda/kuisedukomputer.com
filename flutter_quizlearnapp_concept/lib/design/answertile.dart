@@ -17,17 +17,26 @@ class ATile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: warnajawaban,
+      //color: warnajawaban,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(25),
       ),
-      child: ListTile(
-          onTap: () => klik(),
-          title: Text(jawaban,
-              style: TextStyle(
-                fontSize: 11.sp,
-                color: dipilih ? Colors.white70 : Colors.white,
-              ), textAlign: TextAlign.center,)),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors:gradasiwarnajawaban,
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+          )
+        ),
+        child: ListTile(
+            onTap: () => klik(),
+            title: Text(jawaban,
+                style: TextStyle(
+                  fontSize: 11.sp,
+                  color: dipilih ? Colors.white70 : Colors.white,
+                ), textAlign: TextAlign.center,)),
+      ),
     );
   }
 
@@ -37,6 +46,15 @@ class ATile extends StatelessWidget {
       return Colors.greenAccent;
     } else {
       return Colors.redAccent;
+    }
+  }
+
+  List<Color> get gradasiwarnajawaban{
+  if (!dipilih) return [Colors.transparent.withOpacity(0.7), Colors.transparent.withOpacity(0.8)];
+    if (jawaban == jawabanbenar) {
+      return [Colors.green.shade500, Colors.green.shade700];
+    } else {
+      return [Colors.red.shade500, Colors.red.shade700];;
     }
   }
 }

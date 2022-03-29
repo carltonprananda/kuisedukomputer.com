@@ -17,6 +17,10 @@ import 'package:provider/provider.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_quizlearnapp_concept/pages/gameplay/gamelist.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+import 'package:pdfx/pdfx.dart';
 
 import '../services/services.dart';
 part 'menu.dart';

@@ -11,6 +11,7 @@ class _MenuPageState extends State<MenuPage> {
   bool isloading;
   int selectedIndex = 1;
   String judul;
+  Color onitemcolor;
   static CollectionReference<Map<String, dynamic>> userCollection =
       FirebaseFirestore.instance.collection("users");
   static User auth = FirebaseAuth.instance.currentUser;
@@ -38,16 +39,19 @@ class _MenuPageState extends State<MenuPage> {
         case 0:
           {
             judul = "High Score";
+            onitemcolor = Colors.lightBlueAccent.shade100;
           }
           break;
         case 1:
           {
             judul = "Pilih Quiz";
+            onitemcolor = Colors.green;
           }
           break;
         case 2:
           {
             judul = "Profil";
+            onitemcolor = Colors.blueAccent.shade200;
           }
           break;
       }
@@ -79,9 +83,24 @@ class _MenuPageState extends State<MenuPage> {
       switchInCurve: Curves.easeInOut,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(judul),
+          title: Text(judul,
+              style: GoogleFonts.notoSans(
+                  fontWeight: FontWeight.bold, color: onitemcolor)),
           centerTitle: true,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: Builder(
+            builder: (context) => IconButton( 
+                onPressed: () => Scaffold.of(context).openDrawer(),
+                icon: Icon(Icons.menu, color: onitemcolor)),
+          ),
         ),
+        floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.lightBlueAccent,
+            elevation: 4,
+            child: const Icon(Icons.play_arrow),
+            onPressed: () => _onItemtapped(1)),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         drawer: Drawer(
           child: ListView(
             children: <Widget>[
@@ -111,6 +130,10 @@ class _MenuPageState extends State<MenuPage> {
               ListTile(
                 leading: Icon(Icons.open_in_browser),
                 title: Text("Survey tentang Game"),
+              ),
+              ListTile(
+                leading: Icon(Icons.help_rounded),
+                title: Text("Bantuan"),
               ),
               ListTile(
                 leading: Icon(Icons.logout),
@@ -143,7 +166,8 @@ class _MenuPageState extends State<MenuPage> {
                                             .then((value) {
                                           if (value) {
                                             Fluttertoast.showToast(
-                                              msg: "berhasil keluar, terimakasih telah menggunakan aplikasi ini",
+                                              msg:
+                                                  "berhasil keluar, terimakasih telah menggunakan aplikasi ini",
                                               toastLength: Toast.LENGTH_SHORT,
                                               gravity: ToastGravity.BOTTOM,
                                               backgroundColor:
@@ -188,25 +212,48 @@ class _MenuPageState extends State<MenuPage> {
         ),
         body: IndexedStack(index: selectedIndex, children: widgetOptions),
         bottomNavigationBar: ClipRRect(
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-          child: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.format_list_numbered_rtl),
-                  label: 'High Score'),
-              BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: 'Profil'),
-            ],
-            currentIndex: selectedIndex,
-            backgroundColor: Colors.blueAccent,
-            selectedItemColor: Colors.white,
-            unselectedItemColor: Colors.lightBlueAccent,
-            onTap: _onItemtapped,
-            iconSize: 18,
-          ),
-        ),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+            child: BottomAppBar(
+              shape: CircularNotchedRectangle(),
+              notchMargin: 1,
+              color: Colors.blue,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Stack(children: [
+                    IconButton(
+                      highlightColor: Colors.white,
+                      icon: Icon(Icons.list),
+                      onPressed: () => _onItemtapped(0),
+                    ),
+                  ]),
+                  IconButton(
+                      highlightColor: Colors.white,
+                      icon: Icon(Icons.person),
+                      onPressed: () => _onItemtapped(2)),
+                ],
+              ),
+            )), /*
+              BottomNavigationBar(
+              items: <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.format_list_numbered_rtl),
+                    label: 'High Score'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.play_arrow), label: 'Main'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.person), label: 'Profil'),
+              ],
+              currentIndex: selectedIndex,
+              backgroundColor: Colors.blueAccent,
+              selectedItemColor: Colors.white,
+              unselectedItemColor: Colors.lightBlueAccent,
+              onTap: _onItemtapped,
+              iconSize: 18,
+            ),
+            */
       ),
     );
   }

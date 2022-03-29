@@ -35,8 +35,12 @@ class HighScoreServices {
   }
 
     static Future deleteProduct(String productID) async {
-
     await productCollection.doc(productID).delete();
+    
+  }
+
+    static Future deleteProductuserall(String username) async {
+    await productCollection.doc(username).delete();
     
   }
 }

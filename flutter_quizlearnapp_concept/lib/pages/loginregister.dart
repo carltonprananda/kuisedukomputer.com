@@ -37,14 +37,12 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
   TabController tabController;
   var usia = [for (var i = 6; i <= 99; i++) i];
 
-
   @override
   void initState() {
     tabController = new TabController(length: 2, vsync: this);
     loginpassword = true;
     super.initState();
   }
-  
 
   @override
   void dispose() {
@@ -133,12 +131,19 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
             color: Colors.blueAccent,
             child: SizedBox(
               height: 15.h,
-              child: Center(
-                child: Text("Quiz Game Edukasi Komputer",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 11.sp,
-                        color: Colors.white70)),
+              child: Align(
+                alignment: Alignment.center,
+                child: AnimatedTextKit(
+                  isRepeatingAnimation: true,
+                  animatedTexts: [
+                    ColorizeAnimatedText(
+                        "Kuis Edukasi Komputer berbasis Flutter".toUpperCase(),
+                        colors: [Colors.white54, Colors.white70],
+                        textStyle: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16.sp),
+                        textAlign: TextAlign.center),
+                  ],
+                ),
               ),
             ),
           ),
@@ -197,10 +202,13 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                     ),
                     SizedBox(height: 30),
                     ElevatedButton.icon(
-                      icon: isLoading ? Icon(Icons.lock_clock) : Icon(Icons.login),
+                      icon: isLoading
+                          ? Icon(Icons.lock_clock)
+                          : Icon(Icons.login),
                       label: const Text("Masuk"),
                       onPressed: () async {
-                        if (ctrlLoginEmail.text == "" || ctrlLoginPassword.text == "") {
+                        if (ctrlLoginEmail.text == "" ||
+                            ctrlLoginPassword.text == "") {
                           Fluttertoast.showToast(
                             msg: "Masukan semua data terlebih dahulu",
                             toastLength: Toast.LENGTH_SHORT,
@@ -363,7 +371,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                       SizedBox(height: 40),
                       ElevatedButton.icon(
                         label: Text("Daftar"),
-                        icon: isLoading ? Icon(Icons.app_registration_rounded) : Icon(Icons.upload),
+                        icon: isLoading
+                            ? Icon(Icons.app_registration_rounded)
+                            : Icon(Icons.upload),
                         onPressed: () async {
                           if (ctrlName.text == "" ||
                               ctrlEmail.text == "" ||
@@ -388,7 +398,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                                 ctrlName.text,
                                 ctrlUsia.text,
                                 ctrlProfesi.text);
-                            if (result == "sukses") {
+                            if (result == "success") {
                               Fluttertoast.showToast(
                                 msg: "sukses",
                                 toastLength: Toast.LENGTH_SHORT,
@@ -403,7 +413,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                               });
                               Navigator.pushReplacement(context,
                                   MaterialPageRoute(builder: (context) {
-                                return MenuPage();
+                                return WelcomePage();
                               }));
                             } else {
                               Fluttertoast.showToast(

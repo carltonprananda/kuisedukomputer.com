@@ -43,7 +43,7 @@ class _ResultGameState extends State<ResultGame> {
   List<Question> _pertanyaan = questiontype1;
   static double ratingnilai = 3, ratingkepahaman = 3;
   static int persentasebenar;
-  static DateTime waktuselesai = DateTime.now();
+  static DateTime waktuselesai = DateTime.now().toLocal();
   static int persenbenar() {
     return (persentasebenar ~/ 5) * 100;
   }
@@ -152,6 +152,7 @@ class _ResultGameState extends State<ResultGame> {
                 minimumSize: Size.fromHeight(40)
               ),
               onPressed: () async {
+                waktuselesai = DateTime.now().toLocal();
                 if (ratingnilai == 0 || ratingkepahaman == 0) {
                   Fluttertoast.showToast(
                       msg: "Mohon berikan nilai :-)",
@@ -209,7 +210,6 @@ class _ResultGameState extends State<ResultGame> {
                                   totalsalah: 0,
                                   qindex: 0,
                                   timerplus: 0,
-                                  user: "Dean",
                                 )));
                       },
                       child: Text("Ulang")),

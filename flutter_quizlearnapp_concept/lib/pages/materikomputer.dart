@@ -2,18 +2,30 @@ part of 'pages.dart';
 
 class MateriKomputerPage extends StatelessWidget {
   const MateriKomputerPage({Key key}) : super(key: key);
+  
 
   @override
+  
   Widget build(BuildContext context) {
+    final pdfPinchController = PdfControllerPinch(
+  document: PdfDocument.openAsset('assets/docs/GEKomnon_KomputerDasar.pdf'),
+
+);
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Materi Komputer"),
+        centerTitle: true,
+      ),
       body: Column(
         mainAxisSize: MainAxisSize.min,
-        children: const <Widget>[
-          Text("Komputer Dasar"),
-          Expanded(child: SingleChildScrollView(child: MateriKomputerDasarTile())),
-          Text("Sistem Operasi"),
-          Expanded(child: SingleChildScrollView(child: MateriOSTile())),
-          Text("Keamanan Komputer"),
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Expanded(
+            child: PdfViewPinch(
+            
+            controller: pdfPinchController,
+          ),
+          )
         ],
       ),
     );
@@ -25,7 +37,7 @@ class IstilahKomputerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }
 

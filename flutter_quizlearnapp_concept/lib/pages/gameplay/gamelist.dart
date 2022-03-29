@@ -8,6 +8,7 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quizlearnapp_concept/pages/pages.dart';
 import 'package:flutter_quizlearnapp_concept/models/models.dart';
+import 'package:google_fonts/google_fonts.dart';
 part 'truefalsegameplay.dart';
 part 'tour1_1_1.dart';
 part 'tour1_2_1.dart';

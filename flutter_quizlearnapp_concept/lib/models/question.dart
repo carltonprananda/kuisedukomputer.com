@@ -673,7 +673,7 @@ List<Question> tourstage131 = [
   Question(
       questionid: '1',
       question: 'Kata Komputer berasal dari Bahasa',
-      listanswers: ['Yunani', 'Inggris', 'Latin' 'Sanskerta'],
+      listanswers: ['Yunani', 'Inggris', 'Latin', 'Sanskerta'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
@@ -1562,7 +1562,7 @@ List<Question> tourstage222 = [
       questiontitle: 'Komponen Komputer',
       questioncorrect: 'App Store'),
 ];
-/* Tentang Sistem Operasi Windows Mac OS untuk stage 2 pada Mode Ketiga*/
+/* Tentang Sistem Operasi Windows dan Mac OS untuk stage 2 pada Mode Ketiga*/
 List<Question> tourstage223 = [
   Question(
       questionid: '1',
@@ -1856,4 +1856,606 @@ List<Question> tourstage223 = [
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
       questioncorrect: 'App Store'),
+];
+
+/* Tentang Sistem Operasi dan Windows untuk stage 3 pada Mode Pertama*/
+List<Question> tourstage231 = [
+  Question(
+      questionid: '1',
+      question: 'Yang bukan merupakan definisi Sistem Operasi',
+      listanswers: [
+        'Sistem yang menghubungkan hardware dengan software',
+        'Mempermudah interaksi pengguna',
+        'Sistem yang memiliki komponen pada komputer'
+        'Sistem yang membantu operasi komputer pengguna'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Sistem Operasi',
+      questioncorrect: 'Sistem yang memiliki komponen pada komputer'),
+  Question(
+      questionid: '2',
+      question: 'Contoh Sistem Operasi Komputer kecuali',
+      listanswers: ['Windows', 'Linux', 'Android', 'MacOS'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Sistem Operasi',
+      questioncorrect: 'Windows'),
+  Question(
+      questionid: '3',
+      question: 'Komponen dalam OS, kecuali',
+      listanswers: ['File', 'UI', 'Kernel', 'Hardware'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Sistem Operasi',
+      questioncorrect: 'Hardware'),
+  Question(
+      questionid: '4',
+      question: 'UI merupakan singkatan dari',
+      listanswers: [
+        'Utility Interface',
+        'Utility Implementation',
+        'User Inteface',
+        'User Impelementation'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Sistem Operasi',
+      questioncorrect: 'User Inteface'),
+  Question(
+      questionid: '5',
+      question: 'Fungsi Sistem Operasi kecuali',
+      listanswers: [
+        'Sebagai Manajemen Sumber Daya Komputer',
+        'Mengoptimal Fungsi Perangkat Komputer',
+        'Menghubungkan Software'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Menghubungkan Software'),
+  Question(
+      questionid: '6',
+      question: 'System Requriement dalam Sistem Operasi kecuali',
+      listanswers: [
+        'Mengetahui spesifikasi yang handal untuk menjalankan OS',
+        'Menentukan spesifikasi penting Sistem Operasi dapat berjalan dengan lancar',
+        'Menentukan harga spesifikasi komputer untuk berjalan dengan lancar',
+        'Menentukan spesifikasi yang disarankan dalam menjalankan sebuah OS maupun Aplikasi'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Menentukan harga spesifikasi komputer untuk berjalan dengan lancar'),
+  Question(
+      questionid: '7',
+      question: 'Software dalam Sistem Operasi adalah',
+      listanswers: [
+        'Aplikasi untuk berisikan berbagai variasi sesuai kebutuhan pengguna',
+        'Aplikasi untuk menampilkan gambar di monitor',
+        'Aplikasi untuk mengelola komputer',    
+        'Aplikasi yang terdiri atas Browser dan Game'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Aplikasi untuk mengelola komputer'),
+  Question(
+      questionid: '8',
+      question: 'Management yang ada di Sistem Operasi, Kecuali',
+      listanswers: ['Device', 'System', 'File', 'Kernel'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'System'),
+  Question(
+      questionid: '9',
+      question: 'Ciri-ciri Sistem Operasi 32-bit kecuali',
+      listanswers: [
+        'RAM Terbatas Hingga 3 GB',
+        'Dapat menjalankan program 16-bit',
+        'Digunakan untuk komputer yang tidak mendukung program 64-bit',
+        'Dapat menjalan program 64-bit'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Dapat menjalan program 64-bit'),
+  Question(
+      questionid: '10',
+      question: 'Ciri-ciri Sistem Operasi 64-bit adalah',
+      listanswers: [
+        'Dukungan RAM diatas 4 GB',
+        'Tidak dapat menjalankan program 32-bit',
+        'Harga Cukup Mahal',
+        'Mengonsumsi RAM yang lebih banyak'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Dukungan RAM diatas 4 GB'),
+  Question(
+      questionid: '11',
+      question: 'Instalansi Sistem Operasi dapat dilakukan melalui, kecuali',
+      listanswers: ['USB', 'CD', 'ISO', 'Floppy'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Floppy'),
+  Question(
+      questionid: '12',
+      question: 'Windows, MacOS dan Linux adalah sistem operasi berjenis',
+      listanswers: ['Networking', 'Live CD', 'Embedded', 'Standalone'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Standalone'),
+  Question(
+      questionid: '13',
+      question: 'Tahapan Sistem Operasi terdiri atas,',
+      listanswers: ['Hardware', 'Browser', 'Explorer'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Hardware'),
+  Question(
+      questionid: '14',
+      question: 'Tahapan Sistem Operasi terdiri atas, kecuali',
+      listanswers: ['Hardware', 'Software', 'Database'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Database'),
+  Question(
+      questionid: '15',
+      question: 'Tahapan Sistem Operasi terdiri atas, kecuali',
+      listanswers: ['Hardware', 'Software', 'Database'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Database'),
+    Question(
+      questionid: '16',
+      question: 'Windows Merupakan OS yang bersifat',
+      listanswers: ['Open Source', 'Close Source', 'Campuran'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Pengaturan Komputer',
+      questioncorrect: 'Close Source'),
+  Question(
+      questionid: '17',
+      question:
+          'Untuk menjalankan aplikasi Run, Tombol shortcut untuk Windows Run adalah',
+      listanswers: ['WIN + R', 'WIN + C', 'WIN + I'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'WIN + R'),
+  Question(
+      questionid: '18',
+      question: 'Windows Explorer adalah ... ',
+      listanswers: [
+        'Sistem Management',
+        'File Management',
+        'Driver Management'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'File Management'),
+  Question(
+      questionid: '19',
+      question: 'Powershell adalah ',
+      listanswers: [
+        'Interface Antar Muka untuk melakukan task',
+        'Interface Command Line untuk melakukan task',
+        'Interface Terminal untuk melakukan task'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Interface Command Line untuk melakukan task'),
+  Question(
+      questionid: '20',
+      question: 'Yang ada di dalam Start Menu, kecuali',
+      listanswers: ['Daftar Program', 'Menu Boot', 'Semua Salah'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Semua Salah'),
+  Question(
+      questionid: '21',
+      question: 'Label pada Local Disc adalah',
+      listanswers: ['A', 'C', 'D'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'C'),
+  Question(
+      questionid: '22',
+      question: 'Label pada Drive Kedua adalah',
+      listanswers: ['D', 'E', 'Semua Benar'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Semua Benar'),
+  Question(
+      questionid: '23',
+      question: 'Label pada Floppy adalah',
+      listanswers: ['A', 'B', 'C'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'A'),
+  Question(
+      questionid: '249',
+      question: 'Windows Pertama kali diperkenalkan pada tahun',
+      listanswers: ['1975', '1985', '1995'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: '1985'),
+  Question(
+      questionid: '25',
+      question: 'Task Manager adalah',
+      listanswers: [
+        'Aplikasi yang berisikan untuk melihat proses aplikasi beserta komponen',
+        'Aplikasi yang berisikan untuk melihat status aplikasi beserta komponen',
+        'Aplikasi yang berisikan untuk melihat error aplikasi beserta komponen'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect:
+          'Aplikasi yang berisikan untuk melihat proses aplikasi beserta komponen'),
+  Question(
+      questionid: '26',
+      question: 'Taskbar adalah',
+      listanswers: [
+        'Kumpulan aplikasi dan status dalam Windows',
+        'Kumpulan beberapa aplikasi beserta aplikasi yang telah dipin dan status dalam Windows',
+        'Berisikan Start Menu, Kumpulan beberapa aplikasi beserta aplikasi yang telah dipin dan status dalam Windows'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect:
+          'Berisikan Start Menu, Kumpulan beberapa aplikasi beserta aplikasi yang telah dipin dan status dalam Windows'),
+  Question(
+      questionid: '27',
+      question:
+          'Untuk memeriksa komponen pada Windows dalam Command Prompt, Command apa yang digunakan',
+      listanswers: ['sfc/ scannow', 'sfc /verifyonly', 'Semua Benar'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Windows',
+      questioncorrect: 'sfc/ scannow'),
+  Question(
+      questionid: '28',
+      question: 'Windows versi terkini yang dirilis pada 2021 adalah',
+      listanswers: ['Windows 7', 'Windows 10', 'Windows 11'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Windows 11'),
+  Question(
+      questionid: '29',
+      question: 'Ciri-ciri Windows 64-bit kecuali',
+      listanswers: [
+        'Dapat menjalankan program 16-bit',
+        'Mendukung RAM diatas 4 GB',
+        'Aplikasi 32-bit tetap berjalan dalam 64-bit'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Dapat menjalankan program 16-bit'),
+  Question(
+      questionid: '30',
+      question: 'Ciri-ciri Windows 32-bit adalah',
+      listanswers: [
+        'Dapat menjalankan program 16-bit',
+        'Mendukung RAM diatas 4 GB',
+        'Aplikasi 64-bit tetap berjalan dalam 32-bit'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Dapat menjalankan program 16-bit'),
+];
+
+/* Tentang Sistem Operasi dan Mac OS untuk stage 3 pada Mode Kedua*/
+List<Question> tourstage232 = [
+  Question(
+      questionid: '1',
+      question: 'Sistem Operasi adalah',
+      listanswers: [
+        'Sistem yang menghubungkan hardware dengan software',
+        'Mempermudah interaksi pengguna',
+        'Semua benar'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Sistem Operasi',
+      questioncorrect: 'Sistem yang menghubungkan hardware dengan software'),
+  Question(
+      questionid: '2',
+      question: 'Contoh Sistem Operasi Komputer adalah',
+      listanswers: ['Windows', 'iOS', 'Android'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Sistem Operasi',
+      questioncorrect: 'Windows'),
+  Question(
+      questionid: '3',
+      question: 'Komponen dalam OS, kecuali',
+      listanswers: ['File', 'UI', 'Hardware'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Sistem Operasi',
+      questioncorrect: 'Hardware'),
+  Question(
+      questionid: '4',
+      question: 'UI merupakan singkatan dari',
+      listanswers: [
+        'Utility Interface',
+        'User Inteface',
+        'User Impelementation'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Sistem Operasi',
+      questioncorrect: 'User Inteface'),
+  Question(
+      questionid: '5',
+      question: 'Fungsi Sistem Operasi kecuali',
+      listanswers: [
+        'Sebagai Manajemen Sumber Daya Komputer',
+        'Mengoptimal Fungsi Perangkat Komputer',
+        'Menghubungkan Software'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Menghubungkan Software'),
+  Question(
+      questionid: '6',
+      question: 'System Requriement dalam Sistem Operasi adalah',
+      listanswers: [
+        'Mengetahui spesifikasi yang handal untuk menjalankan OS',
+        'Menentukan spesifikasi penting Sistem Operasi dapat berjalan dengan lancar',
+        'Semua Benar'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Semua Benar'),
+  Question(
+      questionid: '7',
+      question: 'Software dalam Sistem Operasi adalah',
+      listanswers: [
+        'Aplikasi untuk mengelola komputer',
+        'Aplikasi untuk menampilkan gambar di monitor',
+        'Aplikasi yang terdiri atas Browser dan Game'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Aplikasi untuk mengelola komputer'),
+  Question(
+      questionid: '8',
+      question: 'Management yang ada di Sistem Operasi, Kecuali',
+      listanswers: ['Device', 'Component', 'File'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Component'),
+  Question(
+      questionid: '9',
+      question: 'Ciri-ciri Sistem Operasi 32-bit adalah',
+      listanswers: [
+        'RAM Terbatas Hingga 3 GB',
+        'Dapat menjalankan program 16-bit',
+        'Semua Benar'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Semua Benar'),
+  Question(
+      questionid: '10',
+      question: 'Ciri-ciri Sistem Operasi 64-bit kecuali',
+      listanswers: [
+        'Dukungan RAM diatas 4 GB',
+        'Tidak dapat menjalankan program 32-bit',
+        'Semua Benar'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Semua Benar'),
+  Question(
+      questionid: '11',
+      question: 'Instalansi Sistem Operasi dapat dilakukan melalui',
+      listanswers: ['USB', 'CD', 'Floppy'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'USB'),
+  Question(
+      questionid: '12',
+      question: 'Windows, MacOS dan Linux adalah sistem operasi berjenis',
+      listanswers: ['Networking', 'Live CD', 'Standalone'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Standalone'),
+  Question(
+      questionid: '13',
+      question: 'Tahapan Sistem Operasi terdiri atas,',
+      listanswers: ['Hardware', 'Browser', 'Explorer'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Hardware'),
+  Question(
+      questionid: '14',
+      question: 'Tahapan Sistem Operasi terdiri atas, kecuali',
+      listanswers: ['Hardware', 'Software', 'Database'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Database'),
+  Question(
+      questionid: '15',
+      question: 'Tahapan Sistem Operasi terdiri atas, kecuali',
+      listanswers: ['Hardware', 'Software', 'Database'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Database'),
+];
+/* Tentang True False Komputer Dasaruntuk stage 1*/
+List<Question> tourstage311 = [
+  Question(
+      questionid: '1',
+      question: 'Kata Komputer berasal dari Bahasa Latin',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '2',
+      question: 'Dalam Bahasa Inggris, Compute berarti mengurangi',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '3',
+      question: 'CPU merupakan singkatan dari Center Processing Utility',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect:
+          'False'),
+  Question(
+      questionid: '4',
+      question: 'SSD SATA merupakan jenis SSD Tercepat',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '5',
+      question: 'Untuk menampilkan gambar visual komputer dalam monitor maka diperlukan kartu VGA',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '6',
+      question: 'HDD lebih baik daripada SSD',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '7',
+      question:
+          'Salah satu kelemahan SSD adalah harga yang cukup mahal',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '8',
+      question: 'Salah satu kelemahan HDD adalah suara sunyi',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '9',
+      question:
+          'Salah satu komponen komputer yang dapat menampilkan tampilan pada monitor adalah Processor',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '10',
+      question:
+          'Komponen terpenting dalam menyalakan komputer adalah Power Supply',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '11',
+      question: 'Kekurangan Hard Disk Drive adalah',
+      listanswers: [
+        'Mengeluarkan suara bising',
+        'Mengaktifkan Secure Boot',
+        'Semua Benar'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'Semua Benar'),
+  Question(
+      questionid: '12',
+      question: 'Kelebihan SSD M.2 adalah',
+      listanswers: [
+        'Transfer Data lebih cepat',
+        'Kapasitas Memori Lebih kecil',
+        'Slot terdiri dari 2 pemasangan'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'Transfer Data lebih cepat'),
+  Question(
+      questionid: '13',
+      question:
+          'Jenis driver external yang digunakan sebagai media penyimpanan pada komputer, kecuali',
+      listanswers: ['CD', 'USB', 'RAM'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'RAM'),
+  Question(
+      questionid: '14',
+      question: 'SSD merupakan singkatan dari',
+      listanswers: [
+        'Solid State Drive',
+        'Security State Drive',
+        'Secure State Drive'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'Solid State Drive'),
+  Question(
+      questionid: '15',
+      question: 'Kelebihan SSD jenis NVMe adalah',
+      listanswers: [
+        'Lebih Cepat daripada M.2',
+        'Harga Lebih Mahal',
+        'Semua Benar'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'Lebih Cepat daripada M.2'),
 ];

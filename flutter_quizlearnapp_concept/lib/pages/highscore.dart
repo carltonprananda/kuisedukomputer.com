@@ -21,10 +21,20 @@ class _HighscorePageState extends State<HighscorePage> {
   Widget build(BuildContext context) {
     return Stack(children: <Widget>[
       Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.blueAccent,
+                Colors.lightBlueAccent,
+              ],
+            )
+          ),
         width: double.infinity,
         height: double.infinity,
         child: Column(children: <Widget>[
-          Text("Semua Data"),
+          Text("Semua Data", style: GoogleFonts.notoSans(fontSize: 18.sp)),
           Flexible(
               child: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
             stream: productquery.orderBy('score', descending: true).snapshots(),
@@ -37,7 +47,7 @@ class _HighscorePageState extends State<HighscorePage> {
                 return Text("Data tidak ada");
               }
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return SpinKitCircle(
+                return SpinKitSpinningCircle(
                   size: 50,
                   color: Colors.blueAccent,
                 );
@@ -70,7 +80,7 @@ class _HighscorePageState extends State<HighscorePage> {
               width: double.infinity,
               height: double.infinity,
               color: Colors.transparent,
-              child: SpinKitCircle(size: 50, color: Colors.blueAccent))
+              child: SpinKitSpinningCircle(size: 50, color: Colors.blueAccent))
           : Container()
     ]);
   }

@@ -20,7 +20,7 @@ class QTile extends StatelessWidget {
               style: TextStyle(
                 fontSize: 13.sp,
                 color: Colors.blueAccent,
-              ), textAlign: TextAlign.center,)),
+              ), textAlign: TextAlign.left,)),
     );
   }
 }

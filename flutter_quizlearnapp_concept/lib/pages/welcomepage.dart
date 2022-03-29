@@ -112,9 +112,29 @@ class _FirstPageState extends State<FirstPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text("Kuis Edukasi Komputer berbasis Flutter",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp)),
+            SizedBox(
+              width: double.infinity,
+              height: 10.h,
+              child: Container(
+                color: Colors.blueAccent,
+                child: Center(
+                  child: AnimatedTextKit(
+                    isRepeatingAnimation: true,
+                      animatedTexts: [
+                        ColorizeAnimatedText(
+        "Kuis Edukasi Komputer berbasis Flutter".toUpperCase(),
+        colors: [Colors.white54, Colors.white70],
+        textStyle: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20.sp
+        ),
+        textAlign: TextAlign.center
+      ),
+                        ],
+                      ),
+                ),
+              ),
+            ),
             ListView(
               shrinkWrap: true,
               padding: EdgeInsets.all(10),
@@ -153,8 +173,10 @@ class _FirstPageState extends State<FirstPage> {
                     child: Text(
                       "Masuk",
                       textAlign: TextAlign.center,
+                      style: GoogleFonts.permanentMarker(
+                        fontSize: 24.sp
+                      )
                     ))),
-            
           ],
         ),
       ),

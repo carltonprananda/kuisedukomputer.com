@@ -36,12 +36,13 @@ class AuthServices {
             () => msg = "success",
           );
     } catch (e) {
-      msg = e.toString();//e.toString();
+      msg = e.toString();
     }
     return msg;
   }
 
   static Future<bool> signout() async {
+    await FirebaseAuth.instance.signOut();
     bool result = false;
     await auth.signOut().whenComplete(
           () => result = true,

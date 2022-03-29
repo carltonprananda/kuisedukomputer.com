@@ -9,7 +9,7 @@ class Tour2Screen extends StatefulWidget {
     this.totalsalah,
     this.timerplus,
     this.qindex,
-    this.stage, this.round, this.user,
+    this.stage, this.round, this.user, this.roundscore,
   }) : super(key: key);
 
   final List<Question> pertanyaan;
@@ -21,24 +21,26 @@ class Tour2Screen extends StatefulWidget {
   final String stage;
   final int round;
   final String user;
+  final int roundscore;
   @override
   _Tour2ScreenState createState() => _Tour2ScreenState();
 }
 
 class _Tour2ScreenState extends State<Tour2Screen> {
-  List<Question> _pertanyaan = tourstage111;
+  List<Question> _pertanyaan = tourstage121;
   int _totaltime;
   int _countdowntimer;
   Timer _timerplus;
   Timer _timerminus;
   static int _gamescore = 0;
+  static int _roundscore = 0;
   static int _totalbenar = 0;
   static int _totalsalah = 0;
   static int questionindex = 0;
   static var questionrandom = List<int>.generate(questiontype1.length, (i) => i)
     ..shuffle();
-  static var questionrandomtake = questionrandom.take(5);
-  String stage = "Keamanan Komputer";
+  static var questionrandomtake = questionrandom.take(4);
+  static String stage;
 
   String myanswer = '';
   @override
@@ -59,25 +61,59 @@ class _Tour2ScreenState extends State<Tour2Screen> {
   void dispose() {
     _timerplus.cancel();
     _gamescore = 0;
+    _roundscore = 0;
     _totalbenar = 0;
     _totalsalah = 0;
     super.dispose();
   }
+  
 
   void toResultgame(BuildContext context) {
+  if (widget.round == 1){
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => new ResultTour2(
+        builder: (context) => new ResultTour(
           jawabanbenar: _totalbenar,
           jawabansalah: _totalsalah,
           score: _gamescore,
           answertime: _totaltime, 
-          stage: 2,
-          user: "Dean",
-          mode: stage,
+          stage: widget.round,
+          mode: widget.stage,
+          roundscore: _roundscore,
         ),
       ),
     );
+  }
+  if (widget.round == 2){
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => new ResultTour(
+          jawabanbenar: _totalbenar,
+          jawabansalah: _totalsalah,
+          score: _gamescore,
+          answertime: _totaltime, 
+          stage: widget.round,
+          mode: widget.stage,
+          roundscore: _roundscore,
+        ),
+      ),
+    );
+  } 
+  if (widget.round == 3){
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => new ResultTour(
+          jawabanbenar: _totalbenar,
+          jawabansalah: _totalsalah,
+          score: _gamescore,
+          answertime: _totaltime, 
+          stage: widget.round,
+          mode: widget.stage,
+          roundscore: _roundscore,
+        ),
+      ),
+    );
+  };
   }
 
   @override
