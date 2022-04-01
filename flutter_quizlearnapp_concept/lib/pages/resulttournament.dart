@@ -95,31 +95,92 @@ class _ResultTourState extends State<ResultTour> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(title: Text(widget.mode), automaticallyImplyLeading: false),
-      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+          AppBar(title: Text(widget.mode,
+            style: GoogleFonts.notoSans(
+                fontWeight: FontWeight.bold, color: Colors.green)),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,),
+      body: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
           Widget>[
-        Text('Skor Anda: ${widget.score}'),
-        Card(
-          child: ListTile(
-            leading: Icon(Icons.timer),
-            title: Text('Waktu menjawab'),
-            trailing: Text('${widget.answertime}'),
-          ),
+                CircularPercentIndicator(
+              radius: 60,
+              percent: widget.score / 100,
+              lineWidth: 10,
+              animation: true,
+              header: Text('Skor Anda', style: GoogleFonts.notoSans(fontSize: 24)),
+              center: Text('${widget.score}', style: TextStyle(fontSize: 32),),
+              linearGradient: LinearGradient(
+                colors: [Colors.green, Colors.blue],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: CircularPercentIndicator(
+              radius: 40,
+              percent: hasilpersenbenar / 100,
+              lineWidth: 10,
+              animation: true,
+              header: Text("Benar", style: GoogleFonts.notoSans(fontSize: 14)),
+              center: Text(hasilpersenbenar.toString() + "%", style: GoogleFonts.notoSans(fontSize: 14)),
+              linearGradient: LinearGradient(
+                colors: [Colors.green, Colors.lightGreenAccent],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+            ),
+            Expanded(
+              child: CircularPercentIndicator(
+              radius: 40,
+              percent: hasilpersensalah / 100,
+              lineWidth: 10,
+              animation: true,
+              header: Text("Salah", style: GoogleFonts.notoSans(fontSize: 14)),
+              center: Text(hasilpersensalah.toString() + "%", style: GoogleFonts.notoSans(fontSize: 14)),
+              linearGradient: LinearGradient(
+                colors: [Colors.red, Colors.redAccent],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+            ),
+          ],
         ),
-        Card(
-          child: ListTile(
-              leading: Icon(Icons.check),
-              title: Text('Benar'),
-              trailing: Text(hasilpersenbenar.toString() + "%"),
-              subtitle: Text('${widget.jawabanbenar}')),
-        ),
-        Card(
-          child: ListTile(
-            leading: Icon(Icons.close),
-            title: Text('Salah'),
-            trailing: Text(hasilpersensalah.toString() + "%"),
-            subtitle: Text('${widget.jawabansalah}'),
-          ),
+
+        Row(
+          children: [
+            Expanded(
+                child: Column(
+              children: [
+                Icon(Icons.timer),
+                Text('Waktu Menjawab'),
+                Text('${widget.answertime}'),
+              ],
+            )),
+            Expanded(
+                child: Column(
+              children: [
+                Icon(Icons.check),
+                Text('Jumlah Benar'),
+                Text('${widget.jawabanbenar}'),
+              ],
+            )),
+            Expanded(
+                child: Column(
+              children: [
+                Icon(Icons.close),
+                Text('Jumlah Salah'),
+                Text('${widget.jawabansalah}'),
+              ],
+            )),
+          ],
         ),
         Text("Bagaimana Hasil Kami " + (name ?? '') + " ?"),
         RatingBar.builder(
@@ -181,7 +242,7 @@ class _ResultTourState extends State<ResultTour> {
                           waktuselesai.toString(),
                           widget.stage.toString(),
                           widget.mode,
-                          widget.score);
+                          widget.roundscore);
                       bool result =
                           await HighScoreServices.addHighscore(highScore);
                       if (result == true) {
@@ -239,7 +300,7 @@ class _ResultTourState extends State<ResultTour> {
                           waktuselesai.toString(),
                           widget.stage.toString(),
                           widget.mode,
-                          widget.score);
+                          widget.roundscore);
                       bool result =
                           await HighScoreServices.addHighscore(highScore);
                       if (result == true) {
@@ -298,7 +359,7 @@ class _ResultTourState extends State<ResultTour> {
                           waktuselesai.toString(),
                           widget.stage.toString(),
                           widget.mode,
-                          widget.score);
+                          widget.roundscore);
                       bool result =
                           await HighScoreServices.addHighscore(highScore);
                       if (result == true) {
@@ -356,7 +417,7 @@ class _ResultTourState extends State<ResultTour> {
                           waktuselesai.toString(),
                           widget.stage.toString(),
                           widget.mode,
-                          widget.score);
+                          widget.roundscore);
                       bool result =
                           await HighScoreServices.addHighscore(highScore);
                       if (result == true) {
@@ -414,7 +475,7 @@ class _ResultTourState extends State<ResultTour> {
                           waktuselesai.toString(),
                           widget.stage.toString(),
                           widget.mode,
-                          widget.score);
+                          widget.roundscore);
                       bool result =
                           await HighScoreServices.addHighscore(highScore);
                       if (result == true) {
@@ -474,7 +535,7 @@ class _ResultTourState extends State<ResultTour> {
                       waktuselesai.toString(),
                       widget.stage.toString(),
                       widget.mode,
-                      widget.score);
+                      widget.roundscore);
                   bool result = await HighScoreServices.addHighscore(highScore);
                   if (result == true) {
                     Fluttertoast.showToast(
@@ -523,7 +584,8 @@ class ResultTour2 extends StatefulWidget {
     this.answertime,
     this.stage,
     this.user,
-    this.mode,
+    this.mode, this.roundscore,
+    
   }) : super(key: key);
 
   final int score;
@@ -533,6 +595,7 @@ class ResultTour2 extends StatefulWidget {
   final int stage;
   final String user;
   final String mode;
+  final int roundscore;
 
   @override
   _ResultTour2State createState() => _ResultTour2State();
@@ -607,31 +670,92 @@ class _ResultTour2State extends State<ResultTour2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(title: Text("Your Result"), automaticallyImplyLeading: false),
-      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+          AppBar(title: Text(widget.mode,
+            style: GoogleFonts.notoSans(
+                fontWeight: FontWeight.bold, color: Colors.green)),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,),
+      body: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
           Widget>[
-        Text('Skor Anda: ${widget.score}'),
-        Card(
-          child: ListTile(
-            leading: Icon(Icons.timer),
-            title: Text('Waktu menjawab'),
-            trailing: Text('${widget.answertime}'),
-          ),
+        CircularPercentIndicator(
+              radius: 60,
+              percent: widget.score / 100,
+              lineWidth: 10,
+              animation: true,
+              header: Text('Skor Anda', style: GoogleFonts.notoSans(fontSize: 24)),
+              center: Text('${widget.score}', style: TextStyle(fontSize: 32),),
+              linearGradient: LinearGradient(
+                colors: [Colors.green, Colors.blue],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: CircularPercentIndicator(
+              radius: 40,
+              percent: hasilpersenbenar / 100,
+              lineWidth: 10,
+              animation: true,
+              header: Text("Benar", style: GoogleFonts.notoSans(fontSize: 14)),
+              center: Text(hasilpersenbenar.toString() + "%", style: GoogleFonts.notoSans(fontSize: 14)),
+              linearGradient: LinearGradient(
+                colors: [Colors.green, Colors.lightGreenAccent],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+            ),
+            Expanded(
+              child: CircularPercentIndicator(
+              radius: 40,
+              percent: hasilpersensalah / 100,
+              lineWidth: 10,
+              animation: true,
+              header: Text("Salah", style: GoogleFonts.notoSans(fontSize: 14)),
+              center: Text(hasilpersensalah.toString() + "%", style: GoogleFonts.notoSans(fontSize: 14)),
+              linearGradient: LinearGradient(
+                colors: [Colors.red, Colors.redAccent],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+            ),
+          ],
         ),
-        Card(
-          child: ListTile(
-              leading: Icon(Icons.check),
-              title: Text('Benar'),
-              trailing: Text(hasilpersenbenar.toString() + "%"),
-              subtitle: Text('${widget.jawabanbenar}')),
-        ),
-        Card(
-          child: ListTile(
-            leading: Icon(Icons.close),
-            title: Text('Salah'),
-            trailing: Text(hasilpersensalah.toString() + "%"),
-            subtitle: Text('${widget.jawabansalah}'),
-          ),
+
+        Row(
+          children: [
+            Expanded(
+                child: Column(
+              children: [
+                Icon(Icons.timer),
+                Text('Waktu Menjawab'),
+                Text('${widget.answertime}'),
+              ],
+            )),
+            Expanded(
+                child: Column(
+              children: [
+                Icon(Icons.check),
+                Text('Jumlah Benar'),
+                Text('${widget.jawabanbenar}'),
+              ],
+            )),
+            Expanded(
+                child: Column(
+              children: [
+                Icon(Icons.close),
+                Text('Jumlah Salah'),
+                Text('${widget.jawabansalah}'),
+              ],
+            )),
+          ],
         ),
         Text("Bagaimana Hasil Kami " + widget.user + " ?"),
         RatingBar.builder(
@@ -691,7 +815,7 @@ class _ResultTour2State extends State<ResultTour2> {
                           waktuselesai.toString(),
                           widget.stage.toString(),
                           widget.mode,
-                          widget.score);
+                          widget.roundscore);
                       bool result =
                           await HighScoreServices.addHighscore(highScore);
                       if (result == true) {
@@ -749,7 +873,7 @@ class _ResultTour2State extends State<ResultTour2> {
                           waktuselesai.toString(),
                           widget.stage.toString(),
                           widget.mode,
-                          widget.score);
+                          widget.roundscore);
                       bool result =
                           await HighScoreServices.addHighscore(highScore);
                       if (result == true) {
@@ -807,7 +931,7 @@ class _ResultTour2State extends State<ResultTour2> {
                           waktuselesai.toString(),
                           widget.stage.toString(),
                           widget.mode,
-                          widget.score);
+                          widget.roundscore);
                       bool result =
                           await HighScoreServices.addHighscore(highScore);
                       if (result == true) {
@@ -866,7 +990,7 @@ class _ResultTour2State extends State<ResultTour2> {
                           waktuselesai.toString(),
                           widget.stage.toString(),
                           widget.mode,
-                          widget.score);
+                          widget.roundscore);
                       bool result =
                           await HighScoreServices.addHighscore(highScore);
                       if (result == true) {
@@ -924,7 +1048,7 @@ class _ResultTour2State extends State<ResultTour2> {
                           waktuselesai.toString(),
                           widget.stage.toString(),
                           widget.mode,
-                          widget.score);
+                          widget.roundscore);
                       bool result =
                           await HighScoreServices.addHighscore(highScore);
                       if (result == true) {
@@ -984,7 +1108,7 @@ class _ResultTour2State extends State<ResultTour2> {
                       waktuselesai.toString(),
                       widget.stage.toString(),
                       widget.mode,
-                      widget.score);
+                      widget.roundscore);
                   bool result = await HighScoreServices.addHighscore(highScore);
                   if (result == true) {
                     Fluttertoast.showToast(

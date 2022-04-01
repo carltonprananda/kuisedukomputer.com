@@ -8,7 +8,7 @@ class Tour3Screen extends StatefulWidget {
     this.totalbenar,
     this.totalsalah,
     this.timerplus,
-    this.qindex, this.round, this.user,
+    this.qindex, this.round, this.user, this.roundscore
   }) : super(key: key);
 
   final List<Question> pertanyaan;
@@ -19,6 +19,7 @@ class Tour3Screen extends StatefulWidget {
   final int qindex;
   final int round;
   final String user;
+  final int roundscore;
   @override
   _Tour3ScreenState createState() => _Tour3ScreenState();
 }
@@ -33,6 +34,8 @@ class _Tour3ScreenState extends State<Tour3Screen> {
   static int _totalbenar = 0;
   static int _totalsalah = 0;
   static int questionindex = 0;
+    static int roundjawabanbenar = 100;
+  static int roundjawabansalah = 0;
   static var questionrandom = List<int>.generate(questiontype1.length, (i) => i)
     ..shuffle();
   static var questionrandomtake = questionrandom.take(5);

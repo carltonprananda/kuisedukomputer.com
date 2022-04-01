@@ -13,112 +13,35 @@ class SelectGamePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text("Multi Round Game", textAlign: TextAlign.left, style:TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
-                Text("Uji kepahaman komputer dengan 3 babak yang berbeda",
-                    textAlign: TextAlign.left),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Tour1Screen(
-                                    pertanyaan: tourstage111,
-                                    gamescore: 0,
-                                    totalbenar: 0,
-                                    totalsalah: 0,
-                                    qindex: 0,
-                                    timerplus: 0,
-                                    stage: "Multi Round - Komputer Dasar",
-                                    round: 1,
-                                  )));
-                        },
-                        child: Card(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage('assets/images/monitor1.jpg'),
-                              ),
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                colors: [
-                                  Colors.greenAccent.shade700.withOpacity(0.8),
-                                  Colors.green.shade900.withOpacity(0.8),
-                                ],
-                                begin: Alignment.topLeft,
-                                end: Alignment.topRight,
-                              )),
-                              child: ListTile(
-                                tileColor: Colors.greenAccent,
-                                title: Text("Quiz Komputer Dasar",
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white)),
-                                subtitle: Text(
-                                  "3 Round seputar Komputer Dasar",
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ),
-                          ),
-                        )),
-                    InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Tour1Screen(
-                                    pertanyaan: tourstage121,
-                                    gamescore: 0,
-                                    totalbenar: 0,
-                                    totalsalah: 0,
-                                    qindex: 0,
-                                    timerplus: 0,
-                                    stage: "Multi Round - Sistem Operasi",
-                                    round: 1,
-                                  )));
-                        },
-                        child: Card(
-                            child: Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image:
-                                        AssetImage('assets/images/laptop1.jpg'),
-                                  ),
-                                ),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                    colors: [
-                                      Colors.greenAccent.shade700
-                                          .withOpacity(0.8),
-                                      Colors.green.shade900.withOpacity(0.8),
-                                    ],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.topRight,
-                                  )),
-                                  child: ListTile(
-                                    tileColor: Colors.greenAccent,
-                                    title: Text(
-                                      "Quiz Sistem Operasi Komputer",
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white),
-                                    ),
-                                    subtitle: Text(
-                                      "3 Quiz Tentang Seputar Sistem Operasi",
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                ))))
-                  ],
+                ListTile(
+                  title: Text("Multi Round",
+                      style: GoogleFonts.notoSans(
+                          fontSize: 18, fontWeight: FontWeight.bold)),
+                  subtitle: Text(
+                      "Uji kepahaman komputer dengan 3 babak yang berbeda",
+                      style: GoogleFonts.notoSans(fontSize: 14)),
+                  trailing: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Image.asset('assets/pngs/hierarchy-300x300.png'),
+                  ),
                 ),
+                Divider(
+                  color: Colors.greenAccent,
+                  thickness: 5,
+                  endIndent: 100,
+                ),
+                ListMenuGameplay2(
+                    judul: "Quiz Komputer Dasar",
+                    deskripsijudul: "3 Round seputar Komputer Dasar",
+                    juduldenganmode: "Multi Round - Komputer Dasar",
+                    deskripsi: "Uji Kemampuan Komputer Dasar dengan 3 Babak",
+                    tourstage: tourstage111),
+                ListMenuGameplay2(
+                    judul: "Quiz Sistem Operasi",
+                    deskripsijudul: "3 Round seputar Komputer Dasar",
+                    juduldenganmode: "Multi Round - Sistem Operasi",
+                    deskripsi: "Uji Kemampuan Sistem Operasi dengan 3 Babak",
+                    tourstage: tourstage121),
               ]),
         ),
       ),
@@ -139,154 +62,57 @@ class SelectGamePage2 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text("Single Round Quiz", textAlign: TextAlign.left, style:TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
-                Text("Cocok untuk latihan dan basic",
-                    textAlign: TextAlign.left),
-                ConstrainedBox(
-                  constraints: new BoxConstraints(minHeight: 12.h),
-                  child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => GameplayScreen(
-                                  pertanyaan: tourstage111,
-                                  gamescore: 0,
-                                  totalbenar: 0,
-                                  totalsalah: 0,
-                                  qindex: 0,
-                                  timerplus: 0,
-                                  stage: "Komputer Dasar",
-                                )));
-                      },
-                      child: Card(
-                        child: ListTile(
-                          tileColor: Colors.blue,
-                          title: Text(
-                            "Komputer Dasar",
-                            textAlign: TextAlign.center,
-                          ),
-                          subtitle: Text(
-                            "Latihan Quiz Komputer Dasar | 10 Pertanyaan",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      )),
+                ListTile(
+                  title: Text("Single Round",
+                      style: GoogleFonts.notoSans(
+                          fontSize: 18, fontWeight: FontWeight.bold)),
+                  subtitle: Text("Cocok untuk latihan dan basic",
+                      style: GoogleFonts.notoSans(fontSize: 14)),
+                  trailing: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Image.asset('assets/pngs/category-300x300.png'),
+                  ),
                 ),
-                ConstrainedBox(
-                  constraints: new BoxConstraints(minHeight: 12.h),
-                  child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => GameplayScreen(
-                                  pertanyaan: tourstage121,
-                                  gamescore: 0,
-                                  totalbenar: 0,
-                                  totalsalah: 0,
-                                  qindex: 0,
-                                  timerplus: 0,
-                                  stage: "Sistem Operasi",
-                                )));
-                      },
-                      child: Card(
-                        child: ListTile(
-                          tileColor: Colors.blue,
-                          title: Text(
-                            "Sistem Operasi",
-                            textAlign: TextAlign.center,
-                          ),
-                          subtitle: Text(
-                            "Latihan Kuis Sistem Operasi | 10 Pertanyaan",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      )),
+                Divider(
+                  color: Colors.blueAccent,
+                  thickness: 5,
+                  endIndent: 100,
                 ),
-                ConstrainedBox(
-                  constraints: new BoxConstraints(minHeight: 12.h),
-                  child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => GameplayScreen(
-                                  pertanyaan: tourstage122,
-                                  gamescore: 0,
-                                  totalbenar: 0,
-                                  totalsalah: 0,
-                                  qindex: 0,
-                                  timerplus: 0,
-                                  stage: "Keamanan Komputer",
-                                )));
-                      },
-                      child: Card(
-                        child: ListTile(
-                          tileColor: Colors.blue,
-                          title: Text(
-                            "Keamanan Komputer",
-                            textAlign: TextAlign.center,
-                          ),
-                          subtitle: Text(
-                            "Latihan Kuis Keamanan Komputer | 10 Pertanyaan",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      )),
-                ),
-                ConstrainedBox(
-                  constraints: new BoxConstraints(minHeight: 12.h),
-                  child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => GameplayScreen(
-                                  pertanyaan: tourstage221,
-                                  gamescore: 0,
-                                  totalbenar: 0,
-                                  totalsalah: 0,
-                                  qindex: 0,
-                                  timerplus: 0,
-                                  stage: "Microsoft Windows",
-                                )));
-                      },
-                      child: Card(
-                        child: ListTile(
-                          tileColor: Colors.blue,
-                          title: Text(
-                            "Microsoft Windows",
-                            textAlign: TextAlign.center,
-                          ),
-                          subtitle: Text(
-                            "Latihan Kuis tentang Windows | 10 Pertanyaan",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      )),
-                ),
-                ConstrainedBox(
-                  constraints: new BoxConstraints(minHeight: 12.h),
-                  child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => GameplayScreen(
-                                  pertanyaan: tourstage222,
-                                  gamescore: 0,
-                                  totalbenar: 0,
-                                  totalsalah: 0,
-                                  qindex: 0,
-                                  timerplus: 0,
-                                  stage: "MacOS",
-                                )));
-                      },
-                      child: Card(
-                        child: ListTile(
-                          tileColor: Colors.blue,
-                          title: Text(
-                            "MacOS",
-                            textAlign: TextAlign.center,
-                          ),
-                          subtitle: Text(
-                            "Latihan Kuis tentang MacOS | 10 Pertanyaan",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      )),
-                ),
+                ListMenuGameplay1(
+                    judul: "Komputer Dasar",
+                    deskripsijudul: "Latihan Quiz Komputer Dasar",
+                    juduldenganmode: "Single Round - Komputer Dasar",
+                    deskripsi:
+                        "Tentang Komputer Dasar mengenai komponen komputer serta definisi dasar tentang komputer",
+                    tourstage: tourstage111),
+                ListMenuGameplay1(
+                    judul: "Sistem Operasi",
+                    deskripsijudul: "Latihan Quiz Sistem Operasi",
+                    juduldenganmode: "Single Round - Sistem Operasi",
+                    deskripsi:
+                        "Tentang Sistem Operasi mengenai OS-OS jenis serta contohnya",
+                    tourstage: tourstage121),
+                ListMenuGameplay1(
+                    judul: "Keamanan Komputer",
+                    deskripsijudul: "Latihan Quiz Keamanan Komputer",
+                    juduldenganmode: "Single Round - Keamanan Komputer",
+                    deskripsi:
+                        "Tentang Keamanan Komputer seperti Virus dan sejenisnya",
+                    tourstage: tourstage122),
+                ListMenuGameplay1(
+                    judul: "Microsoft Windows",
+                    deskripsijudul: "Latihan Quiz Microsoft Windows",
+                    juduldenganmode: "Single Round - Microsoft Windows",
+                    deskripsi:
+                        "Seputar Microsoft Windows dan hal yang perlu diketahui tentang Microsoft Windows",
+                    tourstage: tourstage221),
+                ListMenuGameplay1(
+                    judul: "Mac OS",
+                    deskripsijudul: "Latihan Quiz Mac OS",
+                    juduldenganmode: "Single Round - Mac OS",
+                    deskripsi:
+                        "Seputar Mac OS dan hal yang perlu diketahui tentang Mac OS",
+                    tourstage: tourstage222),
               ]),
         ),
       ),

@@ -23,21 +23,33 @@ class _HighscorePageState extends State<HighscorePage> {
       Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Colors.blueAccent,
-                Colors.lightBlueAccent,
-              ],
-            )
-          ),
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.blueAccent,
+            Colors.lightBlueAccent,
+          ],
+        )),
         width: double.infinity,
         height: double.infinity,
         child: Column(children: <Widget>[
-          Text("Semua Data", style: GoogleFonts.notoSans(fontSize: 18.sp)),
+          ListTile(
+            title: Text("Semua Data",
+                style: GoogleFonts.notoSans(
+                    fontSize: 18, fontWeight: FontWeight.bold)),
+            trailing: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Image.asset('assets/pngs/contest-300x300.png'),
+            ),
+          ),
+          Divider(
+            color: Colors.white,
+            thickness: 5,
+            endIndent: 100,
+          ),
           Flexible(
               child: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-            stream: productquery.orderBy('score', descending: true).snapshots(),
+            stream: productquery.orderBy('roundscore', descending: true).snapshots(),
             builder: (BuildContext context,
                 AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
               if (snapshot.hasError) {
@@ -52,24 +64,28 @@ class _HighscorePageState extends State<HighscorePage> {
                   color: Colors.blueAccent,
                 );
               }
-              return ListView(
-                shrinkWrap: true,
-                children: snapshot.data.docs
-                    .map((DocumentSnapshot<Map<String, dynamic>> doc) {
-                  return HighScoreTile(
-                    highScore: HighScore(
-                      doc.data()['id'],
-                      doc.data()['score'],
-                      doc.data()['ratingquiz'],
-                      doc.data()['ratingkepahaman'],
-                      doc.data()['username'],
-                      doc.data()['submitdata'],
-                      doc.data()['round'],
-                      doc.data()['mode'],
-                      doc.data()['roundscore'],
-                    ),
-                  );
-                }).toList(),
+              return AnimatedSwitcher(
+                switchInCurve: Curves.linear,
+                duration: Duration(seconds: 1),
+                child: ListView(
+                  shrinkWrap: true,
+                  children: snapshot.data.docs
+                      .map((DocumentSnapshot<Map<String, dynamic>> doc) {
+                    return HighScoreTile(
+                      highScore: HighScore(
+                        doc.data()['id'],
+                        doc.data()['score'],
+                        doc.data()['ratingquiz'],
+                        doc.data()['ratingkepahaman'],
+                        doc.data()['username'],
+                        doc.data()['submitdata'],
+                        doc.data()['round'],
+                        doc.data()['mode'],
+                        doc.data()['roundscore'],
+                      ),
+                    );
+                  }).toList(),
+                ),
               );
             },
           ))

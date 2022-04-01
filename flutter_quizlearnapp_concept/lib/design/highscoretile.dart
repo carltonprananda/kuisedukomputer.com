@@ -13,24 +13,14 @@ class HighScoreTile extends StatelessWidget {
         color: Colors.transparent,
         shadowColor: Colors.lightBlueAccent.shade100,
         child: ListTile(
-          isThreeLine: true,
-          title: Text(highScore.username, style: TextStyle(fontSize: 16.sp)),
+          title: Text(highScore.username, style: TextStyle(fontSize: 16)),
           trailing: Text(
-            highScore.score.toString(),
-            style: TextStyle(fontSize: 14.sp),
+            highScore.roundscore.toString(),
+            style: TextStyle(fontSize: 14),
           ),
           subtitle: Text(
             highScore.mode,
-            style: TextStyle(fontSize: 12.sp),
-          ),
-          leading: Column(
-            children: <Widget>[
-              Icon(Icons.star),
-              Text(
-                highScore.ratingquiz.toString(),
-                style: TextStyle(fontSize: 12.sp),
-              ),
-            ],
+            style: TextStyle(fontSize: 12),
           ),
         ));
   }
@@ -67,7 +57,6 @@ class ProfileScoreTile extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                   primary: Colors.redAccent),
                               onPressed: () async {
-                                Navigator.pop(context);
                                 bool result =
                                     await HighScoreServices.deleteProduct(
                                         highScore.id);
@@ -80,6 +69,7 @@ class ProfileScoreTile extends StatelessWidget {
                                       textColor: Colors.yellow,
                                       fontSize: 16.0);
                                 }
+                                Navigator.pop(context);
                               },
                               icon: Icon(Icons.delete),
                               label: Text("Hapus"),
@@ -100,7 +90,7 @@ class ProfileScoreTile extends StatelessWidget {
                               trailing: Text(highScore.roundscore.toString()),
                             ),
                             ListTile(
-                              title: Text("Dipost di Database pada"),
+                              title: Text("Babak yang dimainkan"),
                               subtitle: Text(highScore.mode),
                             )
                           ],
@@ -111,21 +101,21 @@ class ProfileScoreTile extends StatelessWidget {
             
           },
           isThreeLine: false,
-          title: Text(highScore.username, style: TextStyle(fontSize: 16.sp)),
+          title: Text(highScore.username, style: TextStyle(fontSize: 16)),
           trailing: Text(
             highScore.score.toString(),
-            style: TextStyle(fontSize: 14.sp),
+            style: TextStyle(fontSize: 14),
           ),
           subtitle: Text(
             highScore.mode,
-            style: TextStyle(fontSize: 12.sp),
+            style: TextStyle(fontSize: 12),
           ),
           leading: Column(
             children: <Widget>[
               Icon(Icons.star),
               Text(
                 highScore.ratingquiz.toString(),
-                style: TextStyle(fontSize: 12.sp),
+                style: TextStyle(fontSize: 12),
               ),
             ],
           ),

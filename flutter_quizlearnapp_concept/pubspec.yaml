@@ -30,9 +30,9 @@ dependencies:
   animated_text_kit: ^4.2.1
   audioplayers: ^0.20.1
   cloud_firestore: ^3.1.10
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.4
   equatable: ^2.0.3
-  firebase_auth: ^3.3.9
+  firebase_auth: ^3.3.11
   firebase_core: ^1.13.1
   firebase_storage: ^10.2.9
   flutter:
@@ -66,9 +66,19 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/audios/correct-answer.wav
+    - assets/audios/sound-wrong.wav
+    - assets/audios/negative-beeps.wav
+    - assets/audios/level-win.wav
     - assets/images/play_store_512.png
     - assets/images/monitor1.jpg
     - assets/images/laptop1.jpg
+    - assets/pngs/category-300x300.png
+    - assets/pngs/contest-300x300.png
+    - assets/pngs/hierarchy-300x300.png
+    - assets/pngs/computer-dynamic-color.png
+    - assets/pngs/computer-dynamic-premium.png
+    - assets/pngs/undraw_messaging_fun_re_vic9.png
     - assets/docs/GEKomnon_KomputerDasar.pdf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

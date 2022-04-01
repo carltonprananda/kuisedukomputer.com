@@ -126,7 +126,7 @@ class _FirstPageState extends State<FirstPage> {
         colors: [Colors.white54, Colors.white70],
         textStyle: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 20.sp
+          fontSize: 16
         ),
         textAlign: TextAlign.center
       ),
@@ -174,7 +174,7 @@ class _FirstPageState extends State<FirstPage> {
                       "Masuk",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.permanentMarker(
-                        fontSize: 24.sp
+                        fontSize: 20
                       )
                     ))),
           ],

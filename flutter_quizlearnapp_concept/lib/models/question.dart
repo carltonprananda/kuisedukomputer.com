@@ -216,7 +216,7 @@ List<Question> tourstage111 = [
       listanswers: ['Latin', 'Yunani', 'Inggris'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Latin'),
   Question(
       questionid: '2',
@@ -224,7 +224,7 @@ List<Question> tourstage111 = [
       listanswers: ['Mengurangi', 'Menambahkan', 'Menghitung'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Menghitung'),
   Question(
       questionid: '3',
@@ -236,7 +236,7 @@ List<Question> tourstage111 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect:
           'Alat untuk memberikan tegangan arus listrik ke berbagai komponen dalam komputer'),
   Question(
@@ -245,7 +245,7 @@ List<Question> tourstage111 = [
       listanswers: ['M.2', 'NVMe', 'HDD'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'NVMe'),
   Question(
       questionid: '5',
@@ -253,7 +253,7 @@ List<Question> tourstage111 = [
       listanswers: ['DDR3', 'DDR4', 'DDR5'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'DDR4'),
   Question(
       questionid: '6',
@@ -261,7 +261,7 @@ List<Question> tourstage111 = [
       listanswers: ['LGA 1200', 'TRX4', 'AM4'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'LGA 1200'),
   Question(
       questionid: '7',
@@ -270,7 +270,7 @@ List<Question> tourstage111 = [
       listanswers: ['Kartu VGA', 'Monitor', 'Semua benar'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Kartu VGA'),
   Question(
       questionid: '8',
@@ -278,7 +278,7 @@ List<Question> tourstage111 = [
       listanswers: ['2 GB', '3 GB', '4 GB'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: '3 GB'),
   Question(
       questionid: '9',
@@ -287,7 +287,7 @@ List<Question> tourstage111 = [
       listanswers: ['Motherboard', 'VGA Card', 'Processor'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'VGA Card'),
   Question(
       questionid: '10',
@@ -296,7 +296,7 @@ List<Question> tourstage111 = [
       listanswers: ['Case Fans', 'Air Cooler', 'Semua Benar'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Semua Benar'),
   Question(
       questionid: '11',
@@ -308,7 +308,7 @@ List<Question> tourstage111 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Semua Benar'),
   Question(
       questionid: '12',
@@ -2403,59 +2403,179 @@ List<Question> tourstage311 = [
       questioncorrect: 'True'),
   Question(
       questionid: '11',
-      question: 'Kekurangan Hard Disk Drive adalah',
+      question: 'Kekurangan Hard Disk Drive adalah Suara terlalu bising',
       listanswers: [
-        'Mengeluarkan suara bising',
-        'Mengaktifkan Secure Boot',
-        'Semua Benar'
+        'True', 'False'
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
-      questioncorrect: 'Semua Benar'),
+      questioncorrect: 'True'),
   Question(
       questionid: '12',
-      question: 'Kelebihan SSD M.2 adalah',
+      question: 'Untuk menjaga suhu dalam CPU maka diperlukan Thermal Paste',
       listanswers: [
-        'Transfer Data lebih cepat',
-        'Kapasitas Memori Lebih kecil',
-        'Slot terdiri dari 2 pemasangan'
+        'True', 'False'
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
-      questioncorrect: 'Transfer Data lebih cepat'),
+      questioncorrect: 'True'),
   Question(
       questionid: '13',
       question:
-          'Jenis driver external yang digunakan sebagai media penyimpanan pada komputer, kecuali',
-      listanswers: ['CD', 'USB', 'RAM'],
+          'HDD, SDD dan USB adalah driver external yang dapat digunakan sebagai media penyimpanan pada komputer',
+      listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
-      questioncorrect: 'RAM'),
+      questioncorrect: 'True'),
   Question(
       questionid: '14',
-      question: 'SSD merupakan singkatan dari',
+      question: 'SSD merupakan singkatan dari Secure Solid Drive',
       listanswers: [
-        'Solid State Drive',
-        'Security State Drive',
-        'Secure State Drive'
+        'True', 'False'
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
-      questioncorrect: 'Solid State Drive'),
+      questioncorrect: 'False'),
   Question(
       questionid: '15',
-      question: 'Kelebihan SSD jenis NVMe adalah',
+      question: 'Media Penyimpanan internal Komputer berada di RAM',
       listanswers: [
-        'Lebih Cepat daripada M.2',
-        'Harga Lebih Mahal',
-        'Semua Benar'
+        'True', 'False'
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
-      questioncorrect: 'Lebih Cepat daripada M.2'),
+      questioncorrect: 'True'),
+];
+
+/* Tentang Sistem Operasi Windows untuk stage 3 pada Mode Kedua*/
+List<Question> tourstage321 = [
+  Question(
+      questionid: '1',
+      question: 'Windows Merupakan OS yang bersifat Open Source',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Pengaturan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '2',
+      question:
+          'Untuk menutup jendela aplikasi dapat dilakukan melalui Alt+F1',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '3',
+      question: 'Windows Explorer adalah ... ',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'File Management'),
+  Question(
+      questionid: '4',
+      question: 'Powershell adalah ',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Interface Command Line untuk melakukan task'),
+  Question(
+      questionid: '5',
+      question: 'Yang ada di dalam Start Menu, kecuali',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Semua Salah'),
+  Question(
+      questionid: '6',
+      question: 'Label pada Local Disc adalah',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'C'),
+  Question(
+      questionid: '7',
+      question: 'Label pada Drive Kedua adalah',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Semua Benar'),
+  Question(
+      questionid: '8',
+      question: 'Label pada Floppy adalah',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'A'),
+  Question(
+      questionid: '9',
+      question: 'Windows Pertama kali diperkenalkan pada tahun',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: '1985'),
+  Question(
+      questionid: '10',
+      question: 'Task Manager adalah',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect:
+          'Aplikasi yang berisikan untuk melihat proses aplikasi beserta komponen'),
+  Question(
+      questionid: '11',
+      question: 'Taskbar adalah',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect:
+          'Berisikan Start Menu, Kumpulan beberapa aplikasi beserta aplikasi yang telah dipin dan status dalam Windows'),
+  Question(
+      questionid: '12',
+      question:
+          'Untuk memeriksa komponen pada Windows dalam Command Prompt, Command apa yang digunakan',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Windows',
+      questioncorrect: 'sfc/ scannow'),
+  Question(
+      questionid: '13',
+      question: 'Windows versi terkini yang dirilis pada 2021 adalah',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Windows 11'),
+  Question(
+      questionid: '14',
+      question: 'Ciri-ciri Windows 64-bit kecuali',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Dapat menjalankan program 16-bit'),
+  Question(
+      questionid: '15',
+      question: 'Ciri-ciri Windows 32-bit adalah',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'Dapat menjalankan program 16-bit'),
 ];

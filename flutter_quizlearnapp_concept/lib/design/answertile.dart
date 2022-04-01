@@ -17,12 +17,15 @@ class ATile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.only(top:5),
+
       //color: warnajawaban,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Container(
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
           gradient: LinearGradient(
             colors:gradasiwarnajawaban,
               begin: Alignment.topRight,
@@ -33,7 +36,7 @@ class ATile extends StatelessWidget {
             onTap: () => klik(),
             title: Text(jawaban,
                 style: TextStyle(
-                  fontSize: 11.sp,
+                  fontSize: 14,
                   color: dipilih ? Colors.white70 : Colors.white,
                 ), textAlign: TextAlign.center,)),
       ),
@@ -50,11 +53,11 @@ class ATile extends StatelessWidget {
   }
 
   List<Color> get gradasiwarnajawaban{
-  if (!dipilih) return [Colors.transparent.withOpacity(0.7), Colors.transparent.withOpacity(0.8)];
+  if (!dipilih) return [Colors.transparent.withOpacity(0.4), Colors.transparent.withOpacity(0.5)];
     if (jawaban == jawabanbenar) {
       return [Colors.green.shade500, Colors.green.shade700];
     } else {
-      return [Colors.red.shade500, Colors.red.shade700];;
+      return [Colors.red.shade500, Colors.red.shade700];
     }
   }
 }

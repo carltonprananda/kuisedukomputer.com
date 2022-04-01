@@ -8,10 +8,11 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
-  bool isloading;
+  bool isLoading;
   int selectedIndex = 1;
   String judul;
-  Color onitemcolor;
+  Color onitemcolor = Colors.blueAccent;
+  Color appbottomcolor = Colors.lightBlueAccent;
   static CollectionReference<Map<String, dynamic>> userCollection =
       FirebaseFirestore.instance.collection("users");
   static User auth = FirebaseAuth.instance.currentUser;
@@ -40,18 +41,21 @@ class _MenuPageState extends State<MenuPage> {
           {
             judul = "High Score";
             onitemcolor = Colors.lightBlueAccent.shade100;
+            appbottomcolor = Colors.lightBlueAccent.shade400;
           }
           break;
         case 1:
           {
             judul = "Pilih Quiz";
             onitemcolor = Colors.green;
+            appbottomcolor = Colors.greenAccent.shade400;
           }
           break;
         case 2:
           {
             judul = "Profil";
             onitemcolor = Colors.blueAccent.shade200;
+            appbottomcolor = Colors.blueAccent.shade700;
           }
           break;
       }
@@ -95,8 +99,9 @@ class _MenuPageState extends State<MenuPage> {
                 icon: Icon(Icons.menu, color: onitemcolor)),
           ),
         ),
+        
         floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.lightBlueAccent,
+            backgroundColor: appbottomcolor,
             elevation: 4,
             child: const Icon(Icons.play_arrow),
             onPressed: () => _onItemtapped(1)),
@@ -139,72 +144,88 @@ class _MenuPageState extends State<MenuPage> {
                 leading: Icon(Icons.logout),
                 title: Text("Signout"),
                 onTap: () {
-                  showDialog(
-                      barrierColor: Colors.blueAccent.withAlpha(200),
-                      barrierDismissible: false,
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title:
-                              Text("Konfirmasi", textAlign: TextAlign.center),
-                          content: Text("Apakah Anda ingin signout?"),
-                          actions: [
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Expanded(
-                                    child: TextButton(
-                                      onPressed: () async {
-                                        setState(() {
-                                          isloading = true;
-                                          SpinKitCircle(
-                                            color: Colors.blueAccent,
-                                            size: 50,
-                                          );
-                                        });
-                                        await AuthServices.signout()
-                                            .then((value) {
-                                          if (value) {
-                                            Fluttertoast.showToast(
-                                              msg:
-                                                  "berhasil keluar, terimakasih telah menggunakan aplikasi ini",
-                                              toastLength: Toast.LENGTH_SHORT,
-                                              gravity: ToastGravity.BOTTOM,
-                                              backgroundColor:
-                                                  Colors.greenAccent,
-                                              textColor: Colors.white,
-                                              fontSize: 16.0,
-                                            );
-                                            Navigator.pushReplacement(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return LoginRegisterPage();
-                                            }));
-                                            setState(() {
-                                              isloading = false;
-                                            });
-                                          } else {
-                                            setState(() {
-                                              isloading = false;
-                                            });
-                                          }
-                                        });
+                                  showGeneralDialog(
+                                      barrierDismissible: false,
+                                      context: context,
+                                      barrierColor:
+                                          Colors.transparent.withOpacity(0.75),
+                                      transitionDuration:
+                                          Duration(milliseconds: 300),
+                                      transitionBuilder: (context, a1, a2, wi) {
+                                        return Transform.scale(
+                                            scale: a1.value,
+                                            child: AlertDialog(
+                                              title: Text(
+                                                "Konfirmasi",
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 24),
+                                              ),
+                                              content: Text(
+                                                "Apakah Anda ingin signout?",
+                                                textAlign: TextAlign.center,
+                                              ),
+                                              actions: [
+                                                Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment
+                                                          .stretch,
+                                                  children: [
+                                                    ElevatedButton(
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                        primary:
+                                                            Colors.redAccent,
+                                                        textStyle: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                      ),
+                                                      onPressed: () async {
+                                                        setState(() {
+                                                          isLoading = true;
+                                                        });
+                                                        await AuthServices
+                                                                .signout()
+                                                            .then((value) {
+                                                          if (value) {
+                                                            Navigator
+                                                                .pushAndRemoveUntil(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                  builder:
+                                                                      (context) {
+                                                                return LoginRegisterPage();
+                                                              }),
+                                                              (route) => false,
+                                                            );
+                                                            setState(() {
+                                                              isLoading = false;
+                                                            });
+                                                          } else {
+                                                            setState(() {
+                                                              isLoading = false;
+                                                            });
+                                                          }
+                                                        });
+                                                      },
+                                                      child: Text("Ya"),
+                                                    ),
+                                                    ElevatedButton(
+                                                      child: Text("Tidak"),
+                                                      onPressed: () {
+                                                        Navigator.pop(context);
+                                                      },
+                                                    )
+                                                  ],
+                                                ),
+                                              ],
+                                            ));
                                       },
-                                      child: Text("Ya"),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: TextButton(
-                                      child: Text("Tidak"),
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                    ),
-                                  )
-                                ])
-                          ],
-                        );
-                      });
+                                      pageBuilder: (context, an1, an2) {});
                 },
               )
             ],
@@ -217,7 +238,7 @@ class _MenuPageState extends State<MenuPage> {
             child: BottomAppBar(
               shape: CircularNotchedRectangle(),
               notchMargin: 1,
-              color: Colors.blue,
+              color: appbottomcolor,
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

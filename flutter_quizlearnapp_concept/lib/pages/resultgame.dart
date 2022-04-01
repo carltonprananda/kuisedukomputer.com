@@ -32,13 +32,13 @@ class _ResultGameState extends State<ResultGame> {
   CollectionReference<Map<String, dynamic>> userCollection =
       FirebaseFirestore.instance.collection("users");
 
-    void getUserUpdate() async {
+  void getUserUpdate() async {
     userCollection.doc(auth.uid).snapshots().listen((event) {
       name = event.data()['name'];
       print("nama : " + name);
       setState(() {});
     });
-    }
+  }
 
   List<Question> _pertanyaan = questiontype1;
   static double ratingnilai = 3, ratingkepahaman = 3;
@@ -55,23 +55,39 @@ class _ResultGameState extends State<ResultGame> {
     return (persentasebenar ~/ 5) * 100;
   }
 
+  static String hasilsaya(){
+    if(hasilpersenbenar == 100){
+      return 'Selamat telah menjawab benar semua';
+    }
+    else if(hasilpersenbenar < 100 || hasilpersenbenar > 75){
+      return 'Lebih teliti dalam menjawab';
+    }
+    else if(hasilpersenbenar < 75){
+      return 'Perlu banyak belajar kembali';
+    }
+  }
+
   static double hasilpersensalah = persensalah().toDouble();
+  final soundresult = AudioCache();
 
   @override
   void initState() {
+    soundresult.play('audios/level-win.wav');
     getUserUpdate();
     super.initState();
     persentasebenar = widget.jawabanbenar;
     double persenbenar() {
       return (persentasebenar / 10) * 100;
     }
+
     print("persen benar" + persenbenar().toString());
     hasilpersenbenar = persenbenar().toDouble();
     print("hasil persen benar" + hasilpersenbenar.toString());
     persentasesalah = widget.jawabansalah;
     double persensalah() {
-      return (persentasesalah / 10)  * 100;
+      return (persentasesalah / 10) * 100;
     }
+
     print("persen benar" + persenbenar().toString());
     hasilpersensalah = persensalah().toDouble();
     print("hasil persen salah" + hasilpersensalah.toString());
@@ -80,129 +96,188 @@ class _ResultGameState extends State<ResultGame> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          AppBar(title: Text(widget.mode), automaticallyImplyLeading: false),
-      body: Column(
+      appBar: AppBar(
+        title: Text(widget.mode,
+            style: GoogleFonts.notoSans(
+                fontWeight: FontWeight.bold, color: Colors.blue)),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      body:
+          Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
+        CircularPercentIndicator(
+              radius: 60,
+              percent: widget.score / 100,
+              lineWidth: 10,
+              animation: true,
+              header: Text('Skor Anda', style: GoogleFonts.notoSans(fontSize: 24)),
+              center: Text('${widget.score}', style: TextStyle(fontSize: 32),),
+              linearGradient: LinearGradient(
+                colors: [Colors.green, Colors.blue],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: CircularPercentIndicator(
+              radius: 40,
+              percent: hasilpersenbenar / 100,
+              lineWidth: 10,
+              animation: true,
+              header: Text("Benar", style: GoogleFonts.notoSans(fontSize: 14)),
+              center: Text(hasilpersenbenar.toString() + "%", style: GoogleFonts.notoSans(fontSize: 14)),
+              linearGradient: LinearGradient(
+                colors: [Colors.green, Colors.lightGreenAccent],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+            ),
+            Expanded(
+              child: CircularPercentIndicator(
+              radius: 40,
+              percent: hasilpersensalah / 100,
+              lineWidth: 10,
+              animation: true,
+              header: Text("Salah", style: GoogleFonts.notoSans(fontSize: 14)),
+              center: Text(hasilpersensalah.toString() + "%", style: GoogleFonts.notoSans(fontSize: 14)),
+              linearGradient: LinearGradient(
+                colors: [Colors.red, Colors.redAccent],
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+              ),
+            ),
+            ),
+          ],
+        ),
+
+        Row(
+          children: [
+            Expanded(
+                child: Column(
+              children: [
+                Icon(Icons.timer),
+                Text('Waktu Menjawab'),
+                Text('${widget.answertime}'),
+              ],
+            )),
+            Expanded(
+                child: Column(
+              children: [
+                Icon(Icons.check),
+                Text('Jumlah Benar'),
+                Text('${widget.jawabanbenar}'),
+              ],
+            )),
+            Expanded(
+                child: Column(
+              children: [
+                Icon(Icons.close),
+                Text('Jumlah Salah'),
+                Text('${widget.jawabansalah}'),
+              ],
+            )),
+          ],
+        ),
+        Text(hasilsaya()),
+        Text("Bagaimana Hasil Kami " + (name ?? '') + " ?", textAlign: TextAlign.center,),
+        RatingBar.builder(
+          initialRating: ratingnilai,
+          minRating: 1,
+          direction: Axis.horizontal,
+          allowHalfRating: true,
+          itemCount: 5,
+          itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+          itemSize: 48,
+          itemBuilder: (context, _) => Icon(
+            Icons.star,
+            color: Colors.orangeAccent,
+          ),
+          onRatingUpdate: (rating) {
+            ratingnilai = rating;
+          },
+        ),
+        Text("Apakah " +
+            (name ?? '') +
+            " sudah paham setelah menjawab quiz ini?", textAlign: TextAlign.center,),
+        RatingBar.builder(
+          initialRating: ratingkepahaman,
+          minRating: 1,
+          direction: Axis.horizontal,
+          allowHalfRating: true,
+          itemCount: 5,
+          itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+          itemSize: 48,
+          itemBuilder: (context, _) => Icon(
+            Icons.star,
+            color: Colors.orangeAccent,
+          ),
+          onRatingUpdate: (rating) {
+            ratingkepahaman = rating;
+          },
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(minimumSize: Size.fromHeight(40)),
+          onPressed: () async {
+            waktuselesai = DateTime.now().toLocal();
+            if (ratingnilai == 0 || ratingkepahaman == 0) {
+              Fluttertoast.showToast(
+                  msg: "Mohon berikan nilai :-)",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.CENTER_RIGHT,
+                  backgroundColor: Colors.black,
+                  textColor: Colors.yellow,
+                  fontSize: 16.0);
+            } else {
+              HighScore highScore = HighScore(
+                  "",
+                  widget.score,
+                  ratingnilai,
+                  ratingkepahaman,
+                  name,
+                  waktuselesai.toString(),
+                  widget.stage.toString(),
+                  widget.mode,
+                  widget.score);
+              bool result = await HighScoreServices.addHighscore(highScore);
+              if (result == true) {
+                Fluttertoast.showToast(
+                    msg: "Rating penilaian dan skor telah disubmit :-)",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER_RIGHT,
+                    backgroundColor: Colors.black,
+                    textColor: Colors.yellow,
+                    fontSize: 16.0);
+              } else {
+                Fluttertoast.showToast(
+                    msg: "Gagal :-(",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.CENTER_RIGHT,
+                    backgroundColor: Colors.red,
+                    textColor: Colors.yellow,
+                    fontSize: 16.0);
+              }
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => MenuPage()));
+            }
+          },
+          child: Text("SUBMIT"),
+        ),
+        Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Card(
-              child: ListTile(
-                title: Text('Skor Anda'),
-                trailing: Text('${widget.score}'),
-              ),
-            ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.timer),
-                title: Text('Waktu menjawab'),
-                trailing: Text('${widget.answertime}'),
-              ),
-            ),
-            Card(
-              child: ListTile(
-                  leading: Icon(Icons.check),
-                  title: Text('Benar'),
-                  trailing: Text(hasilpersenbenar.toString() + "%"),
-                  subtitle: Text('${widget.jawabanbenar}')),
-            ),
-            Card(
-              child: ListTile(
-                leading: Icon(Icons.close),
-                title: Text('Salah'),
-                trailing: Text(hasilpersensalah.toString() + "%"),
-                subtitle: Text('${widget.jawabansalah}'),
-              ),
-            ),
-            Text("Bagaimana Hasil Kami " + (name ?? '') + " ?"),
-            RatingBar.builder(
-              initialRating: ratingnilai,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-              itemSize: 48,
-              itemBuilder: (context, _) => Icon(
-                Icons.star,
-                color: Colors.orangeAccent,
-              ),
-              onRatingUpdate: (rating) {
-                ratingnilai = rating;
-              },
-            ),
-            Text("Apakah " + (name ?? '') + " sudah paham setelah menjawab quiz ini?"),
-            RatingBar.builder(
-              initialRating: ratingkepahaman,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-              itemSize: 48,
-              itemBuilder: (context, _) => Icon(
-                Icons.star,
-                color: Colors.orangeAccent,
-              ),
-              onRatingUpdate: (rating) {
-                ratingkepahaman = rating;
-              },
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size.fromHeight(40)
-              ),
-              onPressed: () async {
-                waktuselesai = DateTime.now().toLocal();
-                if (ratingnilai == 0 || ratingkepahaman == 0) {
-                  Fluttertoast.showToast(
-                      msg: "Mohon berikan nilai :-)",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.CENTER_RIGHT,
-                      backgroundColor: Colors.black,
-                      textColor: Colors.yellow,
-                      fontSize: 16.0);
-                } else {
-                  HighScore highScore = HighScore(
-                      "",
-                      widget.score,
-                      ratingnilai,
-                      ratingkepahaman,
-                      name,
-                      waktuselesai.toString(),
-                      widget.stage.toString(),
-                      widget.mode,
-                      widget.score);
-                  bool result = await HighScoreServices.addHighscore(highScore);
-                  if (result == true) {
-                    Fluttertoast.showToast(
-                        msg: "Rating penilaian dan skor telah disubmit :-)",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.CENTER_RIGHT,
-                        backgroundColor: Colors.black,
-                        textColor: Colors.yellow,
-                        fontSize: 16.0);
-                  } else {
-                    Fluttertoast.showToast(
-                        msg: "Gagal :-(",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.CENTER_RIGHT,
-                        backgroundColor: Colors.red,
-                        textColor: Colors.yellow,
-                        fontSize: 16.0);
-                  }
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => MenuPage()));
-                }
-              },
-              child: Text("SUBMIT"),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(
+            Expanded(
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
                             builder: (context) => GameplayScreen(
                                   pertanyaan: widget.pertanyaan,
                                   gamescore: 0,
@@ -210,23 +285,24 @@ class _ResultGameState extends State<ResultGame> {
                                   totalsalah: 0,
                                   qindex: 0,
                                   timerplus: 0,
+                                  stage: widget.mode,
                                 )));
-                      },
-                      child: Text("Ulang")),
-                ),
-                Expanded(
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) {
-                          return MenuPage();
-                        }));
-                      },
-                      child: Text("Back")),
-                ),
-              ],
+                  },
+                  child: Text("Ulang")),
             ),
-          ]),
+            Expanded(
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) {
+                      return MenuPage();
+                    }));
+                  },
+                  child: Text("Back")),
+            ),
+          ],
+        ),
+      ]),
     );
   }
 }
@@ -284,8 +360,10 @@ class _ResultGame2State extends State<ResultGame2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          AppBar(title: Text("Your Result"), automaticallyImplyLeading: false),
+      appBar: AppBar(
+          title: Text("Hasil Akhir"),
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.transparent),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

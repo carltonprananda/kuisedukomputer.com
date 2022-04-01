@@ -37,9 +37,12 @@ class _Tour1ScreenState extends State<Tour1Screen> {
   static int _totalbenar = 0;
   static int _totalsalah = 0;
   static int questionindex = 0;
+  static int roundjawabanbenar = 100;
+  static int roundjawabansalah = 0;
   static var questionrandom = List<int>.generate(questiontype1.length, (i) => i)
     ..shuffle();
   static var questionrandomtake = questionrandom.take(4);
+  final soundbenar = AudioCache();
   static String stage;
 
   String myanswer = '';
@@ -123,12 +126,15 @@ class _Tour1ScreenState extends State<Tour1Screen> {
     int jumlahsoal = 10;
     if (_roundgame == 1){
       jumlahsoal = 3;
+      roundjawabanbenar = 25;
     }
     if (_roundgame == 2){
-      jumlahsoal = 7;
+      jumlahsoal = 9;
+      roundjawabanbenar = 10;
     }
     if (_roundgame == 3){
       jumlahsoal = 9;
+      roundjawabanbenar = 10;
     }
     print(questionrandomtake);
     //final randomquestion = widget.pertanyaan.shuffle();
@@ -218,7 +224,35 @@ class _Tour1ScreenState extends State<Tour1Screen> {
                       padding: EdgeInsets.all(2),
                       child: Column(
                         children: [
-                          Text("Skor",
+                          Text("Skor Babak",
+                              style: GoogleFonts.notoSans(
+                                  fontWeight: FontWeight.bold)),
+                          ClipRRect(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            child: Container(
+                              color: Colors.blue,
+                              padding: EdgeInsets.all(10),
+                              width: double.infinity,
+                              child: Text(
+                                "$_roundscore",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontSize: 14.sp),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.lightBlueAccent,
+                    child: Padding(
+                      padding: EdgeInsets.all(2),
+                      child: Column(
+                        children: [
+                          Text("Total Skor",
                               style: GoogleFonts.notoSans(
                                   fontWeight: FontWeight.bold)),
                           ClipRRect(
@@ -242,11 +276,6 @@ class _Tour1ScreenState extends State<Tour1Screen> {
               ],
             ),
             Text(
-              "Round $_roundgame /3",
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 10.sp),
-            ),
-            Text(
               getQuestion.question,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 10.sp),
@@ -256,8 +285,8 @@ class _Tour1ScreenState extends State<Tour1Screen> {
               child: ListView.builder(
                   itemCount: getQuestion.listanswers.length,
                   itemBuilder: (context, index) {
-                    int jawabanbenar = 100;
-                    int jawabansalah = -50;
+                    int jawabanbenar = roundjawabanbenar;
+                    int jawabansalah = 0;
                     final jawaban = getQuestion.listanswers[index];
                     return ATile(
                         dipilih: jawaban == myanswer,
@@ -269,10 +298,12 @@ class _Tour1ScreenState extends State<Tour1Screen> {
                           });
 
                           if (jawaban == getQuestion.questioncorrect) {
+                            soundbenar.play('audios/correct-answer.wav');
                             _gamescore = _gamescore + jawabanbenar;
                             _roundscore = _roundscore + jawabanbenar;
                             _totalbenar++;
                           } else {
+                            soundbenar.play('audios/sound-wrong.wav');
                             _gamescore = _gamescore + jawabansalah;
                             _roundscore = _roundscore + jawabansalah;
                             _totalsalah++;
@@ -281,6 +312,7 @@ class _Tour1ScreenState extends State<Tour1Screen> {
                           Future.delayed(const Duration(milliseconds: 150), () {
                             if (questionindex ==
                                 jumlahsoal /*widget.pertanyaan.length - 1*/) {
+                              soundbenar.play('audios/level-win.wav');
                               toResultgame(context);
                               _timerplus.cancel();
                               questionindex = 0; //mereset index
@@ -289,9 +321,8 @@ class _Tour1ScreenState extends State<Tour1Screen> {
                               return;
                             }
                             setState(() {
+                              soundbenar.respectSilence == true;
                               questionindex++;
-                              print(
-                                  "Random Question" + questionindex.toString());
                               myanswer = '';
                             });
                           });

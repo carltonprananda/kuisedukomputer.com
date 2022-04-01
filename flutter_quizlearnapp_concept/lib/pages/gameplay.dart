@@ -38,6 +38,7 @@ class _GameplayScreenState extends State<GameplayScreen> {
   static var questionrandom = List<int>.generate(questiontype1.length, (i) => i)
     ..shuffle();
   static var questionrandomtake = questionrandom.take(10);
+  final soundbenar = AudioCache();
   String stage;
 
   String myanswer = '';
@@ -141,7 +142,7 @@ class _GameplayScreenState extends State<GameplayScreen> {
                               child: Text(
                                 _totaltime.toString(),
                                 textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 14.sp),
+                                style: TextStyle(fontSize: 14),
                               ),
                             ),
                           ),
@@ -169,7 +170,7 @@ class _GameplayScreenState extends State<GameplayScreen> {
                               child: Text(
                                 "$_gamescore",
                                 textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 14.sp),
+                                style: TextStyle(fontSize: 14),
                               ),
                             ),
                           ),
@@ -185,7 +186,7 @@ class _GameplayScreenState extends State<GameplayScreen> {
               child: LinearPercentIndicator(
                 lineHeight: 20.0,
                 animation: true,
-                percent: (((questionindex+1)*100)/1000),
+                percent: (((questionindex + 1) * 100) / 1000),
                 progressColor: Colors.blue,
                 fillColor: Colors.lightBlue,
               ),
@@ -197,7 +198,7 @@ class _GameplayScreenState extends State<GameplayScreen> {
                   itemCount: getQuestion.listanswers.length,
                   itemBuilder: (context, index) {
                     int jawabanbenar = 10;
-                    int jawabansalah = -5;
+                    int jawabansalah = 0;
                     final jawaban = getQuestion.listanswers[index];
                     return ATile(
                         dipilih: jawaban == myanswer,
@@ -208,10 +209,12 @@ class _GameplayScreenState extends State<GameplayScreen> {
                             myanswer = jawaban;
                           });
 
-                          if (jawaban == getQuestion.questioncorrect) {
+                          if (jawaban == getQuestion.questioncorrect) {                       
+                            soundbenar.play('audios/correct-answer.wav');
                             _gamescore = _gamescore + jawabanbenar;
                             _totalbenar++;
                           } else {
+                            soundbenar.play('audios/sound-wrong.wav');
                             _gamescore = _gamescore + jawabansalah;
                             _totalsalah++;
                           }
@@ -219,6 +222,7 @@ class _GameplayScreenState extends State<GameplayScreen> {
                           Future.delayed(const Duration(milliseconds: 50), () {
                             if (questionindex ==
                                 9 /*widget.pertanyaan.length - 1*/) {
+                              soundbenar.play('audios/level-win.wav');
                               toResultgame(context);
                               _timerplus.cancel();
                               questionindex = 0; //mereset index
@@ -227,6 +231,7 @@ class _GameplayScreenState extends State<GameplayScreen> {
                               return;
                             }
                             setState(() {
+                              soundbenar.respectSilence == true;
                               questionindex++;
                               myanswer = '';
                             });

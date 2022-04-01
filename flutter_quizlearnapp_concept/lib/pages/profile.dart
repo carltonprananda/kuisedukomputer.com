@@ -41,7 +41,7 @@ class _ProfilePageState extends State<ProfilePage> {
           padding: EdgeInsets.only(bottom: 20),
           child: Column(children: <Widget>[
             SizedBox(
-                height: 20.h,
+                height: 160,
                 child: Container(
                   color: Colors.blueAccent,
                   child: Center(
@@ -83,8 +83,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                                 "Konfirmasi",
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold, fontSize: 24.sp),
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 24),
                                               ),
                                               content: Text(
                                                 "Apakah Anda ingin signout?",
@@ -158,6 +158,20 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ),
                 )),
+            ListTile(
+              title: Text("Skor Saya",
+                  style: GoogleFonts.notoSans(
+                      fontSize: 18, fontWeight: FontWeight.bold)),
+              trailing: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Image.asset('assets/pngs/hierarchy-300x300.png'),
+              ),
+            ),
+            Divider(
+              color: Colors.lightBlueAccent,
+              thickness: 5,
+              endIndent: 100,
+            ),
             StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
               stream:
                   productquery.where("username", isEqualTo: name).snapshots(),
@@ -170,12 +184,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   return Text("Data belum ada");
                 }
                 if (snapshot.data.docs.isEmpty == true) {
-                  return Center(
-                    child: Column(children: <Widget>[
+                  return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                      Image.asset('assets/pngs/undraw_messaging_fun_re_vic9.png', scale: 4),
                       Text("Data belum ada"),
                       Text("Silahkan main quiz terlebih dahulu")
-                    ]),
-                  );
+                    ]);
                 }
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return SpinKitCircle(
