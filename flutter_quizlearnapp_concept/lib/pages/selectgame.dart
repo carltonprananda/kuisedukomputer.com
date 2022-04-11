@@ -35,13 +35,22 @@ class SelectGamePage extends StatelessWidget {
                     deskripsijudul: "3 Round seputar Komputer Dasar",
                     juduldenganmode: "Multi Round - Komputer Dasar",
                     deskripsi: "Uji Kemampuan Komputer Dasar dengan 3 Babak",
-                    tourstage: tourstage111),
+                    tourstage: tourstage111,
+                    assetfolder: "assets/docs/GEKomnon_KomputerDasar.pdf"),
                 ListMenuGameplay2(
                     judul: "Quiz Sistem Operasi",
                     deskripsijudul: "3 Round seputar Komputer Dasar",
                     juduldenganmode: "Multi Round - Sistem Operasi",
                     deskripsi: "Uji Kemampuan Sistem Operasi dengan 3 Babak",
-                    tourstage: tourstage121),
+                    tourstage: tourstage121,
+                    assetfolder: "assets/docs/GEKomnon_SistemOperasi.pdf"),
+                ListMenuGameplay2(
+                    judul: "True False Sistem Operasi",
+                    deskripsijudul: "3 Round seputar Komputer Dasar",
+                    juduldenganmode: "Multi Round - True False Sistem Operasi",
+                    deskripsi: "Uji Kemampuan Sistem Operasi dengan 3 Babak",
+                    tourstage: tourstage311,
+                    assetfolder: "assets/docs/GEKomnon_SistemOperasi.pdf"),
               ]),
         ),
       ),
@@ -58,8 +67,9 @@ class SelectGamePage2 extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: SizedBox(
+          height: MediaQuery.of(context).size.height,
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ListTile(
@@ -113,6 +123,19 @@ class SelectGamePage2 extends StatelessWidget {
                     deskripsi:
                         "Seputar Mac OS dan hal yang perlu diketahui tentang Mac OS",
                     tourstage: tourstage222),
+                ListMenuGameplay1(
+                    judul: "True False Komputer Dasar",
+                    deskripsijudul:
+                        "Latihan Quiz Komputer Dasar dalam True False",
+                    juduldenganmode: "True False - Mac OS",
+                    deskripsi: "True False seputar Komputer Dasar",
+                    tourstage: tourstage311),
+                ListMenuGameplay1(
+                    judul: "True False Windows ",
+                    deskripsijudul: "Latihan Quiz Windows dalam True False",
+                    juduldenganmode: "True False - Windows",
+                    deskripsi: "True False seputar Windows",
+                    tourstage: tourstage321),
               ]),
         ),
       ),
@@ -163,9 +186,12 @@ class _SelectPageState extends State<SelectPage>
       length: 2,
       child: Scaffold(
         appBar: TabBar(
-          labelColor: Colors.blueGrey,
-          unselectedLabelColor: Colors.blueAccent[200],
+          labelColor: Colors.blueAccent[200],
+          unselectedLabelColor: Colors.blueGrey,
           indicatorColor: Colors.blueAccent,
+          labelStyle: GoogleFonts.openSans(fontWeight: FontWeight.bold),
+          unselectedLabelStyle:
+              GoogleFonts.openSans(fontWeight: FontWeight.normal),
           tabs: [
             Tab(
               text: 'Multi Round',

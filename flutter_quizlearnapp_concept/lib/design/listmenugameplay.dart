@@ -60,8 +60,9 @@ class ListMenuGameplay1 extends StatelessWidget {
                     judul,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.notoSans(
-                      fontSize: 24,
-                    ),
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                 ),
                 titlePadding: const EdgeInsets.all(8),
@@ -88,6 +89,7 @@ class ListMenuGameplay1 extends StatelessWidget {
         onTap: () => showgamedialog(context),
         child: Card(
           child: Container(
+            height: MediaQuery.of(context).size.height * 0.09,
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
@@ -155,7 +157,8 @@ class ListMenuGameplay2 extends StatelessWidget {
       this.deskripsijudul,
       this.juduldenganmode,
       this.deskripsi,
-      this.tourstage})
+      this.tourstage,
+      this.assetfolder})
       : super(key: key);
 
   final String judul;
@@ -163,6 +166,7 @@ class ListMenuGameplay2 extends StatelessWidget {
   final String juduldenganmode;
   final String deskripsi;
   final List<Question> tourstage;
+  final String assetfolder;
 
   void showgamedialog(BuildContext context) {
     showGeneralDialog(
@@ -187,6 +191,7 @@ class ListMenuGameplay2 extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context, true);
                         if (juduldenganmode == "Multi Round - Komputer Dasar") {
+                          print("test1");
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => Tour1Screen(
                                     pertanyaan: tourstage,
@@ -201,8 +206,24 @@ class ListMenuGameplay2 extends StatelessWidget {
                                   )));
                         } else if (juduldenganmode ==
                             "Multi Round - Sistem Operasi") {
+                               print("test2");
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => Tour2Screen(
+                                    pertanyaan: tourstage,
+                                    gamescore: 0,
+                                    totalbenar: 0,
+                                    totalsalah: 0,
+                                    qindex: 0,
+                                    timerplus: 0,
+                                    round: 1,
+                                    roundscore: 0,
+                                    stage: juduldenganmode,
+                                  )));
+                        }else if (juduldenganmode ==
+                            "Multi Round - True False Sistem Operasi") {
+                               print("test3");
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Tour3Screen(
                                     pertanyaan: tourstage,
                                     gamescore: 0,
                                     totalbenar: 0,
@@ -221,13 +242,14 @@ class ListMenuGameplay2 extends StatelessWidget {
                   ),
                 ],
                 title: Container(
-                  color: Colors.blueAccent,
+                  color: Colors.greenAccent,
                   child: Text(
                     judul,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.notoSans(
-                      fontSize: 24,
-                    ),
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                 ),
                 titlePadding: const EdgeInsets.all(8),
@@ -244,7 +266,7 @@ class ListMenuGameplay2 extends StatelessWidget {
                     ListTile(
                       leading: Icon(Icons.list),
                       title: Text("Jumlah soal Test(Babak Kedua)"),
-                      trailing: Text("8"),
+                      trailing: Text("10"),
                     ),
                     ListTile(
                       leading: Icon(Icons.list),
@@ -262,6 +284,14 @@ class ListMenuGameplay2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () => showgamedialog(context),
+        onLongPress: () {
+          Navigator.pop(context, true);
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => PretestMulti1(
+                    assetfolder: assetfolder,
+                    judulquiz: juduldenganmode,
+                  )));
+        },
         child: Card(
           child: Container(
             decoration: BoxDecoration(

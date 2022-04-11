@@ -26,6 +26,15 @@ class _MenuPageState extends State<MenuPage> {
     });
   }
 
+  void _launchURLBrowser() async {
+    const url = 'https://flutterdevs.com/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   //PageController pageController;
   static List<Widget> widgetOptions = <Widget>[
     HighscorePage(),
@@ -86,6 +95,7 @@ class _MenuPageState extends State<MenuPage> {
       duration: const Duration(milliseconds: 500),
       switchInCurve: Curves.easeInOut,
       child: Scaffold(
+        extendBody: true,
         appBar: AppBar(
           title: Text(judul,
               style: GoogleFonts.notoSans(
@@ -94,12 +104,11 @@ class _MenuPageState extends State<MenuPage> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: Builder(
-            builder: (context) => IconButton( 
+            builder: (context) => IconButton(
                 onPressed: () => Scaffold.of(context).openDrawer(),
                 icon: Icon(Icons.menu, color: onitemcolor)),
           ),
         ),
-        
         floatingActionButton: FloatingActionButton(
             backgroundColor: appbottomcolor,
             elevation: 4,
@@ -107,125 +116,161 @@ class _MenuPageState extends State<MenuPage> {
             onPressed: () => _onItemtapped(1)),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         drawer: Drawer(
+          backgroundColor: Colors.transparent,
+          elevation: 1,
           child: ListView(
             children: <Widget>[
               DrawerHeader(
                   child: Column(
                 children: <Widget>[
-                  Text(name ?? '', style: TextStyle(fontSize: 10.sp)),
-                  Text(email ?? '', style: TextStyle(fontSize: 10.sp)),
+                  Text(name ?? '',
+                      style: TextStyle(fontSize: 12, color: Colors.white)),
+                  Text(email ?? '',
+                      style: TextStyle(fontSize: 12, color: Colors.white)),
                 ],
               )),
               ListTile(
-                leading: Icon(Icons.info),
-                title: Text("Tentang Game"),
+                leading: Icon(Icons.info, color: Colors.white),
+                title: Text("Tentang Game",
+                    style: TextStyle(fontSize: 12, color: Colors.white)),
                 onTap: () {
-                  showDialog(
+                  showGeneralDialog(
+                      pageBuilder: (context, an1, an2) {},
+                      barrierDismissible: true,
+                      barrierLabel: "Tentang Game",
                       context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: Text("Game Edukasi Non-Linear Komputer",
-                              textAlign: TextAlign.center),
-                          content: Text(
-                              "2022, Game dibuat oleh Vincentius Dean Prananda \nGame ini dibuat untuk memenuhi Tugas Akhir Vincentius Dean Prananda"),
+                      barrierColor: Colors.transparent.withOpacity(0.75),
+                      transitionDuration: Duration(milliseconds: 300),
+                      transitionBuilder: (context, a1, a2, wi) {
+                        return Transform.scale(
+                          scale: a1.value,
+                          child: AlertDialog(
+                            title: Text("Game Edukasi Non-Linear Komputer",
+                                textAlign: TextAlign.center),
+                            content: Text(
+                                "2022, Game dibuat oleh Vincentius Dean Prananda \nGame ini dibuat untuk memenuhi Tugas Akhir Vincentius Dean Prananda"),
+                          ),
                         );
                       });
                 },
               ),
               ListTile(
-                leading: Icon(Icons.open_in_browser),
-                title: Text("Survey tentang Game"),
+                onTap: () async {
+                  String url = "https://www.fluttercampus.com";
+                  var urllaunchable = await canLaunch(
+                      url); //canLaunch is from url_launcher package
+                  if (urllaunchable) {
+                    await launch(
+                        url); //launch is from url_launcher package to launch URL
+                  } else {
+                    print("URL can't be launched.");
+                  }
+                },
+                leading: Icon(Icons.open_in_browser, color: Colors.white),
+                title: Text("Survey tentang Game",
+                    style: TextStyle(fontSize: 12, color: Colors.white)),
               ),
               ListTile(
-                leading: Icon(Icons.help_rounded),
-                title: Text("Bantuan"),
-              ),
-              ListTile(
-                leading: Icon(Icons.logout),
-                title: Text("Signout"),
                 onTap: () {
-                                  showGeneralDialog(
-                                      barrierDismissible: false,
-                                      context: context,
-                                      barrierColor:
-                                          Colors.transparent.withOpacity(0.75),
-                                      transitionDuration:
-                                          Duration(milliseconds: 300),
-                                      transitionBuilder: (context, a1, a2, wi) {
-                                        return Transform.scale(
-                                            scale: a1.value,
-                                            child: AlertDialog(
-                                              title: Text(
-                                                "Konfirmasi",
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 24),
-                                              ),
-                                              content: Text(
-                                                "Apakah Anda ingin signout?",
-                                                textAlign: TextAlign.center,
-                                              ),
-                                              actions: [
-                                                Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment
-                                                          .stretch,
-                                                  children: [
-                                                    ElevatedButton(
-                                                      style: ElevatedButton
-                                                          .styleFrom(
-                                                        primary:
-                                                            Colors.redAccent,
-                                                        textStyle: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
-                                                      ),
-                                                      onPressed: () async {
-                                                        setState(() {
-                                                          isLoading = true;
-                                                        });
-                                                        await AuthServices
-                                                                .signout()
-                                                            .then((value) {
-                                                          if (value) {
-                                                            Navigator
-                                                                .pushAndRemoveUntil(
-                                                              context,
-                                                              MaterialPageRoute(
-                                                                  builder:
-                                                                      (context) {
-                                                                return LoginRegisterPage();
-                                                              }),
-                                                              (route) => false,
-                                                            );
-                                                            setState(() {
-                                                              isLoading = false;
-                                                            });
-                                                          } else {
-                                                            setState(() {
-                                                              isLoading = false;
-                                                            });
-                                                          }
-                                                        });
-                                                      },
-                                                      child: Text("Ya"),
-                                                    ),
-                                                    ElevatedButton(
-                                                      child: Text("Tidak"),
-                                                      onPressed: () {
-                                                        Navigator.pop(context);
-                                                      },
-                                                    )
-                                                  ],
-                                                ),
-                                              ],
-                                            ));
+                  showGeneralDialog(
+                      pageBuilder: (context, an1, an2) {},
+                      barrierDismissible: true,
+                      barrierLabel: "Bantuan Game",
+                      context: context,
+                      barrierColor: Colors.transparent.withOpacity(0.75),
+                      transitionDuration: Duration(milliseconds: 300),
+                      transitionBuilder: (context, a1, a2, wi) {
+                        return Transform.scale(
+                          scale: a1.value,
+                          child: AlertDialog(
+                            title: Text("Cara Bermain",
+                                textAlign: TextAlign.center),
+                            content: Text(
+                                "Game ini terdiri atas 2 mode game,\t Single Round Gameplay dan Multiround Gameplay, Single Round merupakan game dengan jenis satu babak yang bertujuan untuk melatih kepahaman pengguna dalam komputer sedangkan multi-round gameplay adalah "),
+                          ),
+                        );
+                      });
+                },
+                leading: Icon(Icons.help_rounded, color: Colors.white),
+                title: Text("Bantuan",
+                    style: TextStyle(fontSize: 12, color: Colors.white)),
+              ),
+              ListTile(
+                leading: Icon(Icons.logout, color: Colors.white),
+                title: Text("Signout",
+                    style: TextStyle(fontSize: 12, color: Colors.white)),
+                onTap: () {
+                  showGeneralDialog(
+                      barrierDismissible: false,
+                      context: context,
+                      barrierColor: Colors.transparent.withOpacity(0.75),
+                      transitionDuration: Duration(milliseconds: 300),
+                      transitionBuilder: (context, a1, a2, wi) {
+                        return Transform.scale(
+                            scale: a1.value,
+                            child: AlertDialog(
+                              title: Text(
+                                "Konfirmasi",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 24),
+                              ),
+                              content: Text(
+                                "Apakah Anda ingin signout?",
+                                textAlign: TextAlign.center,
+                              ),
+                              actions: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        primary: Colors.redAccent,
+                                        textStyle: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      onPressed: () async {
+                                        setState(() {
+                                          isLoading = true;
+                                        });
+                                        await AuthServices.signout()
+                                            .then((value) {
+                                          if (value) {
+                                            Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) {
+                                                return LoginRegisterPage();
+                                              }),
+                                              (route) => false,
+                                            );
+                                            setState(() {
+                                              isLoading = false;
+                                            });
+                                          } else {
+                                            setState(() {
+                                              isLoading = false;
+                                            });
+                                          }
+                                        });
                                       },
-                                      pageBuilder: (context, an1, an2) {});
+                                      child: Text("Ya"),
+                                    ),
+                                    ElevatedButton(
+                                      child: Text("Tidak"),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ));
+                      },
+                      pageBuilder: (context, an1, an2) {});
                 },
               )
             ],

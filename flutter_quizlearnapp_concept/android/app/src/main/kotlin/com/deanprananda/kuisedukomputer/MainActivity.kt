@@ -1,4 +1,4 @@
-package com.example.flutter_quizlearnapp_concept
+package com.deanprananda.kuisedukomputer
 
 import android.os.Build
 import android.os.Bundle

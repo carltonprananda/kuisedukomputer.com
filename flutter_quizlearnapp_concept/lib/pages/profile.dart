@@ -40,124 +40,298 @@ class _ProfilePageState extends State<ProfilePage> {
         Container(
           padding: EdgeInsets.only(bottom: 20),
           child: Column(children: <Widget>[
-            SizedBox(
-                height: 160,
-                child: Container(
-                  color: Colors.blueAccent,
-                  child: Center(
-                    child: Column(
-                      children: <Widget>[
-                        Spacer(),
-                        CircleAvatar(
-                          backgroundColor: Colors.white,
-                          foregroundColor: Colors.black,
-                          radius: 30,
-                          child: Text(firstnl ?? ''),
-                        ),
-                        Text(name ?? '', style: TextStyle(fontSize: 10.sp)),
-                        Text(email ?? '', style: TextStyle(fontSize: 10.sp)),
-                        ButtonBar(
-                          alignment: MainAxisAlignment.center,
-                          children: [
-                            ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) =>
-                                          MateriKomputerPage()));
-                                },
-                                child: Text("Materi")),
-                            ElevatedButton(
-                                onPressed: () {
-                                  showGeneralDialog(
-                                      barrierDismissible: false,
-                                      context: context,
-                                      barrierColor:
-                                          Colors.transparent.withOpacity(0.75),
-                                      transitionDuration:
-                                          Duration(milliseconds: 300),
-                                      transitionBuilder: (context, a1, a2, wi) {
-                                        return Transform.scale(
-                                            scale: a1.value,
-                                            child: AlertDialog(
-                                              title: Text(
-                                                "Konfirmasi",
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 24),
-                                              ),
-                                              content: Text(
-                                                "Apakah Anda ingin signout?",
-                                                textAlign: TextAlign.center,
-                                              ),
-                                              actions: [
-                                                Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment
-                                                          .stretch,
-                                                  children: [
-                                                    ElevatedButton(
-                                                      style: ElevatedButton
-                                                          .styleFrom(
-                                                        primary:
-                                                            Colors.redAccent,
-                                                        textStyle: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
-                                                      ),
-                                                      onPressed: () async {
-                                                        setState(() {
-                                                          isLoading = true;
-                                                        });
-                                                        await AuthServices
-                                                                .signout()
-                                                            .then((value) {
-                                                          if (value) {
-                                                            Navigator
-                                                                .pushAndRemoveUntil(
-                                                              context,
-                                                              MaterialPageRoute(
-                                                                  builder:
-                                                                      (context) {
-                                                                return LoginRegisterPage();
-                                                              }),
-                                                              (route) => false,
-                                                            );
-                                                            setState(() {
-                                                              isLoading = false;
-                                                            });
-                                                          } else {
-                                                            setState(() {
-                                                              isLoading = false;
-                                                            });
-                                                          }
-                                                        });
-                                                      },
-                                                      child: Text("Ya"),
-                                                    ),
-                                                    ElevatedButton(
-                                                      child: Text("Tidak"),
-                                                      onPressed: () {
-                                                        Navigator.pop(context);
-                                                      },
-                                                    )
-                                                  ],
+            if (MediaQuery.of(context).orientation == Orientation.portrait) ...[
+              SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.2,
+                  child: Container(
+                    color: Colors.blueAccent,
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          Spacer(),
+                          CircleAvatar(
+                            backgroundColor: Colors.white,
+                            foregroundColor: Colors.black,
+                            radius: 25,
+                            child: Text(firstnl ?? '',
+                                style: GoogleFonts.notoSans(
+                                    fontSize:
+                                        MediaQuery.of(context).size.width *
+                                            0.05,
+                                    color: Colors.blue)),
+                          ),
+                          Text(name ?? '',
+                              style: GoogleFonts.notoSans(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.035,
+                                  color: Colors.white)),
+                          Text(email ?? '',
+                              style: GoogleFonts.notoSans(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.035,
+                                  color: Colors.white)),
+                          ButtonBar(
+                            alignment: MainAxisAlignment.center,
+                            children: [
+                              ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                MateriKomputerPage()));
+                                  },
+                                  child: Text("Materi")),
+                              ElevatedButton(
+                                  onPressed: () {
+                                    showGeneralDialog(
+                                        barrierDismissible: false,
+                                        context: context,
+                                        barrierColor: Colors.transparent
+                                            .withOpacity(0.75),
+                                        transitionDuration:
+                                            Duration(milliseconds: 300),
+                                        transitionBuilder:
+                                            (context, a1, a2, wi) {
+                                          return Transform.scale(
+                                              scale: a1.value,
+                                              child: AlertDialog(
+                                                title: Text(
+                                                  "Konfirmasi",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 24),
                                                 ),
-                                              ],
-                                            ));
-                                      },
-                                      pageBuilder: (context, an1, an2) {});
-                                },
-                                child: Text("Signout"))
-                          ],
-                        )
-                      ],
+                                                content: Text(
+                                                  "Apakah Anda ingin signout?",
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                                actions: [
+                                                  Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .stretch,
+                                                    children: [
+                                                      ElevatedButton(
+                                                        style: ElevatedButton
+                                                            .styleFrom(
+                                                          primary:
+                                                              Colors.redAccent,
+                                                          textStyle: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                        onPressed: () async {
+                                                          setState(() {
+                                                            isLoading = true;
+                                                          });
+                                                          await AuthServices
+                                                                  .signout()
+                                                              .then((value) {
+                                                            if (value) {
+                                                              Navigator
+                                                                  .pushAndRemoveUntil(
+                                                                context,
+                                                                MaterialPageRoute(
+                                                                    builder:
+                                                                        (context) {
+                                                                  return LoginRegisterPage();
+                                                                }),
+                                                                (route) =>
+                                                                    false,
+                                                              );
+                                                              setState(() {
+                                                                isLoading =
+                                                                    false;
+                                                              });
+                                                            } else {
+                                                              setState(() {
+                                                                isLoading =
+                                                                    false;
+                                                              });
+                                                            }
+                                                          });
+                                                        },
+                                                        child: Text("Ya"),
+                                                      ),
+                                                      ElevatedButton(
+                                                        child: Text("Tidak"),
+                                                        onPressed: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                      )
+                                                    ],
+                                                  ),
+                                                ],
+                                              ));
+                                        },
+                                        pageBuilder: (context, an1, an2) {});
+                                  },
+                                  child: Text("Signout"))
+                            ],
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                )),
+                  ))
+            ] else if (MediaQuery.of(context).orientation ==
+                Orientation.landscape) ...[
+              SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.36,
+                  child: Container(
+                    color: Colors.blueAccent,
+                    child: Center(
+                      child: Column(
+                        children: <Widget>[
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              CircleAvatar(
+                                backgroundColor: Colors.white,
+                                foregroundColor: Colors.black,
+                                radius: 20,
+                                child: Text(firstnl ?? '',
+                                    style: GoogleFonts.notoSans(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.02,
+                                        color: Colors.blue)),
+                              ),
+                              Column(
+                                children: [
+                                Text(name ?? '',
+                                    style: GoogleFonts.notoSans(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.015,
+                                        color: Colors.white), textAlign: TextAlign.start),
+                                
+                                Text(email ?? '',
+                                    style: GoogleFonts.notoSans(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width *
+                                                0.015,
+                                        color: Colors.white), textAlign: TextAlign.start),
+                              ])
+                            ],
+                          ),
+                          ButtonBar(
+                            alignment: MainAxisAlignment.center,
+                            children: [
+                              ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                MateriKomputerPage()));
+                                  },
+                                  child: Text("Materi")),
+                              ElevatedButton(
+                                  onPressed: () {
+                                    showGeneralDialog(
+                                        barrierDismissible: false,
+                                        context: context,
+                                        barrierColor: Colors.transparent
+                                            .withOpacity(0.75),
+                                        transitionDuration:
+                                            Duration(milliseconds: 300),
+                                        transitionBuilder:
+                                            (context, a1, a2, wi) {
+                                          return Transform.scale(
+                                              scale: a1.value,
+                                              child: AlertDialog(
+                                                title: Text(
+                                                  "Konfirmasi",
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 24),
+                                                ),
+                                                content: Text(
+                                                  "Apakah Anda ingin signout?",
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                                actions: [
+                                                  Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .stretch,
+                                                    children: [
+                                                      ElevatedButton(
+                                                        style: ElevatedButton
+                                                            .styleFrom(
+                                                          primary:
+                                                              Colors.redAccent,
+                                                          textStyle: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
+                                                        ),
+                                                        onPressed: () async {
+                                                          setState(() {
+                                                            isLoading = true;
+                                                          });
+                                                          await AuthServices
+                                                                  .signout()
+                                                              .then((value) {
+                                                            if (value) {
+                                                              Navigator
+                                                                  .pushAndRemoveUntil(
+                                                                context,
+                                                                MaterialPageRoute(
+                                                                    builder:
+                                                                        (context) {
+                                                                  return LoginRegisterPage();
+                                                                }),
+                                                                (route) =>
+                                                                    false,
+                                                              );
+                                                              setState(() {
+                                                                isLoading =
+                                                                    false;
+                                                              });
+                                                            } else {
+                                                              setState(() {
+                                                                isLoading =
+                                                                    false;
+                                                              });
+                                                            }
+                                                          });
+                                                        },
+                                                        child: Text("Ya"),
+                                                      ),
+                                                      ElevatedButton(
+                                                        child: Text("Tidak"),
+                                                        onPressed: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                      )
+                                                    ],
+                                                  ),
+                                                ],
+                                              ));
+                                        },
+                                        pageBuilder: (context, an1, an2) {});
+                                  },
+                                  child: Text("Signout"))
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ))
+            ],
             ListTile(
               title: Text("Skor Saya",
                   style: GoogleFonts.notoSans(
@@ -187,10 +361,12 @@ class _ProfilePageState extends State<ProfilePage> {
                   return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                      Image.asset('assets/pngs/undraw_messaging_fun_re_vic9.png', scale: 4),
-                      Text("Data belum ada"),
-                      Text("Silahkan main quiz terlebih dahulu")
-                    ]);
+                        Image.asset(
+                            'assets/pngs/undraw_messaging_fun_re_vic9.png',
+                            scale: 4),
+                        Text("Data belum ada"),
+                        Text("Silahkan main quiz terlebih dahulu")
+                      ]);
                 }
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return SpinKitCircle(

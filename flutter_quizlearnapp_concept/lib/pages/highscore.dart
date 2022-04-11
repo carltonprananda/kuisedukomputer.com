@@ -36,7 +36,7 @@ class _HighscorePageState extends State<HighscorePage> {
           ListTile(
             title: Text("Semua Data",
                 style: GoogleFonts.notoSans(
-                    fontSize: 18, fontWeight: FontWeight.bold)),
+                    fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
             trailing: Padding(
               padding: const EdgeInsets.all(4.0),
               child: Image.asset('assets/pngs/contest-300x300.png'),

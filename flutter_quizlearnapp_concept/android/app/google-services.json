@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:464131542735:android:a63ec94486f9c9a31fb1ba",
+        "android_client_info": {
+          "package_name": "com.deanprananda.kuisedukomputer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464131542735-e7mhust5efllsnorgr67becgb0fe01qg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6OrqBA72ImXAG9tiNCLUNUea_-hnx8vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464131542735-e7mhust5efllsnorgr67becgb0fe01qg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:464131542735:android:b1c7d681388e11f81fb1ba",
         "android_client_info": {
           "package_name": "com.example.flutter_quizlearnapp_concept"

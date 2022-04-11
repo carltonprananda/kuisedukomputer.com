@@ -16,7 +16,7 @@ class AuthServices {
           email: email, password: password);
       Users users =
           result.user.convertToUser(name: name, usia: usia, profesi: profesi);
-      auth.signOut();
+      //auth.signOut();
       await UserServices.updateUser(users);
       msg = "success";
     } catch (e) {

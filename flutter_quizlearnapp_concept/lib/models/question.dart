@@ -320,7 +320,7 @@ List<Question> tourstage111 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Transfer Data lebih cepat'),
   Question(
       questionid: '13',
@@ -329,7 +329,7 @@ List<Question> tourstage111 = [
       listanswers: ['CD', 'USB', 'RAM'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'RAM'),
   Question(
       questionid: '14',
@@ -341,7 +341,7 @@ List<Question> tourstage111 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Solid State Drive'),
   Question(
       questionid: '15',
@@ -353,7 +353,7 @@ List<Question> tourstage111 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Lebih Cepat daripada M.2'),
 ];
 /* Tentang Sistem Operasi untuk stage 2 pada Mode Pertama dalam Komputer Dasar dan stage 1 dalam Mode Kedua dalam Sistem Operasi*/
@@ -408,7 +408,7 @@ List<Question> tourstage121 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Keamanan Komputer',
+      questiontitle: 'Sistem Operas',
       questioncorrect: 'Menghubungkan Software'),
   Question(
       questionid: '6',
@@ -420,7 +420,7 @@ List<Question> tourstage121 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Komponen Komputer',
+      questiontitle: 'Sistem Operasi',
       questioncorrect: 'Semua Benar'),
   Question(
       questionid: '7',
@@ -432,7 +432,7 @@ List<Question> tourstage121 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Keamanan Komputer',
+      questiontitle: 'Sistem Operasi',
       questioncorrect: 'Aplikasi untuk mengelola komputer'),
   Question(
       questionid: '8',
@@ -440,7 +440,7 @@ List<Question> tourstage121 = [
       listanswers: ['Device', 'Component', 'File'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Keamanan Komputer',
+      questiontitle: 'Sistem Operasi',
       questioncorrect: 'Component'),
   Question(
       questionid: '9',
@@ -452,7 +452,7 @@ List<Question> tourstage121 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Keamanan Komputer',
+      questiontitle: 'Sistem Operasi',
       questioncorrect: 'Semua Benar'),
   Question(
       questionid: '10',
@@ -464,7 +464,7 @@ List<Question> tourstage121 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Keamanan Komputer',
+      questiontitle: 'Sistem Operasi',
       questioncorrect: 'Semua Benar'),
   Question(
       questionid: '11',
@@ -472,7 +472,7 @@ List<Question> tourstage121 = [
       listanswers: ['USB', 'CD', 'Floppy'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Keamanan Komputer',
+      questiontitle: 'Sistem Operasi',
       questioncorrect: 'USB'),
   Question(
       questionid: '12',
@@ -480,7 +480,7 @@ List<Question> tourstage121 = [
       listanswers: ['Networking', 'Live CD', 'Standalone'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Komponen Komputer',
+      questiontitle: 'Sistem Operasi',
       questioncorrect: 'Standalone'),
   Question(
       questionid: '13',
@@ -488,7 +488,7 @@ List<Question> tourstage121 = [
       listanswers: ['Hardware', 'Browser', 'Explorer'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Komponen Komputer',
+      questiontitle: 'Sistem Operasi',
       questioncorrect: 'Hardware'),
   Question(
       questionid: '14',
@@ -504,7 +504,7 @@ List<Question> tourstage121 = [
       listanswers: ['Hardware', 'Software', 'Database'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Komponen Komputer',
+      questiontitle: 'Sistem Operasi',
       questioncorrect: 'Database'),
 ];
 
@@ -545,7 +545,7 @@ List<Question> tourstage122 = [
       listanswers: ['AVG Antivirus', 'McAfee Total Protection', 'Semua Benar'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Pengaturan Komputer',
+      questiontitle: 'Keamanan Komputer',
       questioncorrect: 'Semua Benar'),
   Question(
       questionid: '5',
@@ -558,7 +558,7 @@ List<Question> tourstage122 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Pengaturan Komputer',
+      questiontitle: 'Keamanan Komputer',
       questioncorrect: 'Menginstall Antivirus'),
   Question(
       questionid: '6',
@@ -566,7 +566,7 @@ List<Question> tourstage122 = [
       listanswers: ['Privasi', 'Keamanan', 'Modification'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Pengaturan Komputer',
+      questiontitle: 'Keamanan Komputer',
       questioncorrect: 'Modification'),
   Question(
       questionid: '7',
@@ -668,7 +668,7 @@ List<Question> tourstage122 = [
           'Adware sering dijumpai pada iklan sedangkan Spyware sering dijumpai pada aplikasi'),
 ];
 
-/* Tentang Posttest Komputer dan Sistem Operasi untuk stage 3 pada Mode Pertama*/
+/* Tentang Posttest Komputer dan Keamanan Komputer untuk stage 3 pada Mode Pertama*/
 List<Question> tourstage131 = [
   Question(
       questionid: '1',
@@ -676,7 +676,7 @@ List<Question> tourstage131 = [
       listanswers: ['Yunani', 'Inggris', 'Latin', 'Sanskerta'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Latin'),
   Question(
       questionid: '2',
@@ -684,7 +684,7 @@ List<Question> tourstage131 = [
       listanswers: ['Mengurangi', 'Menambahkan', 'Menukarkan', 'Menghitung'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Menghitung'),
   Question(
       questionid: '3',
@@ -697,7 +697,7 @@ List<Question> tourstage131 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect:
           'Alat untuk memberikan tegangan arus listrik ke berbagai komponen dalam komputer'),
   Question(
@@ -706,7 +706,7 @@ List<Question> tourstage131 = [
       listanswers: ['M.2', 'PCIe', 'NVMe', 'HDD'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'NVMe'),
   Question(
       questionid: '5',
@@ -714,7 +714,7 @@ List<Question> tourstage131 = [
       listanswers: ['DDR3', 'DDR4', 'DDR5', 'DDR4 dan DDR5'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'DDR4 dan DDR5'),
   Question(
       questionid: '6',
@@ -722,7 +722,7 @@ List<Question> tourstage131 = [
       listanswers: ['LGA 1200', 'TRX4', 'AM4', 'AM4 dan TRX4'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'AM4 dan TRX4'),
   Question(
       questionid: '7',
@@ -731,7 +731,7 @@ List<Question> tourstage131 = [
       listanswers: ['Monitor', 'Kartu VGA', 'Motherboard', 'Semua benar'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Kartu VGA'),
   Question(
       questionid: '8',
@@ -739,7 +739,7 @@ List<Question> tourstage131 = [
       listanswers: ['3 GB', '4 GB', '6 GB', '8 GB'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: '3 GB'),
   Question(
       questionid: '9',
@@ -748,7 +748,7 @@ List<Question> tourstage131 = [
       listanswers: ['Motherboard', 'Processor', 'CPU', 'Kartu VGA'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Kartu VGA'),
   Question(
       questionid: '10',
@@ -762,7 +762,7 @@ List<Question> tourstage131 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Semua Benar'),
   Question(
       questionid: '11',
@@ -775,7 +775,7 @@ List<Question> tourstage131 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Mengeluarkan suara bising'),
   Question(
       questionid: '12',
@@ -788,7 +788,7 @@ List<Question> tourstage131 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Transfer Data lebih cepat'),
   Question(
       questionid: '13',
@@ -797,7 +797,7 @@ List<Question> tourstage131 = [
       listanswers: ['CD', 'USB', 'Floppy', 'Semua Benar'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Semua Benar'),
   Question(
       questionid: '14',
@@ -810,7 +810,7 @@ List<Question> tourstage131 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Solid State Drive'),
   Question(
       questionid: '15',
@@ -823,11 +823,190 @@ List<Question> tourstage131 = [
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Basic Komputer',
+      questiontitle: 'Komputer Dasar',
       questioncorrect: 'Lebih Cepat daripada M.2'),
+  Question(
+      questionid: '16',
+      question: 'Definisi Keamanan Komputer, Kecuali',
+      listanswers: [
+        'Pencegahan diri dan deteksi dalam system komputer',
+        'Pencegahan dari serangan pengguna komputer',
+        'Pencegahan dari ancaman siber',
+        'Semua Benar'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Semua Benar'),
+  Question(
+      questionid: '17',
+      question: 'Tingkat keamanan akun sistem operasi paling lemah',
+      listanswers: ['PIN', 'Password', 'Fingerprint', 'Scanner'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'PIN'),
+  Question(
+      questionid: '18',
+      question: 'Malware merupakan singkatan dari',
+      listanswers: [
+        'Malicious Adware',
+        'Malicious Hardware',
+        'Malicious Software',
+        'Semua Salah'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Malicious Software'),
+  Question(
+      questionid: '19',
+      question:
+          'Aplikasi antivirus yang merupakan aplikasi dari pihak ketiga, kecuali',
+      listanswers: [
+        'AVG Antivirus',
+        'McAfee Total Protection',
+        'Microsoft Defender',
+        'Avira'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Microsoft Defender'),
+  Question(
+      questionid: '20',
+      question:
+          'Untuk meningkatkan keamanan di komputer, maka hal apa yang harus dilakukan',
+      listanswers: [
+        'Tidak menginstall aplikasi sembarangan'
+            'Menginstall Antivirus',
+        'Menggunakan Cracking',
+        '1 dan 2 Benar'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: '1 dan 2 Benar'),
+  Question(
+      questionid: '21',
+      question: 'Aspek dalam Keamanan Komputer, Kecuali',
+      listanswers: ['Privasi', 'Keamanan', '1 dan 2 Benar', 'Modification'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Modification'),
+  Question(
+      questionid: '22',
+      question: 'Malware adalah',
+      listanswers: [
+        'Penyebaran virus ke berbagai perangkat lunak',
+        'Virus yang merusak komputer',
+        'Memanfaatkan kecacatan dalam keamanan komputer untuk diserang',
+        'Virus yang melindungi komputer'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Virus yang merusak komputer'),
+  Question(
+      questionid: '23',
+      question: 'Jenis Exploit yang digunakan dalam Wannacry adalah',
+      listanswers: [
+        'EternalBlue',
+        'DoublePulsar',
+        'ShellShock',
+        'Wannacryptor'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'EternalBlue'),
+  Question(
+      questionid: '24',
+      question: 'Untuk mencegah cyberattack, yang harus dilakukan, kecuali',
+      listanswers: [
+        'Melakukan Patching dan Cracking'
+            'Mengupdate OS',
+        'Rutin mengupdate versi Antivirus',
+        'Semua Benar'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Melakukan Patching dan Cracking'),
+  Question(
+      questionid: '25',
+      question: 'Virus adalah',
+      listanswers: [
+        'Program yang dibuat untuk memperlambat OS',
+        'Program yang dibuat untuk membuat error',
+        'Program yang dibuat untuk melumpuhkan komputer',
+        'Program yang dibuat untuk merusak file'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Program yang dibuat untuk merusak file'),
+  Question(
+      questionid: '26',
+      question: 'Trojan adalah',
+      listanswers: [
+        'Perangkat'
+        'Jenis Virus yang sangat berbahaya',
+        'Perangkat lunak berbahaya yang dapat merusak sebuah sistem',
+        'Perangkat lunak yang serupa dengan virus'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect:
+          'Perangkat lunak berbahaya yang dapat merusak sebuah sistem'),
+  Question(
+      questionid: '27',
+      question: 'Mencegah virus komputerdapat dilakukan dengan',
+      listanswers: [
+        'tidak menginstall sembarangan aplikasi',
+        'Mengatur Windows Defender lebih dalam',
+        'Mengubah pengaturan Windows Update',
+        'Semua Benar'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Semua Benar'),
+  Question(
+      questionid: '28',
+      question: 'Contoh Ransomware yang terkenal adalah',
+      listanswers: ['Syskey', 'Wannacry', 'CryptoLocker','Semua Benar'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Semua Benar'),
+  Question(
+      questionid: '29',
+      question: 'Jenis Malware',
+      listanswers: ['Malware', 'Software', 'Hardware', 'Spyware'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'Spyware'),
+  Question(
+      questionid: '30',
+      question: 'Perbedaan Adware dan Spyware',
+      listanswers: [
+        'Adware sering dijumpai pada iklan sedangkan Spyware sering dijumpai pada komputer',
+        'Adware sering dijumpai pada iklan web maupun aplikasi sedangkan Spyware sering dijumpai pada email',
+        'Adware sering dijumpai pada iklan sedangkan Spyware sering dijumpai pada aplikasi',
+        'Adware sering dijumpai pada iklan sedangkan Spyware sering dijumpai pada website'
+      ],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect:
+          'Adware sering dijumpai pada iklan sedangkan Spyware sering dijumpai pada aplikasi'),
 ];
 
-/* Tentang Posttest Komputer dan Keamanan Komputer untuk stage 3 pada Mode Pertama*/
+/* Tentang Posttest Komputer dan Sistem Operasi Komputer untuk stage 3 pada Mode Pertama*/
 List<Question> tourstage132 = [
   Question(
       questionid: '1',
@@ -978,7 +1157,7 @@ List<Question> tourstage132 = [
         'Lebih Cepat daripada M.2',
         'Harga Lebih Mahal',
         'Digunakan dalam Gaming dan Multitasking yang lebih berat'
-        'Semua Benar'
+            'Semua Benar'
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
@@ -1127,7 +1306,12 @@ List<Question> tourstage132 = [
   Question(
       questionid: '30',
       question: 'Tahapan Sistem Operasi terdiri atas',
-      listanswers: ['Hardware', 'Software', 'Database', 'Hardware dan Software'],
+      listanswers: [
+        'Hardware',
+        'Software',
+        'Database',
+        'Hardware dan Software'
+      ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
@@ -1423,7 +1607,7 @@ List<Question> tourstage222 = [
       listanswers: ['Apple', 'Google', 'Microsoft'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
-      questiontitle: 'Pengaturan Komputer',
+      questiontitle: 'Mac OS',
       questioncorrect: 'Close Source'),
   Question(
       questionid: '2',
@@ -1445,11 +1629,7 @@ List<Question> tourstage222 = [
   Question(
       questionid: '4',
       question: 'Taskbar dalam Mac OS disebut dengan',
-      listanswers: [
-        'Taskbar',
-        'Dock',
-        'Window'
-      ],
+      listanswers: ['Taskbar', 'Dock', 'Window'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
@@ -1457,7 +1637,11 @@ List<Question> tourstage222 = [
   Question(
       questionid: '5',
       question: 'Kelebihan Mac OS, kecuali',
-      listanswers: ['Performa Maksimal', 'Cocok untuk Kreator di bidang Grafis', 'Bisa diinstal di berbagai perangkat'],
+      listanswers: [
+        'Performa Maksimal',
+        'Cocok untuk Kreator di bidang Grafis',
+        'Bisa diinstal di berbagai perangkat'
+      ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
@@ -1465,7 +1649,11 @@ List<Question> tourstage222 = [
   Question(
       questionid: '6',
       question: 'Kekurangan Mac OS, kecuali',
-      listanswers: ['Hanya didukung oleh Perangkat Apple', 'Kurang Cocok Untuk Gaming', 'Harga Murah'],
+      listanswers: [
+        'Hanya didukung oleh Perangkat Apple',
+        'Kurang Cocok Untuk Gaming',
+        'Harga Murah'
+      ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
@@ -1497,11 +1685,7 @@ List<Question> tourstage222 = [
   Question(
       questionid: '10',
       question: 'Text editor dalam Terimnal MacOS disebut',
-      listanswers: [
-        'Edit',
-        'Notepad',
-        'Nano'
-      ],
+      listanswers: ['Edit', 'Notepad', 'Nano'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
@@ -1518,12 +1702,10 @@ List<Question> tourstage222 = [
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
-      questioncorrect:
-          'Masuk sebagai akun root tingkat administrator'),
+      questioncorrect: 'Masuk sebagai akun root tingkat administrator'),
   Question(
       questionid: '12',
-      question:
-          'Control Panel dalam Mac Disebut',
+      question: 'Control Panel dalam Mac Disebut',
       listanswers: ['Settings', 'System Preferences', 'Semua Benar'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
@@ -1552,11 +1734,7 @@ List<Question> tourstage222 = [
   Question(
       questionid: '15',
       question: 'Toko Aplikasi di Mac disebut',
-      listanswers: [
-        'App Store',
-        'Play Store',
-        'Microsoft Store'
-      ],
+      listanswers: ['App Store', 'Play Store', 'Microsoft Store'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
@@ -1712,7 +1890,7 @@ List<Question> tourstage223 = [
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
       questioncorrect: 'Dapat menjalankan program 16-bit'),
-    Question(
+  Question(
       questionid: '16',
       question: 'Mac OS dibuat oleh ',
       listanswers: ['Apple', 'Google', 'Microsoft'],
@@ -1740,11 +1918,7 @@ List<Question> tourstage223 = [
   Question(
       questionid: '19',
       question: 'Taskbar dalam Mac OS disebut dengan',
-      listanswers: [
-        'Taskbar',
-        'Dock',
-        'Window'
-      ],
+      listanswers: ['Taskbar', 'Dock', 'Window'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
@@ -1752,7 +1926,11 @@ List<Question> tourstage223 = [
   Question(
       questionid: '20',
       question: 'Kelebihan Mac OS, kecuali',
-      listanswers: ['Performa Maksimal', 'Cocok untuk Kreator di bidang Grafis', 'Bisa diinstal di berbagai perangkat'],
+      listanswers: [
+        'Performa Maksimal',
+        'Cocok untuk Kreator di bidang Grafis',
+        'Bisa diinstal di berbagai perangkat'
+      ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
@@ -1760,7 +1938,11 @@ List<Question> tourstage223 = [
   Question(
       questionid: '21',
       question: 'Kekurangan Mac OS, kecuali',
-      listanswers: ['Hanya didukung oleh Perangkat Apple', 'Kurang Cocok Untuk Gaming', 'Harga Murah'],
+      listanswers: [
+        'Hanya didukung oleh Perangkat Apple',
+        'Kurang Cocok Untuk Gaming',
+        'Harga Murah'
+      ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
@@ -1792,11 +1974,7 @@ List<Question> tourstage223 = [
   Question(
       questionid: '25',
       question: 'Text editor dalam Terimnal MacOS disebut',
-      listanswers: [
-        'Edit',
-        'Notepad',
-        'Nano'
-      ],
+      listanswers: ['Edit', 'Notepad', 'Nano'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
@@ -1813,12 +1991,10 @@ List<Question> tourstage223 = [
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
-      questioncorrect:
-          'Masuk sebagai akun root tingkat administrator'),
+      questioncorrect: 'Masuk sebagai akun root tingkat administrator'),
   Question(
       questionid: '27',
-      question:
-          'Control Panel dalam Mac Disebut',
+      question: 'Control Panel dalam Mac Disebut',
       listanswers: ['Settings', 'System Preferences', 'Semua Benar'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
@@ -1847,11 +2023,7 @@ List<Question> tourstage223 = [
   Question(
       questionid: '30',
       question: 'Toko Aplikasi di Mac disebut',
-      listanswers: [
-        'App Store',
-        'Play Store',
-        'Microsoft Store'
-      ],
+      listanswers: ['App Store', 'Play Store', 'Microsoft Store'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
@@ -1867,7 +2039,7 @@ List<Question> tourstage231 = [
         'Sistem yang menghubungkan hardware dengan software',
         'Mempermudah interaksi pengguna',
         'Sistem yang memiliki komponen pada komputer'
-        'Sistem yang membantu operasi komputer pengguna'
+            'Sistem yang membantu operasi komputer pengguna'
       ],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
@@ -1926,14 +2098,15 @@ List<Question> tourstage231 = [
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
-      questioncorrect: 'Menentukan harga spesifikasi komputer untuk berjalan dengan lancar'),
+      questioncorrect:
+          'Menentukan harga spesifikasi komputer untuk berjalan dengan lancar'),
   Question(
       questionid: '7',
       question: 'Software dalam Sistem Operasi adalah',
       listanswers: [
         'Aplikasi untuk berisikan berbagai variasi sesuai kebutuhan pengguna',
         'Aplikasi untuk menampilkan gambar di monitor',
-        'Aplikasi untuk mengelola komputer',    
+        'Aplikasi untuk mengelola komputer',
         'Aplikasi yang terdiri atas Browser dan Game'
       ],
       questionhint: 'Salah satu data yang di',
@@ -2014,7 +2187,7 @@ List<Question> tourstage231 = [
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
       questioncorrect: 'Database'),
-    Question(
+  Question(
       questionid: '16',
       question: 'Windows Merupakan OS yang bersifat',
       listanswers: ['Open Source', 'Close Source', 'Campuran'],
@@ -2340,8 +2513,7 @@ List<Question> tourstage311 = [
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
-      questioncorrect:
-          'False'),
+      questioncorrect: 'False'),
   Question(
       questionid: '4',
       question: 'SSD SATA merupakan jenis SSD Tercepat',
@@ -2352,7 +2524,8 @@ List<Question> tourstage311 = [
       questioncorrect: 'False'),
   Question(
       questionid: '5',
-      question: 'Untuk menampilkan gambar visual komputer dalam monitor maka diperlukan kartu VGA',
+      question:
+          'Untuk menampilkan gambar visual komputer dalam monitor maka diperlukan kartu VGA',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
@@ -2368,8 +2541,7 @@ List<Question> tourstage311 = [
       questioncorrect: 'False'),
   Question(
       questionid: '7',
-      question:
-          'Salah satu kelemahan SSD adalah harga yang cukup mahal',
+      question: 'Salah satu kelemahan SSD adalah harga yang cukup mahal',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
@@ -2404,9 +2576,7 @@ List<Question> tourstage311 = [
   Question(
       questionid: '11',
       question: 'Kekurangan Hard Disk Drive adalah Suara terlalu bising',
-      listanswers: [
-        'True', 'False'
-      ],
+      listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
@@ -2414,9 +2584,7 @@ List<Question> tourstage311 = [
   Question(
       questionid: '12',
       question: 'Untuk menjaga suhu dalam CPU maka diperlukan Thermal Paste',
-      listanswers: [
-        'True', 'False'
-      ],
+      listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
@@ -2433,9 +2601,7 @@ List<Question> tourstage311 = [
   Question(
       questionid: '14',
       question: 'SSD merupakan singkatan dari Secure Solid Drive',
-      listanswers: [
-        'True', 'False'
-      ],
+      listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
@@ -2443,13 +2609,11 @@ List<Question> tourstage311 = [
   Question(
       questionid: '15',
       question: 'Media Penyimpanan internal Komputer berada di RAM',
-      listanswers: [
-        'True', 'False'
-      ],
+      listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Basic Komputer',
-      questioncorrect: 'True'),
+      questioncorrect: 'False'),
 ];
 
 /* Tentang Sistem Operasi Windows untuk stage 3 pada Mode Kedua*/
@@ -2464,8 +2628,7 @@ List<Question> tourstage321 = [
       questioncorrect: 'True'),
   Question(
       questionid: '2',
-      question:
-          'Untuk menutup jendela aplikasi dapat dilakukan melalui Alt+F1',
+      question: 'Untuk menutup jendela aplikasi dapat dilakukan melalui Alt+F1',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
@@ -2473,109 +2636,864 @@ List<Question> tourstage321 = [
       questioncorrect: 'False'),
   Question(
       questionid: '3',
-      question: 'Windows Explorer adalah ... ',
+      question: 'Windows Defender adalah Antivirus buatan Microsoft',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
-      questioncorrect: 'File Management'),
+      questioncorrect: 'True'),
   Question(
       questionid: '4',
-      question: 'Powershell adalah ',
+      question: 'CMD adalah terminal pada Microsoft Windows',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
-      questioncorrect: 'Interface Command Line untuk melakukan task'),
+      questioncorrect: 'True'),
   Question(
       questionid: '5',
-      question: 'Yang ada di dalam Start Menu, kecuali',
+      question: 'Win+R adalah tombol untuk membuka aplikasi regedit',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
-      questioncorrect: 'Semua Salah'),
+      questioncorrect: 'False'),
   Question(
       questionid: '6',
-      question: 'Label pada Local Disc adalah',
+      question: 'Label pada Local Disc adalah C',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
-      questioncorrect: 'C'),
+      questioncorrect: 'True'),
   Question(
       questionid: '7',
-      question: 'Label pada Drive Kedua adalah',
+      question: 'Label pada Drive Kedua adalah D maupun E',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
-      questioncorrect: 'Semua Benar'),
+      questioncorrect: 'True'),
   Question(
       questionid: '8',
-      question: 'Label pada Floppy adalah',
+      question: 'Label pada Floppy adalah C',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
-      questioncorrect: 'A'),
+      questioncorrect: 'False'),
   Question(
       questionid: '9',
-      question: 'Windows Pertama kali diperkenalkan pada tahun',
+      question: 'Windows Pertama kali diperkenalkan pada tahun 1985',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
-      questioncorrect: '1985'),
+      questioncorrect: 'True'),
   Question(
       questionid: '10',
-      question: 'Task Manager adalah',
+      question: 'Label pada Local Disk adalah C',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
       questioncorrect:
-          'Aplikasi yang berisikan untuk melihat proses aplikasi beserta komponen'),
+          'True'),
   Question(
       questionid: '11',
-      question: 'Taskbar adalah',
+      question: 'Taskbar berisikan aplikasi yang dipin, start menu dan notifikasi',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Keamanan Komputer',
       questioncorrect:
-          'Berisikan Start Menu, Kumpulan beberapa aplikasi beserta aplikasi yang telah dipin dan status dalam Windows'),
+          'True'),
   Question(
       questionid: '12',
       question:
-          'Untuk memeriksa komponen pada Windows dalam Command Prompt, Command apa yang digunakan',
+          'CMD dan Powershell itu sama',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Windows',
-      questioncorrect: 'sfc/ scannow'),
+      questioncorrect: 'False'),
   Question(
       questionid: '13',
-      question: 'Windows versi terkini yang dirilis pada 2021 adalah',
+      question: 'Windows versi pertama adalah Windows 1.0',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
-      questioncorrect: 'Windows 11'),
+      questioncorrect: 'True'),
   Question(
       questionid: '14',
-      question: 'Ciri-ciri Windows 64-bit kecuali',
+      question: 'Ciri-ciri Windows 64-bit yaitu dapat dijalankan diatas 4 GB',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
-      questioncorrect: 'Dapat menjalankan program 16-bit'),
+      questioncorrect: 'True'),
   Question(
       questionid: '15',
-      question: 'Ciri-ciri Windows 32-bit adalah',
+      question: 'Ciri-ciri Windows 32-bit adalah tidak mampu menjalankan program 64-bit',
       listanswers: ['True', 'False'],
       questionhint: 'Salah satu data yang di',
       questionlevel: 'Beginner',
       questiontitle: 'Komponen Komputer',
-      questioncorrect: 'Dapat menjalankan program 16-bit'),
+      questioncorrect: 'True'),
+];
+
+/* Tentang Sistem Operasi Mac OS untuk stage 2 pada Mode Kedua*/
+List<Question> tourstage322 = [
+  Question(
+      questionid: '1',
+      question: 'Mac OS dibuat oleh Linux',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Mac OS',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '2',
+      question:
+          'Di Windows terdapat tombol Start dan Di Mac OS terdapat tombol Command',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '3',
+      question: 'File Management dalam Mac OS adalah File Explorer',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '4',
+      question: 'Taskbar dalam Mac OS disebut dengan Dock',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '5',
+      question: 'MacOS hanya dapat dijalankan di perangkat Apple',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '6',
+      question: 'Equivalent CMD di Mac OS adalah Terminal',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '7',
+      question: 'Finder serupa dengan File Exploere',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '8',
+      question: 'Command Prompt dalam Apple disebut Powershell',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '9',
+      question: 'Perintah Mac untuk melihat isi directory/folder adalah ls',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '10',
+      question: 'Text editor dalam Terimnal MacOS disebut nano',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect:
+          'True'),
+  Question(
+      questionid: '11',
+      question: 'Sudo su adalah command untuk mengakses sebagai administrator',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'true'),
+  Question(
+      questionid: '12',
+      question: 'Control Panel dalam Mac Disebut System Preference',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Windows',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '13',
+      question: 'Mac dapat dijalankan di perangkat non-Apple',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '14',
+      question: 'Ciri-ciri Sistem operasi 64-bit dalam MacOS Saat ini adalah mendukung RAM diatas 4 GB',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '15',
+      question: 'Toko Aplikasi di Mac serupa dengan iOS',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+];
+
+/* Tentang True False Komputer Dasar untuk stage 3*/
+List<Question> tourstage331 = [
+  Question(
+      questionid: '1',
+      question: 'Kata Komputer berasal dari Bahasa Yunani',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '2',
+      question: 'Dalam Bahasa Inggris, Compute berarti mennghitung',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '3',
+      question: 'CPU merupakan singkatan dari Core Processing Utility',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '4',
+      question: 'SSD PCIe merupakan jenis SSD Tercepat',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '5',
+      question:
+          'Untuk menampilkan gambar visual komputer dalam monitor maka diperlukan kartu VGA',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '6',
+      question: 'SSD lebih baik daripada HDD',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '7',
+      question: 'Salah satu kelebihan SSD adalah harga yang cukup mahal',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '8',
+      question: 'Salah satu kelebihhan HDD adalah harga lebih murah',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '9',
+      question:
+          'Salah satu komponen komputer yang dapat menampilkan tampilan pada monitor adalah Processor',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '10',
+      question:
+          'Komponen terpenting dalam menyalakan komputer adalah Power Supply',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '11',
+      question: 'Kekurangan Hard Disk Drive adalah Suara terlalu bising',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '12',
+      question: 'Untuk menjaga suhu dalam CPU maka diperlukan Thermal Paste',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '13',
+      question:
+          'HDD, SDD dan USB adalah driver external yang dapat digunakan sebagai media penyimpanan pada komputer',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '14',
+      question: 'SSD merupakan singkatan dari Secure Solid Drive',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '15',
+      question: 'Media Penyimpanan internal Komputer berada di RAM',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+];
+
+/* Tentang Sistem Operasi Windows untuk stage 3 pada Mode Kedua*/
+List<Question> tourstage332 = [
+  Question(
+      questionid: '1',
+      question: 'Versi Pertama Windows adalah Windows 95',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Pengaturan Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '2',
+      question: 'Untuk menutup jendela aplikasi dapat dilakukan melalui Alt+F4',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '3',
+      question: 'Windows Explorer adalah Device Management',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '4',
+      question: 'CMD dan Powershell adalah terminal pada Microsoft Windows',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '5',
+      question: 'Win+R adalah tombol untuk membuka aplikasi run',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '6',
+      question: 'Umumnya Harddisk kedua dapat dilabel D',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '7',
+      question: 'Label pada Local Disk selalu Huruf C',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '8',
+      question: 'Folder Libraries adalah kategori penyimpanan masing-masing dalam File Explorer',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '9',
+      question: 'Windows Pertama kali diperkenalkan pada tahun 1985',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '10',
+      question: 'Label pada Local Disk adalah C',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect:
+          'True'),
+  Question(
+      questionid: '11',
+      question: 'Taskbar berisikan aplikasi yang dipin, start menu dan notifikasi',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect:
+          'True'),
+  Question(
+      questionid: '12',
+      question:
+          'CMD dan Powershell itu sama',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Windows',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '13',
+      question: 'Windows versi pertama adalah Windows 1.0',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '14',
+      question: 'Ciri-ciri Windows 64-bit yaitu dapat dijalankan diatas 4 GB',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '15',
+      question: 'Ciri-ciri Windows 32-bit adalah tidak mampu menjalankan program 64-bit',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+        Question(
+      questionid: '16',
+      question: 'Kata Komputer berasal dari Bahasa Yunani',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '17',
+      question: 'Dalam Bahasa Inggris, Compute berarti mennghitung',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '18',
+      question: 'CPU merupakan singkatan dari Core Processing Utility',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '19',
+      question: 'SSD PCIe merupakan jenis SSD Tercepat',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '20',
+      question:
+          'Untuk menampilkan gambar visual komputer dalam monitor maka diperlukan kartu VGA',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '21',
+      question: 'SSD lebih baik daripada HDD',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '22',
+      question: 'Salah satu kelebihan SSD adalah harga yang cukup mahal',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '23',
+      question: 'Salah satu kelebihhan HDD adalah harga lebih murah',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '24',
+      question:
+          'Salah satu komponen komputer yang dapat menampilkan tampilan pada monitor adalah Processor',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '25',
+      question:
+          'Komponen terpenting dalam menyalakan komputer adalah Power Supply',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '26',
+      question: 'Kekurangan Hard Disk Drive adalah Suara terlalu bising',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '27',
+      question: 'Untuk menjaga suhu dalam CPU maka diperlukan Thermal Paste',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '28',
+      question:
+          'HDD, SDD dan USB adalah driver external yang dapat digunakan sebagai media penyimpanan pada komputer',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '29',
+      question: 'SSD merupakan singkatan dari Secure Solid Drive',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '30',
+      question: 'Media Penyimpanan internal Komputer berada di RAM',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+];
+
+/* Tentang Sistem Operasi Mac OS untuk stage 2 pada Mode Kedua*/
+List<Question> tourstage333 = [
+  Question(
+      questionid: '1',
+      question: 'Mac OS dibuat oleh Linux',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Mac OS',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '2',
+      question:
+          'Di Windows terdapat tombol Start dan Di Mac OS terdapat tombol Command',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '3',
+      question: 'File Management dalam Mac OS adalah File Explorer',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '4',
+      question: 'Taskbar dalam Mac OS disebut dengan Dock',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '5',
+      question: 'MacOS hanya dapat dijalankan di perangkat Apple',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '6',
+      question: 'Equivalent CMD di Mac OS adalah Terminal',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '7',
+      question: 'Finder serupa dengan File Exploere',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '8',
+      question: 'Command Prompt dalam Apple disebut Powershell',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '9',
+      question: 'Perintah Mac untuk melihat isi directory/folder adalah ls',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '10',
+      question: 'Text editor dalam Terimnal MacOS disebut nano',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect:
+          'True'),
+  Question(
+      questionid: '11',
+      question: 'Sudo su adalah command untuk mengakses sebagai administrator',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Keamanan Komputer',
+      questioncorrect: 'true'),
+  Question(
+      questionid: '12',
+      question: 'Control Panel dalam Mac Disebut System Preference',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Windows',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '13',
+      question: 'Mac dapat dijalankan di perangkat non-Apple',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '14',
+      question: 'Ciri-ciri Sistem operasi 64-bit dalam MacOS Saat ini adalah mendukung RAM diatas 4 GB',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '15',
+      question: 'Toko Aplikasi di Mac serupa dengan iOS',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Komponen Komputer',
+      questioncorrect: 'True'),
+    Question(
+      questionid: '16',
+      question: 'Kata Komputer berasal dari Bahasa Yunani',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '17',
+      question: 'Dalam Bahasa Inggris, Compute berarti mennghitung',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '18',
+      question: 'CPU merupakan singkatan dari Core Processing Utility',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '19',
+      question: 'SSD PCIe merupakan jenis SSD Tercepat',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '20',
+      question:
+          'Untuk menampilkan gambar visual komputer dalam monitor maka diperlukan kartu VGA',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '21',
+      question: 'SSD lebih baik daripada HDD',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '22',
+      question: 'Salah satu kelebihan SSD adalah harga yang cukup mahal',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '23',
+      question: 'Salah satu kelebihhan HDD adalah harga lebih murah',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '24',
+      question:
+          'Salah satu komponen komputer yang dapat menampilkan tampilan pada monitor adalah Processor',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '25',
+      question:
+          'Komponen terpenting dalam menyalakan komputer adalah Power Supply',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '26',
+      question: 'Kekurangan Hard Disk Drive adalah Suara terlalu bising',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '27',
+      question: 'Untuk menjaga suhu dalam CPU maka diperlukan Thermal Paste',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '13',
+      question:
+          'HDD, SDD dan USB adalah driver external yang dapat digunakan sebagai media penyimpanan pada komputer',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
+  Question(
+      questionid: '14',
+      question: 'SSD merupakan singkatan dari Secure Solid Drive',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'False'),
+  Question(
+      questionid: '15',
+      question: 'Media Penyimpanan internal Komputer berada di RAM',
+      listanswers: ['True', 'False'],
+      questionhint: 'Salah satu data yang di',
+      questionlevel: 'Beginner',
+      questiontitle: 'Basic Komputer',
+      questioncorrect: 'True'),
 ];

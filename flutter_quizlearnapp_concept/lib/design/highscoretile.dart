@@ -9,18 +9,19 @@ class HighScoreTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         borderOnForeground: true,
-        margin: EdgeInsets.all(4),
+        margin: EdgeInsets.all(0),
+        elevation: 0,
         color: Colors.transparent,
         shadowColor: Colors.lightBlueAccent.shade100,
         child: ListTile(
-          title: Text(highScore.username, style: TextStyle(fontSize: 16)),
+          title: Text(highScore.username, style: GoogleFonts.openSans(fontSize: 16, color: Colors.white)),
           trailing: Text(
             highScore.roundscore.toString(),
-            style: TextStyle(fontSize: 14),
+            style: GoogleFonts.openSans(fontSize: 14, color: Colors.white, fontWeight: FontWeight.bold),
           ),
           subtitle: Text(
             highScore.mode,
-            style: TextStyle(fontSize: 12),
+            style: GoogleFonts.openSans(fontSize: 14, color: Colors.white),
           ),
         ));
   }
@@ -35,8 +36,9 @@ class ProfileScoreTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         borderOnForeground: true,
+        elevation: 0,
         margin: EdgeInsets.all(4),
-        color: Colors.blueAccent,
+        color: Colors.transparent,
         shadowColor: Colors.lightBlueAccent,
         child: ListTile(
           onTap: () async {
@@ -101,21 +103,17 @@ class ProfileScoreTile extends StatelessWidget {
             
           },
           isThreeLine: false,
-          title: Text(highScore.username, style: TextStyle(fontSize: 16)),
+          title: Text(highScore.mode, style: GoogleFonts.openSans(fontSize: 16, color: Colors.blueAccent, fontWeight: FontWeight.bold)),
           trailing: Text(
             highScore.score.toString(),
-            style: TextStyle(fontSize: 14),
-          ),
-          subtitle: Text(
-            highScore.mode,
-            style: TextStyle(fontSize: 12),
+            style: GoogleFonts.openSans(fontSize: 14, color: Colors.blueAccent),
           ),
           leading: Column(
             children: <Widget>[
               Icon(Icons.star),
               Text(
                 highScore.ratingquiz.toString(),
-                style: TextStyle(fontSize: 12),
+                style: GoogleFonts.openSans(fontSize: 12, color: Colors.blueAccent),
               ),
             ],
           ),

@@ -77,12 +77,15 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
       builder: (bc) => AlertDialog(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        title: Text("Pilih Profesi saat ini"),
+        title: Text(
+          "Pilih Profesi saat ini",
+          style: GoogleFonts.notoSans(fontWeight: FontWeight.bold),
+        ),
         content: SizedBox(
           height: 100,
           child: CupertinoPicker(
             itemExtent: 30,
-            backgroundColor: Colors.transparent,
+            backgroundColor: Colors.transparent.withOpacity(0.1),
             children: <Widget>[for (var item in profesi) Text(item)],
             onSelectedItemChanged: (value) {
               ctrlProfesi.text = profesi[value];
@@ -101,12 +104,15 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
       builder: (bc) => AlertDialog(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        title: Text("Usia Saat ini"),
+        title: Text(
+          "Usia Saat ini",
+          style: GoogleFonts.notoSans(fontWeight: FontWeight.bold),
+        ),
         content: SizedBox(
           height: 100,
           child: CupertinoPicker(
             itemExtent: 30,
-            backgroundColor: Colors.transparent,
+            backgroundColor: Colors.transparent.withOpacity(0.1),
             children: <Widget>[for (var item in usia) Text(item.toString())],
             onSelectedItemChanged: (value) {
               ctrlUsia.text = usia[value].toString();
@@ -120,6 +126,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
       themeMode: ThemeMode.system,
       darkTheme: ThemeData(brightness: Brightness.dark),
@@ -130,7 +137,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
           Container(
             color: Colors.blueAccent,
             child: SizedBox(
-              height: 15.h,
+              height: MediaQuery.of(context).size.height * 0.14,
               child: Align(
                 alignment: Alignment.center,
                 child: AnimatedTextKit(
@@ -140,7 +147,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                         "Kuis Edukasi Komputer berbasis Flutter".toUpperCase(),
                         colors: [Colors.white54, Colors.white70],
                         textStyle: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 16.sp),
+                            fontWeight: FontWeight.bold, fontSize: 16),
                         textAlign: TextAlign.center),
                   ],
                 ),
@@ -154,6 +161,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                 indicatorColor: Colors.blueAccent,
                 isScrollable: true,
                 controller: tabController,
+                labelStyle: GoogleFonts.openSans(fontWeight: FontWeight.bold),
                 tabs: <Widget>[
                   Tab(
                     text: "Masuk",
@@ -171,7 +179,6 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: 20),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       controller: ctrlLoginEmail,
@@ -179,7 +186,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                           prefixIcon: Icon(Icons.email),
                           labelText: 'Email',
                           hintText: "Tuliskan Email Anda",
-                          border: OutlineInputBorder()),
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)))),
                     ),
                     SizedBox(height: 20),
                     TextFormField(
@@ -188,7 +197,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                       decoration: InputDecoration(
                           prefixIcon: Icon(Icons.password),
                           labelText: 'Password',
-                          border: OutlineInputBorder(),
+                          border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
                           suffixIcon: GestureDetector(
                             onTap: () {
                               setState(() {
@@ -202,10 +213,16 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                     ),
                     SizedBox(height: 30),
                     ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        primary: Colors.transparent,
+                      ),
                       icon: isLoading
-                          ? Icon(Icons.lock_clock)
-                          : Icon(Icons.login),
-                      label: const Text("Masuk"),
+                          ? Icon(Icons.lock_clock, color: Colors.blueAccent)
+                          : Icon(Icons.login, color: Colors.blueAccent),
+                      label: Text("Masuk",
+                          style: GoogleFonts.notoSans(
+                              fontSize: 18, color: Colors.blueAccent)),
                       onPressed: () async {
                         if (ctrlLoginEmail.text == "" ||
                             ctrlLoginPassword.text == "") {
@@ -270,7 +287,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                               prefixIcon: Icon(Icons.person),
                               labelText: 'Nama',
                               hintText: "Tuliskan nama Anda",
-                              border: OutlineInputBorder()),
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)))),
                         ),
                         SizedBox(height: 10),
                         TextFormField(
@@ -287,7 +306,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                               prefixIcon: Icon(Icons.onetwothree),
                               labelText: 'Usia',
                               hintText: "Tuliskan usia Anda",
-                              border: OutlineInputBorder()),
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)))),
                           validator: (String value) {
                             int value2 = int.parse(value);
                             if (value.isEmpty) {
@@ -311,7 +332,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                               prefixIcon: Icon(Icons.business_center),
                               labelText: 'Profesi',
                               hintText: "Tuliskan usia Anda",
-                              border: OutlineInputBorder()),
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)))),
                         ),
                         SizedBox(height: 10),
                         TextFormField(
@@ -321,7 +344,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                               prefixIcon: Icon(Icons.email),
                               labelText: 'Email',
                               hintText: "Tuliskan email Anda",
-                              border: OutlineInputBorder()),
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)))),
                           validator: (String value) {
                             if (value.isEmpty) {
                               return 'Mohon Masukan Email';
@@ -341,7 +366,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                           decoration: InputDecoration(
                               prefixIcon: Icon(Icons.password),
                               labelText: 'Password',
-                              border: OutlineInputBorder()),
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)))),
                           validator: (String value) {
                             if (value.isEmpty) {
                               return 'Masukan Password';
@@ -356,7 +383,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                           decoration: InputDecoration(
                               prefixIcon: Icon(Icons.password),
                               labelText: 'Konfirmasi Password',
-                              border: OutlineInputBorder()),
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)))),
                           validator: (String value) {
                             if (value.isEmpty) {
                               return 'Please a Enter Password';
@@ -370,10 +399,17 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                       ])),
                       SizedBox(height: 40),
                       ElevatedButton.icon(
-                        label: Text("Daftar"),
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          primary: Colors.transparent,
+                        ),
+                        label: Text("Daftar",
+                            style: GoogleFonts.notoSans(
+                                fontSize: 18, color: Colors.blueAccent)),
                         icon: isLoading
-                            ? Icon(Icons.app_registration_rounded)
-                            : Icon(Icons.upload),
+                            ? Icon(Icons.app_registration_rounded,
+                                color: Colors.blueAccent)
+                            : Icon(Icons.upload, color: Colors.blueAccent),
                         onPressed: () async {
                           if (ctrlName.text == "" ||
                               ctrlEmail.text == "" ||

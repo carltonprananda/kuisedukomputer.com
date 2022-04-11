@@ -40,7 +40,7 @@ class _Tour2ScreenState extends State<Tour2Screen> {
   static int _totalbenar = 0;
   static int _totalsalah = 0;
   static int questionindex = 0;
-    static int roundjawabanbenar = 100;
+  static int roundjawabanbenar = 100;
   static int roundjawabansalah = 0;
   static var questionrandom = List<int>.generate(questiontype1.length, (i) => i)
     ..shuffle();
@@ -77,7 +77,7 @@ class _Tour2ScreenState extends State<Tour2Screen> {
     if (widget.round == 1) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => new ResultTour(
+          builder: (context) => new ResultTour2(
             jawabanbenar: _totalbenar,
             jawabansalah: _totalsalah,
             score: _gamescore,
@@ -92,7 +92,7 @@ class _Tour2ScreenState extends State<Tour2Screen> {
     if (widget.round == 2) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => new ResultTour(
+          builder: (context) => new ResultTour2(
             jawabanbenar: _totalbenar,
             jawabansalah: _totalsalah,
             score: _gamescore,
@@ -107,7 +107,7 @@ class _Tour2ScreenState extends State<Tour2Screen> {
     if (widget.round == 3) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => new ResultTour(
+          builder: (context) => new ResultTour2(
             jawabanbenar: _totalbenar,
             jawabansalah: _totalsalah,
             score: _gamescore,
@@ -122,19 +122,76 @@ class _Tour2ScreenState extends State<Tour2Screen> {
     ;
   }
 
+  void toMainmenu(BuildContext context) {
+    dispose;
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => MenuPage()),
+    );
+  }
+
+  Future<bool> dialogmenu() {
+    _timerplus.isActive == false;
+    _totaltime--;
+    return showGeneralDialog(
+        barrierDismissible: false,
+        context: context,
+        barrierColor: Colors.transparent.withOpacity(0.75),
+        transitionDuration: Duration(milliseconds: 300),
+        transitionBuilder: (context, a1, a2, wi) {
+          return Transform.scale(
+              scale: a1.value,
+              child: AlertDialog(
+                title: Text(
+                  "Pause",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                ),
+                actions: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.redAccent,
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        onPressed: () {
+                          toMainmenu(context);
+                        },
+                        child: Text("Kembali Ke Menu"),
+                      ),
+                      ElevatedButton(
+                        child: Text("Lanjut"),
+                        onPressed: () {
+                          Navigator.pop(context);
+                          _timerplus.isActive == true;
+                          _totaltime++;
+                        },
+                      )
+                    ],
+                  ),
+                ],
+              ));
+        },
+        pageBuilder: (context, an1, an2) {});
+  }
+
   @override
   Widget build(BuildContext context) {
     int _roundgame = widget.round;
     int jumlahsoal = 10;
-    if (_roundgame == 1){
+    if (_roundgame == 1) {
       jumlahsoal = 3;
       roundjawabanbenar = 25;
     }
-    if (_roundgame == 2){
+    if (_roundgame == 2) {
       jumlahsoal = 9;
       roundjawabanbenar = 10;
     }
-    if (_roundgame == 3){
+    if (_roundgame == 3) {
       jumlahsoal = 9;
       roundjawabanbenar = 10;
     }
@@ -142,166 +199,87 @@ class _Tour2ScreenState extends State<Tour2Screen> {
     //final randomquestion = widget.pertanyaan.shuffle();
     final getQuestion = widget.pertanyaan[questionrandom[questionindex]];
     print("Soal:" + getQuestion.toString());
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          getQuestion.questiontitle,
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+            Colors.greenAccent.shade700,
+            Colors.greenAccent.shade400
+          ])),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: Text(getQuestion.questiontitle, style: GoogleFonts.notoSans()),
+          automaticallyImplyLeading: false,
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          foregroundColor: Colors.white,
+          elevation: 0,
         ),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: Column(
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Spacer(),
-                Expanded(
-                  child: Container(
-                    color: Colors.lightBlueAccent,
-                    child: Padding(
-                      padding: EdgeInsets.all(2),
-                      child: Column(
-                        children: [
-                          Text("Babak",
-                              style: GoogleFonts.notoSans(
-                                  fontWeight: FontWeight.bold)),
-                          ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            child: Container(
-                              color: Colors.blue,
-                              padding: EdgeInsets.all(10),
-                              width: double.infinity,
-                              child: Text(
-                                "$_roundgame/3",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 14.sp),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Spacer()
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Container(
-                    color: Colors.lightBlueAccent,
-                    child: Padding(
-                      padding: EdgeInsets.all(2),
-                      child: Column(
-                        children: [
-                          Text("Waktu",
-                              style: GoogleFonts.notoSans(
-                                  fontWeight: FontWeight.bold)),
-                          ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            child: Container(
-                              color: Colors.blue,
-                              padding: EdgeInsets.all(10),
-                              width: double.infinity,
-                              child: Text(
-                                _totaltime.toString(),
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 14.sp),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    color: Colors.lightBlueAccent,
-                    child: Padding(
-                      padding: EdgeInsets.all(2),
-                      child: Column(
-                        children: [
-                          Text("Skor",
-                              style: GoogleFonts.notoSans(
-                                  fontWeight: FontWeight.bold)),
-                          ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                            child: Container(
-                              color: Colors.blue,
-                              padding: EdgeInsets.all(10),
-                              width: double.infinity,
-                              child: Text(
-                                "$_gamescore",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 14.sp),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Text(
-              getQuestion.question,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 10.sp),
-            ),
-            Expanded(
-              child: ListView.builder(
-                  itemCount: getQuestion.listanswers.length,
-                  itemBuilder: (context, index) {
-                    int jawabanbenar = roundjawabanbenar ;
-                    int jawabansalah = 0;
-                    final jawaban = getQuestion.listanswers[index];
-                    return ATile(
-                        dipilih: jawaban == myanswer,
-                        jawaban: jawaban,
-                        jawabanbenar: getQuestion.questioncorrect,
-                        klik: () {
-                          setState(() {
-                            myanswer = jawaban;
-                          });
-
-                          if (jawaban == getQuestion.questioncorrect) {
-                            soundbenar.play('audios/correct-answer.wav');
-                            _gamescore = _gamescore + jawabanbenar;
-                            _roundscore = _roundscore + jawabanbenar;
-                            _totalbenar++;
-                          } else {
-                            soundbenar.play('audios/sound-wrong.wav');
-                            _gamescore = _gamescore + jawabansalah;
-                            _roundscore = _roundscore + jawabansalah;
-                            _totalsalah++;
-                          }
-
-                          Future.delayed(const Duration(milliseconds: 150), () {
-                            if (questionindex ==
-                                jumlahsoal /*widget.pertanyaan.length - 1*/) {
-                              soundbenar.play('audios/level-win.wav');
-                              toResultgame(context);
-                              _timerplus.cancel();
-                              questionindex = 0; //mereset index
-                              jawabanbenar = 0;
-                              jawabansalah = 0;
-                              return;
-                            }
+        body: Padding(
+          padding: EdgeInsets.all(10.0),
+          child: Column(
+            children: <Widget>[
+              MultiScoreTile(
+                timer: _totaltime,
+                questionindex: questionindex,
+                round: widget.round,
+                roundskor: _roundscore,
+                skor: widget.gamescore,
+              ),
+              QTile(pertanyaan: getQuestion.question),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: getQuestion.listanswers.length,
+                    itemBuilder: (context, index) {
+                      int jawabanbenar = roundjawabanbenar;
+                      int jawabansalah = 0;
+                      final jawaban = getQuestion.listanswers[index];
+                      return ATile(
+                          dipilih: jawaban == myanswer,
+                          jawaban: jawaban,
+                          jawabanbenar: getQuestion.questioncorrect,
+                          klik: () {
                             setState(() {
-                              questionindex++;
-                              myanswer = '';
+                              myanswer = jawaban;
+                            });
+
+                            if (jawaban == getQuestion.questioncorrect) {
+                              soundbenar.play('audios/correct-answer.wav');
+                              _gamescore = _gamescore + jawabanbenar;
+                              _roundscore = _roundscore + jawabanbenar;
+                              _totalbenar++;
+                            } else {
+                              soundbenar.play('audios/sound-wrong.wav');
+                              _gamescore = _gamescore + jawabansalah;
+                              _roundscore = _roundscore + jawabansalah;
+                              _totalsalah++;
+                            }
+
+                            Future.delayed(const Duration(milliseconds: 150),
+                                () {
+                              if (questionindex ==
+                                  jumlahsoal /*widget.pertanyaan.length - 1*/) {
+                                soundbenar.play('audios/level-win.wav');
+                                toResultgame(context);
+                                _timerplus.cancel();
+                                questionindex = 0; //mereset index
+                                jawabanbenar = 0;
+                                jawabansalah = 0;
+                                return;
+                              }
+                              setState(() {
+                                questionindex++;
+                                myanswer = '';
+                              });
                             });
                           });
-                        });
-                  }),
-            )
-          ],
+                    }),
+              )
+            ],
+          ),
         ),
       ),
     );

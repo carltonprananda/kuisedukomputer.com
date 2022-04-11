@@ -2,11 +2,7 @@ part of 'designs.dart';
 
 class ATile extends StatelessWidget {
   const ATile(
-      {Key key,
-      this.dipilih,
-      this.jawaban,
-      this.jawabanbenar,
-      this.klik})
+      {Key key, this.dipilih, this.jawaban, this.jawabanbenar, this.klik})
       : super(key: key);
 
   final bool dipilih;
@@ -16,30 +12,27 @@ class ATile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.only(top:5),
-
-      //color: warnajawaban,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+    return Container(
+      margin: EdgeInsets.all(4),
+      width: double.maxFinite,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25),
+          shape: BoxShape.rectangle,
           gradient: LinearGradient(
-            colors:gradasiwarnajawaban,
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-          )
-        ),
-        child: ListTile(
-            onTap: () => klik(),
-            title: Text(jawaban,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: dipilih ? Colors.white70 : Colors.white,
-                ), textAlign: TextAlign.center,)),
-      ),
+            colors: gradasiwarnajawaban,
+            begin: Alignment.topLeft,
+            end: Alignment.topRight,
+          )),
+      child: ListTile(
+          onTap: () => klik(),
+          title: Text(
+            jawaban,
+            style: GoogleFonts.openSans(
+              fontSize: 14,
+              color: dipilih ? Colors.white70 : Colors.white,
+            ),
+            textAlign: TextAlign.center,
+          )),
     );
   }
 
@@ -52,8 +45,12 @@ class ATile extends StatelessWidget {
     }
   }
 
-  List<Color> get gradasiwarnajawaban{
-  if (!dipilih) return [Colors.transparent.withOpacity(0.4), Colors.transparent.withOpacity(0.5)];
+  List<Color> get gradasiwarnajawaban {
+    if (!dipilih)
+      return [
+        Colors.transparent.withOpacity(0.4),
+        Colors.transparent.withOpacity(0.5)
+      ];
     if (jawaban == jawabanbenar) {
       return [Colors.green.shade500, Colors.green.shade700];
     } else {
