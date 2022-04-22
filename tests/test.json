@@ -1,0 +1,189 @@
+
+{
+    "questions": {
+        "tourstage": {
+            "tourstage111": [
+                
+                    {
+                    "questionid": "1",
+                    "question": "Kata Komputer berasal dari Bahasa",
+                    "listanswers": ["Latin", "Yunani", "Inggris"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Latin"},
+                {
+                    "questionid": "2",
+                    "question": "Dalam Bahasa Inggris, Compute berarti",
+                    "listanswers": ["Mengurangi", "Menambahkan", "Menghitung"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Menghitung"},
+                {
+                    "questionid": "3",
+                    "question": "Power Supply Unit adalah",
+                    "listanswers": [
+                      "Alat untuk memberikan tegangan arus listrik ke berbagai komponen dalam komputer",
+                      "Alat untuk menyalakan komputer",
+                      "Alat untuk menyimpan listrik dalam komponen komputer"
+                    ],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect":
+                        "Alat untuk memberikan tegangan arus listrik ke berbagai komponen dalam komputer"},
+                {
+                    "questionid": "4",
+                    "question": "SSD yang memiliki 2 port disebut",
+                    "listanswers": ["M.2", "NVMe", "HDD"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "NVMe"},
+                {
+                    "questionid": "5",
+                    "question": "Jenis DDR RAM yang banyak digunakan pada saat ini yaitu",
+                    "listanswers": ["DDR3", "DDR4", "DDR5"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "DDR4"},
+                {
+                    "questionid": "6",
+                    "question": "Jenis Socket yang mendukung Intel adalah",
+                    "listanswers": ["LGA 1200", "TRX4", "AM4"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "LGA 1200"},
+                {
+                    "questionid": "7",
+                    "question":
+                        "Untuk menampilkan tampilan pada komputer diperlukan komponen pada Case yaitu",
+                    "listanswers": ["Kartu VGA", "Monitor", "Semua benar"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Kartu VGA"},
+                {
+                    "questionid": "8",
+                    "question": "Batas RAM yang digunakan dalam sistem operasi 32 bit adalah",
+                    "listanswers": ["2 GB", "3 GB", "4 GB"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "3 GB"},
+                {
+                    "questionid": "9",
+                    "question":
+                        "Salah satu komponen komputer yang dapat menampilkan tampilan pada monitor",
+                    "listanswers": ["Motherboard", "VGA Card", "Processor"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "VGA Card"},
+                {
+                    "questionid": "10",
+                    "question":
+                        "Untuk mendinginkan processor, komponen apa yang harus dipasang",
+                    "listanswers": ["Case Fans", "Air Cooler", "Semua Benar"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Semua Benar"},
+                {
+                    "questionid": "11",
+                    "question": "Kekurangan Hard Disk Drive adalah",
+                    "listanswers": [
+                      "Mengeluarkan suara bising",
+                      "Mengaktifkan Secure Boot",
+                      "Semua Benar"
+                    ],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Semua Benar"},
+                {
+                    "questionid": "12",
+                    "question": "Kelebihan SSD M.2 adalah",
+                    "listanswers": [
+                      "Transfer Data lebih cepat",
+                      "Kapasitas Memori Lebih kecil",
+                      "Slot terdiri dari 2 pemasangan"
+                    ],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Transfer Data lebih cepat"},
+                {
+                    "questionid": "13",
+                    "question":
+                        "Jenis driver external yang digunakan sebagai media penyimpanan pada komputer, kecuali",
+                    "listanswers": ["CD", "USB", "RAM"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "RAM"},
+                {
+                    "questionid": "14",
+                    "question": "SSD merupakan singkatan dari",
+                    "listanswers": [
+                      "Solid State Drive",
+                      "Security State Drive",
+                      "Secure State Drive"
+                    ],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Solid State Drive"},
+                {
+                    "questionid": "15",
+                    "question": "Kelebihan SSD jenis NVMe adalah",
+                    "listanswers": [
+                      "Lebih Cepat daripada M.2",
+                      "Harga Lebih Mahal",
+                      "Semua Benar"
+                    ],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Lebih Cepat daripada M.2"},
+                {
+                    "questionid": "16",
+                    "question": "Komponen yang dapat digunakan untuk mengetik adalah",
+                    "listanswers": ["Keyboard", "Mouse", "Joystick"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Mouse"},
+                {
+                    "questionid": "17",
+                    "question": "Yang bukan merupakan komponen komputer",
+                    "listanswers": ["RAM", "CPU", "Headset"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Headset"},
+                {
+                    "questionid": "18",
+                    "question":
+                        "Komponen yang dapat digunakan ketika bermain game dalam komputer adalah",
+                    "listanswers": ["Keyboard", "Mouse", "Semua Benar"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Semua Benar"},
+                {
+                    "questionid": "19",
+                    "question": "Untuk mengeluarkan suara pada Komputer, Komputer memerlukan",
+                    "listanswers": ["Sound Card", "Speaker", "Semua Benar"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "Speaker"},
+                {
+                    "questionid": "20",
+                    "question": "Jenis Penyimpanan Internal kecuali",
+                    "listanswers": ["USB", "HDD", "SSD"],
+                    "questionlevel": "Beginner",
+                    "questiontitle": "Komputer Dasar",
+                    "questioncorrect": "USB"}
+                
+            ],
+            "tourstage121": [],
+            "tourstage122": [],
+            "tourstage131": [],
+            "tourstage132": [],
+            "tourstage221": [],
+            "tourstage222": [],
+            "tourstage223": [],
+            "tourstage311": [],
+            "tourstage321": [],
+            "tourstage331": [],
+            "tourstage332": [],
+            "tourstage333": []
+        }
+    }
+}

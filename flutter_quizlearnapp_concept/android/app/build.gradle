@@ -50,6 +50,7 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -58,11 +59,13 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             // signingConfig signingConfigs.debug
             signingConfig signingConfigs.debug
-            shrinkResources false
-            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
+            //proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),'proguard.pro'
+        }
         }
     }
-}
+
 
 flutter {
     source '../..'
@@ -70,8 +73,8 @@ flutter {
 
 dependencies {
     implementation "androidx.test:core:1.4.0"
-    implementation platform('com.google.firebase:firebase-bom:29.2.1')
-    implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:29.3.1')
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'com.google.android.material:material:1.5.0'
 }

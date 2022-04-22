@@ -14,6 +14,8 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
   final ctrlLoginPassword = TextEditingController();
   bool isLoading = false;
   bool loginpassword = true;
+  bool regpassword = true;
+  bool regconfirmpassword = true;
   //Sign Up
   final ctrlEmail = TextEditingController();
   final ctrlPassword = TextEditingController();
@@ -144,9 +146,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                   isRepeatingAnimation: true,
                   animatedTexts: [
                     ColorizeAnimatedText(
-                        "Kuis Edukasi Komputer berbasis Flutter".toUpperCase(),
+                        "Kuis Edukasi Komputer".toUpperCase(),
                         colors: [Colors.white54, Colors.white70],
-                        textStyle: TextStyle(
+                        textStyle: GoogleFonts.openSans(
                             fontWeight: FontWeight.bold, fontSize: 16),
                         textAlign: TextAlign.center),
                   ],
@@ -180,9 +182,11 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     TextFormField(
+                      style: GoogleFonts.openSans(),
                       keyboardType: TextInputType.emailAddress,
                       controller: ctrlLoginEmail,
                       decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.email),
                           labelText: 'Email',
                           hintText: "Tuliskan Email Anda",
@@ -192,9 +196,11 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                     ),
                     SizedBox(height: 20),
                     TextFormField(
+                      style: GoogleFonts.openSans(),
                       controller: ctrlLoginPassword,
                       obscureText: loginpassword,
                       decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(8),
                           prefixIcon: Icon(Icons.password),
                           labelText: 'Password',
                           border: OutlineInputBorder(
@@ -226,21 +232,26 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                       onPressed: () async {
                         if (ctrlLoginEmail.text == "" ||
                             ctrlLoginPassword.text == "") {
-                          Fluttertoast.showToast(
-                            msg: "Masukan semua data terlebih dahulu",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.BOTTOM,
-                            backgroundColor: Colors.redAccent,
-                            textColor: Colors.white,
-                            fontSize: 16.0,
-                          );
+                          MotionToast(
+                            description:
+                                Text("Masukan semua data terlebih dahulu"),
+                            primaryColor: Colors.redAccent,
+                            secondaryColor: Colors.red[100],
+                            icon: Icons.error,
+                            enableAnimation: true,
+                            animationCurve: Curves.fastOutSlowIn,
+                            borderRadius: 25,
+                            title: Text("Gagal"),
+                            backgroundType: BACKGROUND_TYPE.transparent,
+                            animationDuration: Duration(microseconds: 50),
+                          ).show(context);
                         } else {
                           setState(() {
                             isLoading = true;
                           });
                           String result = await AuthServices.signIn(
                               ctrlLoginEmail.text, ctrlLoginPassword.text);
-                          if (result == result) {
+                          if (result == "success") {
                             Fluttertoast.showToast(
                               msg: "sukses",
                               toastLength: Toast.LENGTH_SHORT,
@@ -257,14 +268,18 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                               return MenuPage();
                             }));
                           } else {
-                            Fluttertoast.showToast(
-                              msg: result,
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.BOTTOM,
-                              backgroundColor: Colors.redAccent,
-                              textColor: Colors.white,
-                              fontSize: 16.0,
-                            );
+                            MotionToast(
+                              description: Text(result),
+                              primaryColor: Colors.redAccent,
+                              secondaryColor: Colors.red[100],
+                              icon: Icons.error,
+                              enableAnimation: true,
+                              animationCurve: Curves.fastOutSlowIn,
+                              borderRadius: 25,
+                              title: Text("Gagal"),
+                              backgroundType: BACKGROUND_TYPE.transparent,
+                              animationDuration: Duration(microseconds: 50),
+                            ).show(context);
                             setState(() {
                               isLoading = false;
                             });
@@ -278,12 +293,14 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                 SingleChildScrollView(
                   child: Column(
                     children: <Widget>[
-                      SizedBox(height: 10),
+                      SizedBox(height: 15),
                       SingleChildScrollView(
                           child: Column(children: <Widget>[
                         TextFormField(
+                          style: GoogleFonts.openSans(),
                           controller: ctrlName,
                           decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(8),
                               prefixIcon: Icon(Icons.person),
                               labelText: 'Nama',
                               hintText: "Tuliskan nama Anda",
@@ -291,8 +308,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)))),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 15),
                         TextFormField(
+                          style: GoogleFonts.openSans(),
                           onTap: () => usiapicker(context),
                           onChanged: (text) {
                             currentusia;
@@ -300,9 +318,10 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(2)
                           ],
-                          keyboardType: TextInputType.number,
+                          keyboardType: TextInputType.none,
                           controller: ctrlUsia,
                           decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(8),
                               prefixIcon: Icon(Icons.onetwothree),
                               labelText: 'Usia',
                               hintText: "Tuliskan usia Anda",
@@ -320,8 +339,9 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                             return null;
                           },
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 15),
                         TextFormField(
+                          style: GoogleFonts.openSans(),
                           onTap: () => jobpicker(context),
                           onChanged: (text) {
                             currentprofesi;
@@ -329,6 +349,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                           keyboardType: TextInputType.none,
                           controller: ctrlProfesi,
                           decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(8),
                               prefixIcon: Icon(Icons.business_center),
                               labelText: 'Profesi',
                               hintText: "Tuliskan usia Anda",
@@ -336,11 +357,13 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20)))),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 15),
                         TextFormField(
+                          style: GoogleFonts.openSans(),
                           keyboardType: TextInputType.emailAddress,
                           controller: ctrlEmail,
                           decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(8),
                               prefixIcon: Icon(Icons.email),
                               labelText: 'Email',
                               hintText: "Tuliskan email Anda",
@@ -359,16 +382,28 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                             return null;
                           },
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 15),
                         TextFormField(
+                          style: GoogleFonts.openSans(),
                           controller: ctrlPassword,
-                          obscureText: true,
+                          obscureText: regpassword,
                           decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(8),
                               prefixIcon: Icon(Icons.password),
                               labelText: 'Password',
                               border: OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(20)))),
+                                      BorderRadius.all(Radius.circular(20))),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    regpassword = !regpassword;
+                                  });
+                                },
+                                child: Icon(regpassword
+                                    ? Icons.visibility_off
+                                    : Icons.visibility),
+                              )),
                           validator: (String value) {
                             if (value.isEmpty) {
                               return 'Masukan Password';
@@ -376,16 +411,27 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                             return null;
                           },
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 15),
                         TextFormField(
+                          style: GoogleFonts.openSans(),
                           controller: ctrlconfirmPassword,
-                          obscureText: true,
                           decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(8),
                               prefixIcon: Icon(Icons.password),
                               labelText: 'Konfirmasi Password',
                               border: OutlineInputBorder(
                                   borderRadius:
-                                      BorderRadius.all(Radius.circular(20)))),
+                                      BorderRadius.all(Radius.circular(20))),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    regconfirmpassword = !regconfirmpassword;
+                                  });
+                                },
+                                child: Icon(regconfirmpassword
+                                    ? Icons.visibility_off
+                                    : Icons.visibility),
+                              )),
                           validator: (String value) {
                             if (value.isEmpty) {
                               return 'Please a Enter Password';
@@ -416,14 +462,18 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                               ctrlPassword.text == "" ||
                               ctrlUsia.text == "" ||
                               ctrlProfesi.text == "") {
-                            Fluttertoast.showToast(
-                              msg: "Mohon masukan semua data",
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.BOTTOM,
-                              backgroundColor: Colors.red,
-                              textColor: Colors.white,
-                              fontSize: 16.0,
-                            );
+                            MotionToast(
+                              description: Text("Isikan semua data"),
+                              primaryColor: Colors.redAccent,
+                              secondaryColor: Colors.red[100],
+                              icon: Icons.error,
+                              enableAnimation: true,
+                              animationCurve: Curves.fastOutSlowIn,
+                              borderRadius: 25,
+                              title: Text("Gagal"),
+                              backgroundType: BACKGROUND_TYPE.transparent,
+                              animationDuration: Duration(microseconds: 50),
+                            ).show(context);
                           } else {
                             setState(() {
                               isLoading = true;
@@ -452,14 +502,18 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                                 return WelcomePage();
                               }));
                             } else {
-                              Fluttertoast.showToast(
-                                msg: "Sudah terdaftar Silahkan Login",
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.BOTTOM,
-                                backgroundColor: Colors.red,
-                                textColor: Colors.white,
-                                fontSize: 16.0,
-                              );
+                            MotionToast(
+                              description: Text(result),
+                              primaryColor: Colors.redAccent,
+                              secondaryColor: Colors.red[100],
+                              icon: Icons.error,
+                              enableAnimation: true,
+                              animationCurve: Curves.fastOutSlowIn,
+                              borderRadius: 25,
+                              title: Text("Gagal"),
+                              backgroundType: BACKGROUND_TYPE.transparent,
+                              animationDuration: Duration(microseconds: 50),
+                            ).show(context);
                               setState(() {
                                 isLoading = false;
                                 clearForm();

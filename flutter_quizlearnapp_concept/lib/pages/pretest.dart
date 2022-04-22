@@ -54,10 +54,11 @@ class _PretestMulti1State extends State<PretestMulti1> {
                           stage: "Multi Round - Komputer Dasar",
                           round: 1,
                           roundscore: 0,
+                          stagemodel: 1,
                         )));
                 } else if (judulquiz == "Multi Round - Sistem Operasi") {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Tour2Screen(
+                    builder: (context) => Tour1Screen(
                           pertanyaan: tourstage121,
                           gamescore: 0,
                           totalbenar: 0,
@@ -67,10 +68,11 @@ class _PretestMulti1State extends State<PretestMulti1> {
                           stage: "Multi Round - Sistem Operasi",
                           round: 1,
                           roundscore: 0,
+                          stagemodel: 2,
                         )));
                 } else if (judulquiz == "Multi Round - True False Sistem Operasi") {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Tour3Screen(
+                    builder: (context) => Tour1Screen(
                           pertanyaan: tourstage311,
                           gamescore: 0,
                           totalbenar: 0,
@@ -80,6 +82,7 @@ class _PretestMulti1State extends State<PretestMulti1> {
                           stage: "Multi Round - True False Sistem Operasi",
                           round: 1,
                           roundscore: 0,
+                          stagemodel: 3,
                         )));
                 }
               },

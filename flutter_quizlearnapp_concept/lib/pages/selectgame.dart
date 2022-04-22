@@ -5,6 +5,32 @@ class SelectGamePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> judul = [
+      "Quiz Komputer Dasar",
+      "Quiz Sistem Operasi",
+      "True False Sistem Operasi"
+    ];
+    List<String> deskripsijudul = [
+      "3 Round seputar Komputer Dasar",
+      "3 Round seputar Sistem Operasi",
+      "3 Round Sistem Operasi dalam True False"
+    ];
+    List<String> juduldenganmode = [
+      "Multi Round - Komputer Dasar",
+      "Multi Round - Sistem Operasi",
+      "Multi Round - True False Sistem Operasi"
+    ];
+    List<String> deskripsi = [
+      "Uji Kemampuan Komputer Dasar dengan 3 Babak",
+      "Uji Kemampuan Sistem Operasi dengan 3 Babak",
+      "Uji Kemampuan True False Sistem Operasi dengan 3 Babak"
+    ];
+    List<List<Question>> tourstage = [tourstage111, tourstage121, tourstage311];
+    List<String> assetfolder = [
+      "assets/docs/GEKomnon_KomputerDasar.pdf",
+      "assets/docs/GEKomnon_SistemOperasi.pdf",
+      "assets/docs/GEKomnon_SistemOperasi.pdf"
+    ];
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
@@ -30,27 +56,19 @@ class SelectGamePage extends StatelessWidget {
                   thickness: 5,
                   endIndent: 100,
                 ),
-                ListMenuGameplay2(
-                    judul: "Quiz Komputer Dasar",
-                    deskripsijudul: "3 Round seputar Komputer Dasar",
-                    juduldenganmode: "Multi Round - Komputer Dasar",
-                    deskripsi: "Uji Kemampuan Komputer Dasar dengan 3 Babak",
-                    tourstage: tourstage111,
-                    assetfolder: "assets/docs/GEKomnon_KomputerDasar.pdf"),
-                ListMenuGameplay2(
-                    judul: "Quiz Sistem Operasi",
-                    deskripsijudul: "3 Round seputar Komputer Dasar",
-                    juduldenganmode: "Multi Round - Sistem Operasi",
-                    deskripsi: "Uji Kemampuan Sistem Operasi dengan 3 Babak",
-                    tourstage: tourstage121,
-                    assetfolder: "assets/docs/GEKomnon_SistemOperasi.pdf"),
-                ListMenuGameplay2(
-                    judul: "True False Sistem Operasi",
-                    deskripsijudul: "3 Round seputar Komputer Dasar",
-                    juduldenganmode: "Multi Round - True False Sistem Operasi",
-                    deskripsi: "Uji Kemampuan Sistem Operasi dengan 3 Babak",
-                    tourstage: tourstage311,
-                    assetfolder: "assets/docs/GEKomnon_SistemOperasi.pdf"),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: judul.length,
+                  itemBuilder: (context, index) {
+                    return ListMenuGameplay2(
+                        judul: judul[index],
+                        deskripsijudul: deskripsijudul[index],
+                        juduldenganmode: juduldenganmode[index],
+                        deskripsi: deskripsi[index],
+                        tourstage: tourstage[index],
+                        assetfolder: assetfolder[index]);
+                  },
+                ),
               ]),
         ),
       ),
@@ -63,6 +81,51 @@ class SelectGamePage2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> judul = [
+      "Komputer Dasar",
+      "Sistem Operasi",
+      "Keamanan Komputer",
+      "Microsoft Windows",
+      "Mac OS",
+      "True False Komputer Dasar",
+      "True False Windows"
+    ];
+    List<String> deskripsijudul = [
+      "Latihan Quiz Komputer Dasar",
+      "Latihan Quiz Sistem Operasi",
+      "Latihan Quiz Keamanan Komputer",
+      "Latihan Quiz Microsoft Windows",
+      "Latihan Quiz Mac OS",
+      "Latihan Quiz Komputer Dasar dalam True False",
+      "Latihan Quiz Windows dalam True False",
+    ];
+    List<String> juduldenganmode = [
+      "Single Round - Komputer Dasar",
+      "Single Round - Sistem Operasi",
+      "Single Round - Keamanan Komputer",
+      "Single Round - Microsoft Windows",
+      "Single Round - Mac OS",
+      "True False - Komputer Dasar",
+      "True False - Windows",
+    ];
+    List<String> deskripsi = [
+      "Tentang Komputer Dasar mengenai komponen komputer serta definisi dasar tentang komputer",
+      "Tentang Sistem Operasi mengenai OS-OS jenis serta contohnya",
+      "Tentang Keamanan Komputer seperti Virus dan sejenisnya",
+      "Seputar Microsoft Windows dan hal yang perlu diketahui tentang Microsoft Windows",
+      "Seputar Mac OS dan hal yang perlu diketahui tentang Mac OS",
+      "Latihan Quiz Komputer Dasar dalam True False",
+      "Latihan Quiz Windows dalam True False",
+    ];
+    List<List<Question>> tourstage = [
+      tourstage111,
+      tourstage121,
+      tourstage122,
+      tourstage221,
+      tourstage222,
+      tourstage311,
+      tourstage321,
+    ];
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
@@ -88,54 +151,19 @@ class SelectGamePage2 extends StatelessWidget {
                   thickness: 5,
                   endIndent: 100,
                 ),
-                ListMenuGameplay1(
-                    judul: "Komputer Dasar",
-                    deskripsijudul: "Latihan Quiz Komputer Dasar",
-                    juduldenganmode: "Single Round - Komputer Dasar",
-                    deskripsi:
-                        "Tentang Komputer Dasar mengenai komponen komputer serta definisi dasar tentang komputer",
-                    tourstage: tourstage111),
-                ListMenuGameplay1(
-                    judul: "Sistem Operasi",
-                    deskripsijudul: "Latihan Quiz Sistem Operasi",
-                    juduldenganmode: "Single Round - Sistem Operasi",
-                    deskripsi:
-                        "Tentang Sistem Operasi mengenai OS-OS jenis serta contohnya",
-                    tourstage: tourstage121),
-                ListMenuGameplay1(
-                    judul: "Keamanan Komputer",
-                    deskripsijudul: "Latihan Quiz Keamanan Komputer",
-                    juduldenganmode: "Single Round - Keamanan Komputer",
-                    deskripsi:
-                        "Tentang Keamanan Komputer seperti Virus dan sejenisnya",
-                    tourstage: tourstage122),
-                ListMenuGameplay1(
-                    judul: "Microsoft Windows",
-                    deskripsijudul: "Latihan Quiz Microsoft Windows",
-                    juduldenganmode: "Single Round - Microsoft Windows",
-                    deskripsi:
-                        "Seputar Microsoft Windows dan hal yang perlu diketahui tentang Microsoft Windows",
-                    tourstage: tourstage221),
-                ListMenuGameplay1(
-                    judul: "Mac OS",
-                    deskripsijudul: "Latihan Quiz Mac OS",
-                    juduldenganmode: "Single Round - Mac OS",
-                    deskripsi:
-                        "Seputar Mac OS dan hal yang perlu diketahui tentang Mac OS",
-                    tourstage: tourstage222),
-                ListMenuGameplay1(
-                    judul: "True False Komputer Dasar",
-                    deskripsijudul:
-                        "Latihan Quiz Komputer Dasar dalam True False",
-                    juduldenganmode: "True False - Mac OS",
-                    deskripsi: "True False seputar Komputer Dasar",
-                    tourstage: tourstage311),
-                ListMenuGameplay1(
-                    judul: "True False Windows ",
-                    deskripsijudul: "Latihan Quiz Windows dalam True False",
-                    juduldenganmode: "True False - Windows",
-                    deskripsi: "True False seputar Windows",
-                    tourstage: tourstage321),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: judul.length,
+                  itemBuilder: (context, index) {
+                    return ListMenuGameplay1(
+                      judul: judul[index],
+                      deskripsijudul: deskripsijudul[index],
+                      juduldenganmode: juduldenganmode[index],
+                      deskripsi: deskripsi[index],
+                      tourstage: tourstage[index],
+                    );
+                  },
+                ),
               ]),
         ),
       ),

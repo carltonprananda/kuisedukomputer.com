@@ -21,36 +21,12 @@ class MateriKomputerPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-            child: PdfViewPinch(
-            
+            child: PdfViewPinch(          
             controller: pdfPinchController,
           ),
           )
         ],
       ),
     );
-  }
-}
-
-class IstilahKomputerPage extends StatelessWidget {
-  const IstilahKomputerPage({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
-  }
-}
-
-class MateriIstilahPage extends StatefulWidget {
-  const MateriIstilahPage({Key key}) : super(key: key);
-
-  @override
-  State<MateriIstilahPage> createState() => _MateriIstilahPageState();
-}
-
-class _MateriIstilahPageState extends State<MateriIstilahPage> with SingleTickerProviderStateMixin{
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

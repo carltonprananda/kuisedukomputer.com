@@ -39,7 +39,7 @@ class ListMenuGameplay1 extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context, true);
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => GameplayScreen(
+                            builder: (context) => Tour1Screen(
                                   pertanyaan: tourstage,
                                   gamescore: 0,
                                   totalbenar: 0,
@@ -47,6 +47,9 @@ class ListMenuGameplay1 extends StatelessWidget {
                                   qindex: 0,
                                   timerplus: 0,
                                   stage: juduldenganmode,
+                                  roundscore: 0,
+                                  round: 0,
+                                  stagemodel: 0,
                                 )));
                       },
                       icon: Icon(Icons.play_arrow),
@@ -93,7 +96,7 @@ class ListMenuGameplay1 extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/images/monitor1.jpg'),
+                image: AssetImage('assets/images/laptop1.jpg'),
               ),
             ),
             child: Stack(children: [
@@ -203,12 +206,13 @@ class ListMenuGameplay2 extends StatelessWidget {
                                     round: 1,
                                     roundscore: 0,
                                     stage: juduldenganmode,
+                                    stagemodel: 1,
                                   )));
                         } else if (juduldenganmode ==
                             "Multi Round - Sistem Operasi") {
                                print("test2");
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Tour2Screen(
+                              builder: (context) => Tour1Screen(
                                     pertanyaan: tourstage,
                                     gamescore: 0,
                                     totalbenar: 0,
@@ -218,12 +222,13 @@ class ListMenuGameplay2 extends StatelessWidget {
                                     round: 1,
                                     roundscore: 0,
                                     stage: juduldenganmode,
+                                    stagemodel: 2,
                                   )));
                         }else if (juduldenganmode ==
                             "Multi Round - True False Sistem Operasi") {
                                print("test3");
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Tour3Screen(
+                              builder: (context) => Tour1Screen(
                                     pertanyaan: tourstage,
                                     gamescore: 0,
                                     totalbenar: 0,
@@ -233,6 +238,7 @@ class ListMenuGameplay2 extends StatelessWidget {
                                     round: 1,
                                     roundscore: 0,
                                     stage: juduldenganmode,
+                                    stagemodel: 3,
                                   )));
                         }
                       },

@@ -14,10 +14,12 @@ class HighScoreTile extends StatelessWidget {
         color: Colors.transparent,
         shadowColor: Colors.lightBlueAccent.shade100,
         child: ListTile(
-          title: Text(highScore.username, style: GoogleFonts.openSans(fontSize: 16, color: Colors.white)),
+          title: Text(highScore.username,
+              style: GoogleFonts.openSans(fontSize: 16, color: Colors.white)),
           trailing: Text(
             highScore.roundscore.toString(),
-            style: GoogleFonts.openSans(fontSize: 14, color: Colors.white, fontWeight: FontWeight.bold),
+            style: GoogleFonts.openSans(
+                fontSize: 14, color: Colors.white, fontWeight: FontWeight.bold),
           ),
           subtitle: Text(
             highScore.mode,
@@ -78,7 +80,10 @@ class ProfileScoreTile extends StatelessWidget {
                             ),
                           ),
                         ],
-                        title: Text("Detail Data", textAlign: TextAlign.center,),
+                        title: Text(
+                          "Detail Data",
+                          textAlign: TextAlign.center,
+                        ),
                         content: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,16 +99,27 @@ class ProfileScoreTile extends StatelessWidget {
                             ListTile(
                               title: Text("Babak yang dimainkan"),
                               subtitle: Text(highScore.mode),
+                            ),
+                            ListTile(
+                              title: Text("Rating Penilaian"),
+                              subtitle: Text(highScore.ratingquiz.toString()),
+                            ),
+                            ListTile(
+                              title: Text("Rating Kepahaman"),
+                              subtitle: Text(highScore.ratingkepahaman.toString()),
                             )
                           ],
                         ),
                       ));
                 },
                 pageBuilder: (context, an1, an2) {});
-            
           },
           isThreeLine: false,
-          title: Text(highScore.mode, style: GoogleFonts.openSans(fontSize: 16, color: Colors.blueAccent, fontWeight: FontWeight.bold)),
+          title: Text(highScore.mode,
+              style: GoogleFonts.openSans(
+                  fontSize: 16,
+                  color: Colors.blueAccent,
+                  fontWeight: FontWeight.bold)),
           trailing: Text(
             highScore.score.toString(),
             style: GoogleFonts.openSans(fontSize: 14, color: Colors.blueAccent),
@@ -113,7 +129,8 @@ class ProfileScoreTile extends StatelessWidget {
               Icon(Icons.star),
               Text(
                 highScore.ratingquiz.toString(),
-                style: GoogleFonts.openSans(fontSize: 12, color: Colors.blueAccent),
+                style: GoogleFonts.openSans(
+                    fontSize: 12, color: Colors.blueAccent),
               ),
             ],
           ),

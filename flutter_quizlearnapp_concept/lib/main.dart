@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter_quizlearnapp_concept/pages/pages.dart';
 
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           themeMode: ThemeMode.system,
           darkTheme: ThemeData(brightness: Brightness.dark),
-          title: 'Kuis Komputer',
+          title: 'Kuis Edukasi Komputer',
           home: MenuPage(),
         );
       });

@@ -8,7 +8,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  String name, email, firstnl;
+  String name, email, firstnl, usia, profesi;
   User auth = FirebaseAuth.instance.currentUser;
   CollectionReference<Map<String, dynamic>> userCollection =
       FirebaseFirestore.instance.collection("users");
@@ -23,6 +23,8 @@ class _ProfilePageState extends State<ProfilePage> {
       name = event.data()['name'];
       email = event.data()['email'];
       firstnl = name.substring(0, 1);
+      usia = event.data()['usia'];
+      profesi = event.data()['profesi'];
       setState(() {});
     });
   }
@@ -49,16 +51,67 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Column(
                         children: <Widget>[
                           Spacer(),
-                          CircleAvatar(
-                            backgroundColor: Colors.white,
-                            foregroundColor: Colors.black,
-                            radius: 25,
-                            child: Text(firstnl ?? '',
-                                style: GoogleFonts.notoSans(
-                                    fontSize:
-                                        MediaQuery.of(context).size.width *
-                                            0.05,
-                                    color: Colors.blue)),
+                          GestureDetector(
+                            onTap: () {
+                              showGeneralDialog(
+                                  barrierLabel: "Detail Profil",
+                                  barrierDismissible: true,
+                                  context: context,
+                                  barrierColor:
+                                      Colors.transparent.withOpacity(0.75),
+                                  transitionDuration:
+                                      Duration(milliseconds: 300),
+                                  transitionBuilder: (context, a1, a2, wi) {
+                                    return Transform.scale(
+                                        scale: a1.value,
+                                        child: AlertDialog(
+                                          title: Text(
+                                            "Profil",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 24),
+                                          ),
+                                          content: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(name ?? '',
+                                                    style:
+                                                        GoogleFonts.notoSans()),
+                                                ListTile(
+                                                  leading: Text("Usia",
+                                                      style: GoogleFonts
+                                                          .notoSans()),
+                                                  trailing: Text(usia ?? '',
+                                                      style: GoogleFonts
+                                                          .notoSans()),
+                                                ),
+                                                ListTile(
+                                                    leading: Text("Profesi",
+                                                        style: GoogleFonts
+                                                            .notoSans()),
+                                                    trailing: Text(
+                                                        profesi ?? '',
+                                                        style: GoogleFonts
+                                                            .notoSans())),
+                                              ]),
+                                        ));
+                                  },
+                                  pageBuilder: (context, an1, an2) {});
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
+                              radius: 25,
+                              child: Text(firstnl ?? '',
+                                  style: GoogleFonts.notoSans(
+                                      fontSize:
+                                          MediaQuery.of(context).size.width *
+                                              0.05,
+                                      color: Colors.blue)),
+                            ),
                           ),
                           Text(name ?? '',
                               style: GoogleFonts.notoSans(
@@ -80,7 +133,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             builder: (context) =>
                                                 MateriKomputerPage()));
                                   },
-                                  child: Text("Materi")),
+                                  child: Text("Materi",
+                                      style: GoogleFonts.notoSans())),
                               ElevatedButton(
                                   onPressed: () {
                                     showGeneralDialog(
@@ -98,15 +152,16 @@ class _ProfilePageState extends State<ProfilePage> {
                                                 title: Text(
                                                   "Konfirmasi",
                                                   textAlign: TextAlign.center,
-                                                  style: TextStyle(
+                                                  style: GoogleFonts.notoSans(
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontSize: 24),
                                                 ),
                                                 content: Text(
-                                                  "Apakah Anda ingin signout?",
-                                                  textAlign: TextAlign.center,
-                                                ),
+                                                    "Apakah Anda ingin signout?",
+                                                    textAlign: TextAlign.center,
+                                                    style:
+                                                        GoogleFonts.notoSans()),
                                                 actions: [
                                                   Column(
                                                     mainAxisAlignment:
@@ -121,7 +176,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                                             .styleFrom(
                                                           primary:
                                                               Colors.redAccent,
-                                                          textStyle: TextStyle(
+                                                          textStyle: GoogleFonts
+                                                              .notoSans(
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                           ),
@@ -160,6 +216,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                                         child: Text("Ya"),
                                                       ),
                                                       ElevatedButton(
+                                                        style: ElevatedButton
+                                                            .styleFrom(
+                                                          textStyle: GoogleFonts
+                                                              .notoSans(),
+                                                        ),
                                                         child: Text("Tidak"),
                                                         onPressed: () {
                                                           Navigator.pop(
@@ -173,7 +234,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                         },
                                         pageBuilder: (context, an1, an2) {});
                                   },
-                                  child: Text("Signout"))
+                                  child: Text("Signout",
+                                      style: GoogleFonts.notoSans()))
                             ],
                           )
                         ],
@@ -192,32 +254,36 @@ class _ProfilePageState extends State<ProfilePage> {
                           Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              CircleAvatar(
-                                backgroundColor: Colors.white,
-                                foregroundColor: Colors.black,
-                                radius: 20,
-                                child: Text(firstnl ?? '',
-                                    style: GoogleFonts.notoSans(
-                                        fontSize:
-                                            MediaQuery.of(context).size.width *
-                                                0.02,
-                                        color: Colors.blue)),
+                              GestureDetector(
+                                //onTap: ,
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  foregroundColor: Colors.black,
+                                  radius: 20,
+                                  child: Text(firstnl ?? '',
+                                      style: GoogleFonts.notoSans(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.02,
+                                          color: Colors.blue)),
+                                ),
                               ),
-                              Column(
-                                children: [
+                              Column(children: [
                                 Text(name ?? '',
                                     style: GoogleFonts.notoSans(
                                         fontSize:
                                             MediaQuery.of(context).size.width *
                                                 0.015,
-                                        color: Colors.white), textAlign: TextAlign.start),
-                                
+                                        color: Colors.white),
+                                    textAlign: TextAlign.start),
                                 Text(email ?? '',
                                     style: GoogleFonts.notoSans(
                                         fontSize:
                                             MediaQuery.of(context).size.width *
                                                 0.015,
-                                        color: Colors.white), textAlign: TextAlign.start),
+                                        color: Colors.white),
+                                    textAlign: TextAlign.start),
                               ])
                             ],
                           ),
@@ -231,7 +297,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                             builder: (context) =>
                                                 MateriKomputerPage()));
                                   },
-                                  child: Text("Materi")),
+                                  child: Text("Materi",
+                                      style: GoogleFonts.notoSans())),
                               ElevatedButton(
                                   onPressed: () {
                                     showGeneralDialog(

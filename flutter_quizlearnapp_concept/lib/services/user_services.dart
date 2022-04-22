@@ -17,4 +17,18 @@ class UserServices {
       'profesi' : users.profesi
     });
   }
+  
+  static Future<bool> editProduct(Users users) async {
+    await Firebase.initializeApp();
+
+    await userCollection.doc(users.uid).update(
+      {
+        'name': users.name,
+        'usia': users.usia,
+        'profesi': users.profesi
+      },
+    );
+
+    return true;
+  }
 }

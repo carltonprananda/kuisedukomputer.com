@@ -8,7 +8,7 @@ class AuthServices {
   final CollectionReference users = firestore.collection('users');
 
   static Future<String> signUp(String email, String password, String name,
-    String usia, String profesi) async {
+      String usia, String profesi) async {
     await Firebase.initializeApp();
     String msg = "";
     try {
@@ -36,7 +36,26 @@ class AuthServices {
             () => msg = "success",
           );
     } catch (e) {
-      msg = e.toString();
+      print(e.code);
+      switch (e.code) {
+        case "invalid-email":
+          msg = "Email invalid";
+          return msg;
+        case "wrong-password":
+          msg = "Password Anda Salah";
+          return msg;
+        case "user-not-found":
+          msg = "User tidak ditemukan";
+          return msg;
+        case "user-disabled":
+          msg = "User telah didisable";
+          return msg;
+        case "operation-not-allowed":
+          msg = "Terlalu banyak permintaan, mohon mencoba lagi";
+          return msg;
+        default:
+          msg = "Masalah tidak diketaui";
+      }
     }
     return msg;
   }
@@ -51,7 +70,7 @@ class AuthServices {
   }
 
   static Future<User> getCurrentUser() async {
-	    User user = auth.currentUser;
-	    return user;
-	  }
+    User user = auth.currentUser;
+    return user;
+  }
 }

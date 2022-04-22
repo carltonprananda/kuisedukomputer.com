@@ -35,7 +35,7 @@ class _WelcomePageState extends State<WelcomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-                "Selamat Datang di Game Kuis Edukasi Komputer berbasis Flutter",
+                "Selamat Datang di Game Edukasi Komputer",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
             ListView(
@@ -216,83 +216,6 @@ class _FirstPageState extends State<FirstPage> {
           ),
         ),
       ),
-
-      /*Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-              width: double.infinity,
-              height: 10.h,
-              child: Container(
-                color: Colors.blueAccent,
-                child: Center(
-                  child: AnimatedTextKit(
-                    isRepeatingAnimation: true,
-                    animatedTexts: [
-                      ColorizeAnimatedText(
-                          "Kuis Edukasi Komputer berbasis Flutter"
-                              .toUpperCase(),
-                          colors: [Colors.white54, Colors.white70],
-                          textStyle: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 16),
-                          textAlign: TextAlign.center),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-            ListView(
-              shrinkWrap: true,
-              padding: EdgeInsets.all(10),
-              children: <Widget>[
-                ListTile(
-                    isThreeLine: true,
-                    subtitle: Text(
-                        "Pilih salah satu dari 2 Mode Uji Kemampuan Kepahaman Anda tentang Komputer"),
-                    title: Text("Two Quiz Mode",
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    leading: Icon(
-                      Icons.list,
-                      color: Colors.blueAccent,
-                    )),
-                ListTile(
-                    isThreeLine: true,
-                    subtitle: Text(
-                        "Nilai hasil penilaian dan Ukur Kepahaman Anda dalam komputer"),
-                    title: Text("Rating Nilai dan Rating Kepahaman",
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    leading: Icon(
-                      Icons.star,
-                      color: Colors.yellowAccent,
-                    )),
-                ListTile(
-                    isThreeLine: true,
-                    subtitle: Text(
-                        "Baca Materi Quiz tentang Komputer dan terkait Komputer"),
-                    title: Text("Materi Quiz tentang Komputer",
-                        style: TextStyle(fontWeight: FontWeight.bold)),
-                    leading: Icon(
-                      Icons.menu_book,
-                      color: Colors.orangeAccent,
-                    )),
-              ],
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) {
-                    return LoginRegisterPage();
-                  }));
-                },
-                child: SizedBox(
-                    width: double.infinity,
-                    child: Text("Masuk",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.permanentMarker(fontSize: 20)))),
-          ],
-        ),
-      ), */
     );
   }
 }

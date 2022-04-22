@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
-class GameplayScreen extends StatefulWidget {
-  GameplayScreen(
+class Tour1Screen extends StatefulWidget {
+  const Tour1Screen(
       {Key key,
       this.pertanyaan,
       this.gamescore,
@@ -9,8 +9,11 @@ class GameplayScreen extends StatefulWidget {
       this.totalsalah,
       this.timerplus,
       this.qindex,
+      this.stage,
+      this.round,
       this.user,
-      this.stage})
+      this.roundscore,
+      this.stagemodel})
       : super(key: key);
 
   final List<Question> pertanyaan;
@@ -19,34 +22,44 @@ class GameplayScreen extends StatefulWidget {
   final int totalsalah;
   final int timerplus;
   final int qindex;
-  final String user;
   final String stage;
+  final int stagemodel;
+  final int round;
+  final String user;
+  final int roundscore;
   @override
-  _GameplayScreenState createState() => _GameplayScreenState();
+  _Tour1ScreenState createState() => _Tour1ScreenState();
 }
 
-class _GameplayScreenState extends State<GameplayScreen> {
-  List<Question> _pertanyaan = questiontype1;
+class _Tour1ScreenState extends State<Tour1Screen> {
+  List<Question> _pertanyaan = tourstage111;
   int _totaltime;
-  int _countdowntimer;
   Timer _timerplus;
-  Timer _timerminus;
   static int _gamescore = 0;
+  static int _roundscore = 0;
   static int _totalbenar = 0;
   static int _totalsalah = 0;
   static int questionindex = 0;
-  static var questionrandom = List<int>.generate(questiontype1.length, (i) => i)
+  static int roundjawabanbenar = 10;
+  static var questionrandom = List<int>.generate(tourstage111.length, (i) => i)
     ..shuffle();
-  static var questionrandomtake = questionrandom.take(15);
+  static var questionrandomtake = questionrandom.take(tourstage111.length);
   final soundbenar = AudioCache();
-  String stage;
+  static String stage;
+  static int _stagemodel;
+  List<Color> warnamode = [
+    Colors.greenAccent.shade700,
+    Colors.greenAccent.shade400
+  ];
 
   String myanswer = '';
   @override
   void initState() {
     super.initState();
+    _pertanyaan = widget.pertanyaan;
+    questionrandom = List<int>.generate(_pertanyaan.length, (i) => i)
+      ..shuffle();
     _totaltime = widget.timerplus;
-
     _timerplus = Timer.periodic(Duration(seconds: 1), (timer) {
       print(_totaltime);
       setState(() {
@@ -60,89 +73,217 @@ class _GameplayScreenState extends State<GameplayScreen> {
   void dispose() {
     _timerplus.cancel();
     _gamescore = 0;
+    _roundscore = 0;
     _totalbenar = 0;
     _totalsalah = 0;
-    questionindex = 0;
     super.dispose();
   }
 
   void toResultgame(BuildContext context) {
-    Navigator.of(context).pushReplacement(
-      MaterialPageRoute(
-        builder: (context) => ResultGame(
-          jawabanbenar: _totalbenar,
-          jawabansalah: _totalsalah,
-          score: _gamescore,
-          answertime: _totaltime,
-          mode: stage,
-          pertanyaan: widget.pertanyaan,
-          stage: 0,
+    print(widget.stage);
+    print("stage model" + widget.stagemodel.toString());
+    if (_stagemodel == 0) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => ResultTour(
+            jawabanbenar: _totalbenar,
+            jawabansalah: _totalsalah,
+            score: _gamescore,
+            answertime: _totaltime,
+            stage: widget.round,
+            mode: widget.stage,
+            roundscore: _roundscore,
+            stagemodel: 0,
+            pertanyaan: widget.pertanyaan,
+          ),
         ),
-      ),
-    );
+      );
+    }
+    if (_stagemodel == 1) {
+      if (widget.round == 1) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => new ResultTour(
+              jawabanbenar: _totalbenar,
+              jawabansalah: _totalsalah,
+              score: _gamescore,
+              answertime: _totaltime,
+              stage: widget.round,
+              mode: widget.stage,
+              roundscore: _roundscore,
+              stagemodel: 1,
+              pertanyaan: widget.pertanyaan,
+            ),
+          ),
+        );
+      }
+      if (widget.round == 2) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => new ResultTour(
+              jawabanbenar: _totalbenar,
+              jawabansalah: _totalsalah,
+              score: _gamescore,
+              answertime: _totaltime,
+              stage: widget.round,
+              mode: stage,
+              roundscore: _roundscore,
+              stagemodel: 1,
+              pertanyaan: widget.pertanyaan,
+            ),
+          ),
+        );
+      }
+      if (widget.round == 3) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => new ResultTour(
+              jawabanbenar: _totalbenar,
+              jawabansalah: _totalsalah,
+              score: _gamescore,
+              answertime: _totaltime,
+              stage: widget.round,
+              mode: widget.stage,
+              roundscore: _roundscore,
+              stagemodel: 1,
+              pertanyaan: widget.pertanyaan,
+            ),
+          ),
+        );
+      }
+    }
+    if (_stagemodel == 2) {
+      if (widget.round == 1) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => new ResultTour(
+              jawabanbenar: _totalbenar,
+              jawabansalah: _totalsalah,
+              score: _gamescore,
+              answertime: _totaltime,
+              stage: widget.round,
+              mode: widget.stage,
+              roundscore: _roundscore,
+              stagemodel: 2,
+              pertanyaan: widget.pertanyaan,
+            ),
+          ),
+        );
+      }
+      if (widget.round == 2) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => new ResultTour(
+              jawabanbenar: _totalbenar,
+              jawabansalah: _totalsalah,
+              score: _gamescore,
+              answertime: _totaltime,
+              stage: widget.round,
+              mode: widget.stage,
+              roundscore: _roundscore,
+              stagemodel: 2,
+              pertanyaan: widget.pertanyaan,
+            ),
+          ),
+        );
+      }
+      if (widget.round == 3) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => new ResultTour(
+              jawabanbenar: _totalbenar,
+              jawabansalah: _totalsalah,
+              score: _gamescore,
+              answertime: _totaltime,
+              stage: widget.round,
+              mode: widget.stage,
+              roundscore: _roundscore,
+              stagemodel: 2,
+              pertanyaan: widget.pertanyaan,
+            ),
+          ),
+        );
+      }
+    }
+    if (_stagemodel == 3) {
+      if (widget.round == 1) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => new ResultTour(
+              jawabanbenar: _totalbenar,
+              jawabansalah: _totalsalah,
+              score: _gamescore,
+              answertime: _totaltime,
+              stage: widget.round,
+              mode: widget.stage,
+              roundscore: _roundscore,
+              stagemodel: 3,
+              pertanyaan: widget.pertanyaan,
+            ),
+          ),
+        );
+      }
+      if (widget.round == 2) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => new ResultTour(
+              jawabanbenar: _totalbenar,
+              jawabansalah: _totalsalah,
+              score: _gamescore,
+              answertime: _totaltime,
+              stage: widget.round,
+              mode: widget.stage,
+              roundscore: _roundscore,
+              stagemodel: 3,
+              pertanyaan: widget.pertanyaan,
+            ),
+          ),
+        );
+      }
+      if (widget.round == 3) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => new ResultTour(
+              jawabanbenar: _totalbenar,
+              jawabansalah: _totalsalah,
+              score: _gamescore,
+              answertime: _totaltime,
+              stage: widget.round,
+              mode: widget.stage,
+              roundscore: _roundscore,
+              stagemodel: 3,
+              pertanyaan: widget.pertanyaan,
+            ),
+          ),
+        );
+      }
+    }
   }
 
-  Future<bool> toMainmenu() {
-    deactivate();
+  void toMainmenu(BuildContext context) {
     dispose;
-    return Navigator.of(context).pushReplacement(
+    Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (context) => MenuPage()),
     );
-  }
-
-  Future<bool> dialogmenu() {
-    _timerplus.isActive == false;
-    _totaltime--;
-    return showGeneralDialog(
-        barrierDismissible: false,
-        context: context,
-        barrierColor: Colors.transparent.withOpacity(0.75),
-        transitionDuration: Duration(milliseconds: 300),
-        transitionBuilder: (context, a1, a2, wi) {
-          return Transform.scale(
-              scale: a1.value,
-              child: AlertDialog(
-                title: Text(
-                  "Pause",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                ),
-                actions: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.redAccent,
-                          textStyle: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        onPressed: () {
-                          toMainmenu();
-                        },
-                        child: Text("Kembali Ke Menu"),
-                      ),
-                      ElevatedButton(
-                        child: Text("Lanjut"),
-                        onPressed: () {
-                          Navigator.pop(context);
-                          _timerplus.isActive == true;
-                          _totaltime++;
-                        },
-                      )
-                    ],
-                  ),
-                ],
-              ));
-        },
-        pageBuilder: (context, an1, an2) {});
   }
 
   @override
   Widget build(BuildContext context) {
     stage = widget.stage;
+    _stagemodel = widget.stagemodel;
+    int _roundgame = widget.round;
+    int jumlahsoal = 10;
+
+    if (_roundgame == 1) {
+      jumlahsoal = 3;
+      roundjawabanbenar = 25;
+    } else {
+      jumlahsoal = 9;
+      roundjawabanbenar = 10;
+    }
+    if (_roundgame == 0) {
+      warnamode = [Colors.blueAccent.shade200, Colors.blueAccent.shade400];
+    }
     print(questionrandomtake);
     //final randomquestion = widget.pertanyaan.shuffle();
     final getQuestion = widget.pertanyaan[questionrandom[questionindex]];
@@ -152,15 +293,13 @@ class _GameplayScreenState extends State<GameplayScreen> {
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.lightBlueAccent.shade700, Colors.lightBlueAccent.shade400])),
+              colors: warnamode)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Text(
-            getQuestion.questiontitle, style: GoogleFonts.notoSans()
-          ),
+          title: Text(getQuestion.questiontitle, style: GoogleFonts.notoSans()),
           centerTitle: true,
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.transparent,
           foregroundColor: Colors.white,
           elevation: 0,
@@ -169,90 +308,27 @@ class _GameplayScreenState extends State<GameplayScreen> {
           padding: EdgeInsets.all(10.0),
           child: Column(
             children: <Widget>[
-              ScoreTile(questionindex: questionindex, timer: _totaltime, skor: _gamescore),
-              /*Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Container(
-                      color: Colors.lightBlueAccent,
-                      child: Padding(
-                        padding: EdgeInsets.all(2),
-                        child: Column(
-                          children: [
-                            Text("Waktu",
-                                style: GoogleFonts.notoSans(
-                                    fontWeight: FontWeight.bold)),
-                            ClipRRect(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              child: Container(
-                                color: Colors.blue,
-                                padding: EdgeInsets.all(10),
-                                width: double.infinity,
-                                child: Text(
-                                  _totaltime.toString(),
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      color: Colors.lightBlueAccent,
-                      child: Padding(
-                        padding: EdgeInsets.all(2),
-                        child: Column(
-                          children: [
-                            Text("Skor",
-                                style: GoogleFonts.notoSans(
-                                    fontWeight: FontWeight.bold)),
-                            ClipRRect(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              child: Container(
-                                color: Colors.blue,
-                                padding: EdgeInsets.all(10),
-                                width: double.infinity,
-                                child: Text(
-                                  "$_gamescore",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              */
-              /*
-              ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                child: LinearPercentIndicator(
-                  lineHeight: 20.0,
-                  animation: true,
-                  percent: (((questionindex + 1) * 100) / 1000),
-                  progressColor: Colors.blue,
-                  fillColor: Colors.lightBlue,
-                ),
-              ),
-              */
+              if (_stagemodel != 0) ...[
+                MultiScoreTile(
+                  timer: _totaltime,
+                  questionindex: questionindex,
+                  round: widget.round,
+                  roundskor: _gamescore,
+                  skor: widget.gamescore,
+                )
+              ] else ...[
+                ScoreTile(
+                  timer: _totaltime,
+                  questionindex: questionindex,
+                  skor: _gamescore,
+                )
+              ],
               QTile(pertanyaan: getQuestion.question),
               Expanded(
                 child: ListView.builder(
-                    shrinkWrap: true,
                     itemCount: getQuestion.listanswers.length,
                     itemBuilder: (context, index) {
-                      int jawabanbenar = 10;
+                      int jawabanbenar = roundjawabanbenar;
                       int jawabansalah = 0;
                       final jawaban = getQuestion.listanswers[index];
                       return ATile(
@@ -263,20 +339,33 @@ class _GameplayScreenState extends State<GameplayScreen> {
                             setState(() {
                               myanswer = jawaban;
                             });
-
-                            if (jawaban == getQuestion.questioncorrect) {
-                              soundbenar.play('audios/correct-answer.wav');
-                              _gamescore = _gamescore + jawabanbenar;
-                              _totalbenar++;
+                            if (_stagemodel != 0) {
+                              if (jawaban == getQuestion.questioncorrect) {
+                                soundbenar.play('audios/correct-answer.wav');
+                                _gamescore = _gamescore + jawabanbenar;
+                                _roundscore = _roundscore + jawabanbenar;
+                                _totalbenar++;
+                              } else {
+                                soundbenar.play('audios/sound-wrong.wav');
+                                _gamescore = _gamescore + jawabansalah;
+                                _roundscore = _roundscore + jawabansalah;
+                                _totalsalah++;
+                              }
                             } else {
-                              soundbenar.play('audios/sound-wrong.wav');
-                              _gamescore = _gamescore + jawabansalah;
-                              _totalsalah++;
+                              if (jawaban == getQuestion.questioncorrect) {
+                                soundbenar.play('audios/correct-answer.wav');
+                                _gamescore = _gamescore + jawabanbenar;
+                                _totalbenar++;
+                              } else {
+                                soundbenar.play('audios/sound-wrong.wav');
+                                _gamescore = _gamescore + jawabansalah;
+                                _totalsalah++;
+                              }
                             }
-                            Future.delayed(const Duration(milliseconds: 50),
+                            Future.delayed(const Duration(milliseconds: 150),
                                 () {
                               if (questionindex ==
-                                  9 /*widget.pertanyaan.length - 1*/) {
+                                  jumlahsoal /*widget.pertanyaan.length - 1*/) {
                                 soundbenar.play('audios/level-win.wav');
                                 toResultgame(context);
                                 _timerplus.cancel();
@@ -293,7 +382,7 @@ class _GameplayScreenState extends State<GameplayScreen> {
                             });
                           });
                     }),
-              ),
+              )
             ],
           ),
         ),
