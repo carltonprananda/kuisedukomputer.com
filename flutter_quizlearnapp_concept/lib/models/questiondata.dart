@@ -294,15 +294,15 @@ List<Question> tourstage121 = [
           'Data yang terbentuk atau dijalankan melalui sebuah sistem operasi di komputer'),
   Question(
       questionid: '17',
-      question: 'File adalah',
+      question: 'UI adalah',
       listanswers: [
-        'Data yang terbentuk atau dijalankan melalui sebuah sistem operasi di komputer',
-        'Aplikasi yang terbentuk atau dijalankan melalui sebuah sistem operasi di komputer',
+        'Tampilan pada Monitor',
+        'Tampilan yang menghubungkan pengguna dengan antarmuka sesuai dengan fungsinya',
         'Semua Benar'
       ],
       questiontitle: kategori[1],
       questioncorrect:
-          'Data yang terbentuk atau dijalankan melalui sebuah sistem operasi di komputer'),
+          'Tampilan yang menghubungkan pengguna dengan antarmuka sesuai dengan fungsinya'),
   Question(
       questionid: '18',
       question: 'Kernel adalah',
@@ -330,6 +330,36 @@ List<Question> tourstage121 = [
       listanswers: ['Windows Server', 'iOS', 'MacOS'],
       questiontitle: kategori[1],
       questioncorrect: 'Windows Server'),
+  Question(
+      questionid: '21',
+      question: 'Contoh Sistem Operasi Jaringan, Kecuali',
+      listanswers: ['Red Hat', 'Windows', 'CentOS Server'],
+      questiontitle: kategori[1],
+      questioncorrect: 'Windows Server'),
+  Question(
+      questionid: '22',
+      question: 'Jenis Sistem Operasi',
+      listanswers: ['Standalone', 'Multiuser', 'Multifunction'],
+      questiontitle: kategori[1],
+      questioncorrect: 'Standalone'),
+  Question(
+      questionid: '23',
+      question: 'Yang bukan merupakan Jenis Sistem Operasi',
+      listanswers: ['Standalone', 'Server', 'Private'],
+      questiontitle: kategori[1],
+      questioncorrect: 'Private'),
+  Question(
+      questionid: '24',
+      question: 'Yang bukan merupakan Jenis Sistem Operasi',
+      listanswers: ['Standalone', 'Server', 'Private'],
+      questiontitle: kategori[1],
+      questioncorrect: 'Private'),
+  Question(
+      questionid: '25',
+      question: 'Linux adalah Sistem Operasi yang berjenis',
+      listanswers: ['Standalone', 'Server', 'Live CD'],
+      questiontitle: kategori[1],
+      questioncorrect: 'SStandalone'),
 ];
 
 /* Tentang Keamanan Komputer untuk stage 2 pada Mode Pertama*/
@@ -495,6 +525,46 @@ List<Question> tourstage122 = [
       listanswers: ['Scanning', 'Hacking', 'Cracking'],
       questiontitle: kategori[2],
       questioncorrect: 'Scanning'),
+  Question(
+      questionid: '21',
+      question: 'Yang merupakan jenis bahaya keamanan Komputer',
+      listanswers: ['Scanning', 'Hacking', 'Login'],
+      questiontitle: kategori[2],
+      questioncorrect: 'Hacking'),
+  Question(
+      questionid: '22',
+      question:
+          'Metode yang digunakan dalam melakukan pembobolan password pengguna',
+      listanswers: ['Cracking', 'Hacking', 'Login'],
+      questiontitle: kategori[2],
+      questioncorrect: 'Cracking'),
+  Question(
+      questionid: '23',
+      question: 'Yang bukan merupakan aplikasi Antivirus',
+      listanswers: ['Microsoft Office', 'Windows Defender', 'McAfee Antivirus'],
+      questiontitle: kategori[2],
+      questioncorrect: 'Microsoft Office'),
+  Question(
+      questionid: '24',
+      question: 'Spoofing adalah',
+      listanswers: [
+        'Pemalsuan alamat jaringan attacker sehingga sasaran menganggap alamat IP attacker adalah alamat IP dari host di dalam network',
+        'Pemalsuan alamat IP attacker sehingga sasaran menganggap alamat IP attacker adalah alamat IP dari host di dalam network bukan dari luar network.',
+        'Semua Benar'
+      ],
+      questiontitle: kategori[2],
+      questioncorrect:
+          'Pemalsuan alamat IP attacker sehingga sasaran menganggap alamat IP attacker adalah alamat IP dari host di dalam network bukan dari luar network.'),
+  Question(
+      questionid: '25',
+      question: 'Yang merupakan kemampuan Virus',
+      listanswers: [
+        'Mendapatkan Informasi',
+        'Mendapatkan Password',
+        'Mendapatkan Data'
+      ],
+      questiontitle: kategori[2],
+      questioncorrect: 'Mendapatkan Informasi'),
 ];
 
 /* Tentang Posttest Komputer dan Keamanan Komputer untuk stage 3 pada Mode Pertama*/
@@ -1117,6 +1187,40 @@ List<Question> tourstage221 = [
       listanswers: ['Word', 'Excel', 'Notepad'],
       questiontitle: kategori[3],
       questioncorrect: 'Notepad'),
+  Question(
+      questionid: '21',
+      question: 'Yang merupakan bagian dari Microsoft Office',
+      listanswers: ['Word', 'Paint', 'Notepad'],
+      questiontitle: kategori[3],
+      questioncorrect: 'Word'),
+  Question(
+      questionid: '22',
+      question:
+          'Aplikasi pra-install Windows yang digunakan untuk menulis catatan',
+      listanswers: ['Windows Media Player', 'Wordpad', 'Notepad'],
+      questiontitle: kategori[3],
+      questioncorrect: 'Notepad'),
+  Question(
+      questionid: '23',
+      question:
+          'Aplikasi pra-install Windows yang digunakan untuk berinternetan',
+      listanswers: ['Internet Explorer', 'Google Chrome', 'Firefox'],
+      questiontitle: kategori[3],
+      questioncorrect: 'Internet Explorer'),
+  Question(
+      questionid: '24',
+      question:
+          'Aplikasi pra-install Windows 10 dan Windows 11yang digunakan untuk berinternetan',
+      listanswers: ['Internet Explorer', 'Google Chrome', 'Microsoft Edge'],
+      questiontitle: kategori[3],
+      questioncorrect: 'Microsoft Edge'),
+  Question(
+      questionid: '25',
+      question:
+          'Aplikasi pra-install Windows 10 dan Windows 11yang digunakan untuk mendeteksi antivirus',
+      listanswers: ['Firewall', 'Windows Defender', 'Microsoft Edge'],
+      questiontitle: kategori[3],
+      questioncorrect: 'Windows Defender'),
 ];
 /* Tentang Sistem Operasi Mac OS untuk stage 2 pada Mode Kedua*/
 List<Question> tourstage222 = [
@@ -1267,6 +1371,36 @@ List<Question> tourstage222 = [
       listanswers: ['Macbook', 'iPad', 'IPhone'],
       questiontitle: kategori[4],
       questioncorrect: 'Macbook'),
+  Question(
+      questionid: '21',
+      question: 'File Explorer di MacOS disebut',
+      listanswers: ['Finder', 'Terminal', 'Notes'],
+      questiontitle: kategori[4],
+      questioncorrect: 'Finder'),
+  Question(
+      questionid: '22',
+      question: 'Fitur Backup di MacOS disebut',
+      listanswers: ['Finder', 'Time Machine', 'Notes'],
+      questiontitle: kategori[4],
+      questioncorrect: 'Time Machine'),
+  Question(
+      questionid: '23',
+      question: 'OS MacOS berbasis',
+      listanswers: ['Linux', 'Unix', 'Darwin'],
+      questiontitle: kategori[4],
+      questioncorrect: 'UNIX'),
+  Question(
+      questionid: '24',
+      question: 'UNIX adalah',
+      listanswers: ['Kernel', 'GUI', 'Aplikasi'],
+      questiontitle: kategori[4],
+      questioncorrect: 'Kernel'),
+  Question(
+      questionid: '25',
+      question: 'UNIX adalah',
+      listanswers: ['Kernel', 'GUI', 'Aplikasi'],
+      questiontitle: kategori[4],
+      questioncorrect: 'Kernel'),
 ];
 /* Tentang Sistem Operasi Windows dan Mac OS untuk stage 2 pada Mode Ketiga*/
 List<Question> tourstage223 = [

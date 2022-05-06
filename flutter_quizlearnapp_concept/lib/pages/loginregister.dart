@@ -145,8 +145,7 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                 child: AnimatedTextKit(
                   isRepeatingAnimation: true,
                   animatedTexts: [
-                    ColorizeAnimatedText(
-                        "Kuis Edukasi Komputer".toUpperCase(),
+                    ColorizeAnimatedText("Kuis Edukasi Komputer".toUpperCase(),
                         colors: [Colors.white54, Colors.white70],
                         textStyle: GoogleFonts.openSans(
                             fontWeight: FontWeight.bold, fontSize: 16),
@@ -502,18 +501,18 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                                 return WelcomePage();
                               }));
                             } else {
-                            MotionToast(
-                              description: Text(result),
-                              primaryColor: Colors.redAccent,
-                              secondaryColor: Colors.red[100],
-                              icon: Icons.error,
-                              enableAnimation: true,
-                              animationCurve: Curves.fastOutSlowIn,
-                              borderRadius: 25,
-                              title: Text("Gagal"),
-                              backgroundType: BACKGROUND_TYPE.transparent,
-                              animationDuration: Duration(microseconds: 50),
-                            ).show(context);
+                              MotionToast(
+                                description: Text(result),
+                                primaryColor: Colors.redAccent,
+                                secondaryColor: Colors.red[100],
+                                icon: Icons.error,
+                                enableAnimation: true,
+                                animationCurve: Curves.fastOutSlowIn,
+                                borderRadius: 25,
+                                title: Text("Gagal"),
+                                backgroundType: BACKGROUND_TYPE.transparent,
+                                animationDuration: Duration(microseconds: 50),
+                              ).show(context);
                               setState(() {
                                 isLoading = false;
                                 clearForm();

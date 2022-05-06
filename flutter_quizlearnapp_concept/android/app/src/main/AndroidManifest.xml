@@ -25,7 +25,7 @@
     </intent>
   </queries>
    <application
-        android:label="Quiz Edukasi Komputer"
+        android:label="Game Edukasi Komputer"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:exported="true"

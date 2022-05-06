@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "464131542735-16hp6ts9vejmt24ejtmcpvtihpv24726.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deanprananda.kuisedukomputer",
+            "certificate_hash": "6314be44633d07bc1b70b4e5f68f703646b0f0ee"
+          }
+        },
+        {
           "client_id": "464131542735-e7mhust5efllsnorgr67becgb0fe01qg.apps.googleusercontent.com",
           "client_type": 3
         }

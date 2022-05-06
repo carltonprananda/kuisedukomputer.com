@@ -36,7 +36,6 @@ class AuthServices {
             () => msg = "success",
           );
     } catch (e) {
-      print(e.code);
       switch (e.code) {
         case "invalid-email":
           msg = "Email invalid";

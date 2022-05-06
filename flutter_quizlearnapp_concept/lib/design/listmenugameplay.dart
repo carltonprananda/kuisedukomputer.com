@@ -1,5 +1,42 @@
 part of 'designs.dart';
 
+class JudulMode extends StatelessWidget {
+  const JudulMode(
+      {Key key,
+      this.mode,
+      this.deskripsimode,
+      this.imageasset,
+      this.warnagaris});
+  final String mode;
+  final String deskripsimode;
+  final String imageasset;
+  final Color warnagaris;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        ListTile(
+          title: Text(mode,
+              style: GoogleFonts.notoSans(
+                  fontSize: 18, fontWeight: FontWeight.bold)),
+          subtitle:
+              Text(deskripsimode, style: GoogleFonts.notoSans(fontSize: 14)),
+          trailing: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(imageasset),
+          ),
+        ),
+        Divider(
+          color: warnagaris,
+          thickness: 5,
+          endIndent: 100,
+        ),
+      ],
+    );
+  }
+}
+
 class ListMenuGameplay1 extends StatelessWidget {
   const ListMenuGameplay1(
       {Key key,
@@ -88,6 +125,12 @@ class ListMenuGameplay1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height * 0.09;
+    if (kIsWeb == true) {
+      height = MediaQuery.of(context).size.height * 0.10;
+    } else {
+      height = MediaQuery.of(context).size.height * 0.09;
+    }
     return InkWell(
         onTap: () => showgamedialog(context),
         child: Card(
@@ -96,12 +139,13 @@ class ListMenuGameplay1 extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/images/laptop1.jpg'),
+                image: NetworkImage(
+                    'https://cdn.pixabay.com/photo/2016/04/04/14/12/monitor-1307227_960_720.jpg'),
               ),
             ),
             child: Stack(children: [
               Container(
-                height: MediaQuery.of(context).size.height * 0.09,
+                height: height,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                   colors: [
@@ -210,7 +254,7 @@ class ListMenuGameplay2 extends StatelessWidget {
                                   )));
                         } else if (juduldenganmode ==
                             "Multi Round - Sistem Operasi") {
-                               print("test2");
+                          print("test2");
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => Tour1Screen(
                                     pertanyaan: tourstage,
@@ -224,9 +268,9 @@ class ListMenuGameplay2 extends StatelessWidget {
                                     stage: juduldenganmode,
                                     stagemodel: 2,
                                   )));
-                        }else if (juduldenganmode ==
+                        } else if (juduldenganmode ==
                             "Multi Round - True False Sistem Operasi") {
-                               print("test3");
+                          print("test3");
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => Tour1Screen(
                                     pertanyaan: tourstage,
@@ -288,6 +332,12 @@ class ListMenuGameplay2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height * 0.09;
+    if (kIsWeb == true) {
+      height = MediaQuery.of(context).size.height * 0.10;
+    } else {
+      height = MediaQuery.of(context).size.height * 0.09;
+    }
     return InkWell(
         onTap: () => showgamedialog(context),
         onLongPress: () {
@@ -303,12 +353,13 @@ class ListMenuGameplay2 extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/images/monitor1.jpg'),
+                image: NetworkImage(
+                    'https://cdn.pixabay.com/photo/2017/06/20/23/15/coffee-2425303_960_720.jpg'),
               ),
             ),
             child: Stack(children: [
               Container(
-                height: MediaQuery.of(context).size.height * 0.09,
+                height: height,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                   colors: [

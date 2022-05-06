@@ -10,7 +10,7 @@ class HighScoreServices {
 
   static Future<bool> addHighscore(HighScore highScore) async {
     await Firebase.initializeApp();
-    
+
     productDoc = await productCollection.add({
       'id': "",
       'score': highScore.score,
@@ -20,7 +20,7 @@ class HighScoreServices {
       'submitdate': highScore.submitdate,
       'round': highScore.round,
       'mode': highScore.mode,
-      'roundscore' : highScore.roundscore
+      'roundscore': highScore.roundscore
     });
 
     if (productDoc.id != null) {
@@ -34,12 +34,7 @@ class HighScoreServices {
     }
   }
 
-    static Future deleteProduct(String productID) async {
+  static Future deleteProduct(String productID) async {
     await productCollection.doc(productID).delete();
-    
-  }
-
-    static Future deleteProductuserall(String username) async {
-    await productCollection.doc(username).delete();
   }
 }

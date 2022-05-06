@@ -98,11 +98,12 @@ class ATile extends StatelessWidget {
   }
 
   List<Color> get gradasiwarnajawaban {
-    if (!dipilih)
+    if (!dipilih) {
       return [
         Colors.transparent.withOpacity(0.4),
         Colors.transparent.withOpacity(0.5)
       ];
+    }
     if (jawaban == jawabanbenar) {
       return [Colors.green.shade500, Colors.green.shade700];
     } else {

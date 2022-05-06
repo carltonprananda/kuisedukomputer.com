@@ -2,15 +2,12 @@ part of 'pages.dart';
 
 class MateriKomputerPage extends StatelessWidget {
   const MateriKomputerPage({Key key}) : super(key: key);
-  
 
   @override
-  
   Widget build(BuildContext context) {
     final pdfPinchController = PdfControllerPinch(
-  document: PdfDocument.openAsset('assets/docs/GEKomnon_KomputerDasar.pdf'),
-
-);
+      document: PdfDocument.openAsset('assets/docs/GEKomnon_KomputerDasar.pdf'),
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text("Materi Komputer"),
@@ -21,9 +18,9 @@ class MateriKomputerPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-            child: PdfViewPinch(          
-            controller: pdfPinchController,
-          ),
+            child: PdfViewPinch(
+              controller: pdfPinchController,
+            ),
           )
         ],
       ),

@@ -297,7 +297,8 @@ class _Tour1ScreenState extends State<Tour1Screen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text(getQuestion.questiontitle, style: GoogleFonts.notoSans()),
+          title: Text(getQuestion.questiontitle,
+              style: GoogleFonts.notoSans(fontWeight: FontWeight.bold)),
           centerTitle: true,
           automaticallyImplyLeading: false,
           backgroundColor: Colors.transparent,
@@ -308,21 +309,14 @@ class _Tour1ScreenState extends State<Tour1Screen> {
           padding: EdgeInsets.all(10.0),
           child: Column(
             children: <Widget>[
-              if (_stagemodel != 0) ...[
-                MultiScoreTile(
-                  timer: _totaltime,
-                  questionindex: questionindex,
-                  round: widget.round,
-                  roundskor: _gamescore,
-                  skor: widget.gamescore,
-                )
-              ] else ...[
-                ScoreTile(
-                  timer: _totaltime,
-                  questionindex: questionindex,
-                  skor: _gamescore,
-                )
-              ],
+              ScoreTile(
+                timer: _totaltime,
+                questionindex: questionindex,
+                round: widget.round,
+                roundskor: _gamescore,
+                skor: widget.gamescore,
+                stagemodel: widget.stagemodel,
+              ),
               QTile(pertanyaan: getQuestion.question),
               Expanded(
                 child: ListView.builder(

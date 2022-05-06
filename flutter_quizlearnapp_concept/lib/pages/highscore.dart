@@ -16,6 +16,7 @@ class _HighscorePageState extends State<HighscorePage> {
       FirebaseFirestore.instance.collection("highscores");
   Query<Map<String, dynamic>> productquery =
       FirebaseFirestore.instance.collection("highscores");
+  num ratingquiz, ratingkepahaman;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,9 @@ class _HighscorePageState extends State<HighscorePage> {
           ListTile(
             title: Text("Semua Data",
                 style: GoogleFonts.notoSans(
-                    fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white)),
             trailing: Padding(
               padding: const EdgeInsets.all(4.0),
               child: Image.asset('assets/pngs/contest-300x300.png'),
@@ -49,7 +52,9 @@ class _HighscorePageState extends State<HighscorePage> {
           ),
           Flexible(
               child: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-            stream: productquery.orderBy('roundscore', descending: true).snapshots(),
+            stream: productquery
+                .orderBy('roundscore', descending: true)
+                .snapshots(),
             builder: (BuildContext context,
                 AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
               if (snapshot.hasError) {
@@ -73,15 +78,15 @@ class _HighscorePageState extends State<HighscorePage> {
                       .map((DocumentSnapshot<Map<String, dynamic>> doc) {
                     return HighScoreTile(
                       highScore: HighScore(
-                        doc.data()['id'],
-                        doc.data()['score'],
-                        doc.data()['ratingquiz'],
-                        doc.data()['ratingkepahaman'],
-                        doc.data()['username'],
-                        doc.data()['submitdata'],
-                        doc.data()['round'],
-                        doc.data()['mode'],
-                        doc.data()['roundscore'],
+                          doc.data()['id'],
+                          doc.data()['score'],
+                          doc.data()[ratingquiz],
+                          doc.data()[ratingkepahaman],
+                          doc.data()['username'],
+                          doc.data()['submitdata'],
+                          doc.data()['round'],
+                          doc.data()['mode'],
+                          doc.data()['roundscore'],
                       ),
                     );
                   }).toList(),

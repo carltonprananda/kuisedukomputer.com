@@ -6,14 +6,11 @@ class PretestMulti1 extends StatefulWidget {
   final String assetfolder;
   final String judulquiz;
 
-
   @override
   State<PretestMulti1> createState() => _PretestMulti1State();
 }
 
-
 class _PretestMulti1State extends State<PretestMulti1> {
-  
   @override
   Widget build(BuildContext context) {
     String judulquiz = widget.judulquiz;
@@ -21,11 +18,12 @@ class _PretestMulti1State extends State<PretestMulti1> {
       if (widget.assetfolder != null) {
         return widget.assetfolder;
       } else {
-      return 'assets/docs/GEKomnon_KomputerDasar.pdf';
+        return 'assets/docs/GEKomnon_KomputerDasar.pdf';
       }
-      }
-      final pdfPinchController = PdfControllerPinch(
-  document: PdfDocument.openAsset(folderaset()));
+    }
+
+    final pdfPinchController =
+        PdfControllerPinch(document: PdfDocument.openAsset(folderaset()));
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -43,47 +41,48 @@ class _PretestMulti1State extends State<PretestMulti1> {
               icon: Icon(Icons.play_arrow),
               onPressed: () {
                 if (judulquiz == "Multi Round - Komputer Dasar") {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Tour1Screen(
-                          pertanyaan: tourstage111,
-                          gamescore: 0,
-                          totalbenar: 0,
-                          totalsalah: 0,
-                          qindex: 0,
-                          timerplus: 0,
-                          stage: "Multi Round - Komputer Dasar",
-                          round: 1,
-                          roundscore: 0,
-                          stagemodel: 1,
-                        )));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Tour1Screen(
+                            pertanyaan: tourstage111,
+                            gamescore: 0,
+                            totalbenar: 0,
+                            totalsalah: 0,
+                            qindex: 0,
+                            timerplus: 0,
+                            stage: "Multi Round - Komputer Dasar",
+                            round: 1,
+                            roundscore: 0,
+                            stagemodel: 1,
+                          )));
                 } else if (judulquiz == "Multi Round - Sistem Operasi") {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Tour1Screen(
-                          pertanyaan: tourstage121,
-                          gamescore: 0,
-                          totalbenar: 0,
-                          totalsalah: 0,
-                          qindex: 0,
-                          timerplus: 0,
-                          stage: "Multi Round - Sistem Operasi",
-                          round: 1,
-                          roundscore: 0,
-                          stagemodel: 2,
-                        )));
-                } else if (judulquiz == "Multi Round - True False Sistem Operasi") {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Tour1Screen(
-                          pertanyaan: tourstage311,
-                          gamescore: 0,
-                          totalbenar: 0,
-                          totalsalah: 0,
-                          qindex: 0,
-                          timerplus: 0,
-                          stage: "Multi Round - True False Sistem Operasi",
-                          round: 1,
-                          roundscore: 0,
-                          stagemodel: 3,
-                        )));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Tour1Screen(
+                            pertanyaan: tourstage121,
+                            gamescore: 0,
+                            totalbenar: 0,
+                            totalsalah: 0,
+                            qindex: 0,
+                            timerplus: 0,
+                            stage: "Multi Round - Sistem Operasi",
+                            round: 1,
+                            roundscore: 0,
+                            stagemodel: 2,
+                          )));
+                } else if (judulquiz ==
+                    "Multi Round - True False Sistem Operasi") {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Tour1Screen(
+                            pertanyaan: tourstage311,
+                            gamescore: 0,
+                            totalbenar: 0,
+                            totalsalah: 0,
+                            qindex: 0,
+                            timerplus: 0,
+                            stage: "Multi Round - True False Sistem Operasi",
+                            round: 1,
+                            roundscore: 0,
+                            stagemodel: 3,
+                          )));
                 }
               },
             ),

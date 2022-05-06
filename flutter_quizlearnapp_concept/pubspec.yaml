@@ -29,17 +29,18 @@ environment:
 dependencies:
   animated_text_kit: ^4.2.1
   audioplayers: ^0.20.1
-  cloud_firestore: ^3.1.12
+  cloud_firestore: ^3.1.13
   cupertino_icons: ^1.0.4
   equatable: ^2.0.3
-  firebase_auth: ^3.3.14
-  firebase_core: ^1.14.1
-  firebase_storage: ^10.2.9
+  firebase_auth: ^3.3.16
+  firebase_core: ^1.15.0
+  firebase_storage: ^10.2.13
   flutter:
     sdk: flutter
-  flutter_native_splash: ^2.1.5
+  flutter_native_splash: ^2.1.6
   flutter_rating_bar: ^4.0.0
   flutter_spinkit: ^5.1.0
+  flutter_svg: ^1.0.3
   flutter_typeahead: ^3.2.4
   fluttertoast: ^8.0.9
   google_fonts: ^2.3.1
@@ -48,9 +49,6 @@ dependencies:
   motion_toast: ^2.1.6
   pdfx: ^2.0.1+2
   percent_indicator: ^4.0.0
-  provider: ^6.0.2
-  rename: ^2.0.1
-  shared_preferences: ^2.0.13
   sizer: ^2.0.15
   sizer_mod: ^0.0.1
   url_launcher: ^6.0.20
@@ -169,18 +167,16 @@ flutter:
     - assets/audios/sound-wrong.wav
     - assets/audios/level-win.wav
     - assets/images/play_store_512.png
-    - assets/images/monitor1.jpg
-    - assets/images/laptop1.jpg
     - assets/pngs/category-300x300.png
     - assets/pngs/contest-300x300.png
     - assets/pngs/hierarchy-300x300.png
     - assets/pngs/computer-dynamic-color.png
     - assets/pngs/computer-dynamic-premium.png
-    - assets/pngs/undraw_messaging_fun_re_vic9.png
-    - assets/pngs/undraw_choose_re_7d5a.png
-    - assets/pngs/undraw_flowers_vx06.png
-    - assets/pngs/undraw_online_test_gba7.png
-    - assets/pngs/undraw_select_option_re_u4qn.png
+    - assets/svgs/undraw_messaging_fun_re_vic9.svg
+    - assets/svgs/undraw_choose_re_7d5a.svg
+    - assets/svgs/undraw_flowers_vx06.svg
+    - assets/svgs/undraw_online_test_gba7.svg
+    - assets/svgs/undraw_select_option_re_u4qn.svg
     - assets/pngs/icon_app.png
     - assets/pngs/icon_app_foreground.png
     - assets/docs/GEKomnon_KomputerDasar.pdf

@@ -11,7 +11,7 @@ class HighScore extends Equatable {
   final String mode;
   final int roundscore;
 
-  HighScore(this.id, this.score, this.ratingquiz, this.ratingkepahaman, this.username, this.submitdate, this.round, this.mode, this.roundscore);
+  const HighScore(this.id, this.score, this.ratingquiz, this.ratingkepahaman, this.username, this.submitdate, this.round, this.mode, this.roundscore);
 
     @override
   List<Object> get props => [id, score, ratingquiz, ratingkepahaman, username, submitdate, round, mode, roundscore];

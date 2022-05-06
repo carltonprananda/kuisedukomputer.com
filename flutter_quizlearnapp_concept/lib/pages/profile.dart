@@ -428,9 +428,10 @@ class _ProfilePageState extends State<ProfilePage> {
                   return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Image.asset(
-                            'assets/pngs/undraw_messaging_fun_re_vic9.png',
-                            scale: 4),
+                        SvgPicture.asset(
+                            'assets/svgs/undraw_messaging_fun_re_vic9.svg',
+                            height: MediaQuery.of(context).size.height * 0.1,
+                            width: MediaQuery.of(context).size.width * 0.1),
                         Text("Data belum ada"),
                         Text("Silahkan main quiz terlebih dahulu")
                       ]);

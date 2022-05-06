@@ -34,8 +34,7 @@ class _WelcomePageState extends State<WelcomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-                "Selamat Datang di Game Edukasi Komputer",
+            Text("Selamat Datang di Game Edukasi Komputer",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
             ListView(
@@ -79,7 +78,7 @@ class _WelcomePageState extends State<WelcomePage> {
                     leading: Icon(Icons.scoreboard, color: Colors.blueAccent)),
                 ListTile(
                     isThreeLine: true,
-                    subtitle: Text("Materi tentang Komputer seperti"),
+                    subtitle: Text("Materi PDF tentang Komputer seperti Komputer Dasar, Sistem Operasi dapat dipelajari sebelum bermain quiz"),
                     title: Text("Materi Quiz tentang Komputer",
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     leading: Icon(
@@ -116,16 +115,13 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
-  final GlobalKey<ScaffoldState> _globalKey = new GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
     final pages = [
       PageViewModel(
         image: Center(
-            child: Image.asset(
-          'assets/pngs/undraw_flowers_vx06.png',
-          scale: 0.25,
+            child: SvgPicture.asset(
+          'assets/svgs/undraw_flowers_vx06.svg',
         )),
         title: 'Selamat Datang di Game Edukasi Komputer Non-Linear',
         body:
@@ -138,9 +134,8 @@ class _FirstPageState extends State<FirstPage> {
       ),
       PageViewModel(
         image: Center(
-            child: Image.asset(
-          'assets/pngs/undraw_online_test_gba7.png',
-          scale: 0.25,
+            child: SvgPicture.asset(
+          'assets/svgs/undraw_online_test_gba7.svg',
         )),
         title: '2 Mode dalam 1 Game',
         body:
@@ -153,9 +148,8 @@ class _FirstPageState extends State<FirstPage> {
       ),
       PageViewModel(
         image: Center(
-            child: Image.asset(
-          'assets/pngs/undraw_choose_re_7d5a.png',
-          scale: 0.25,
+            child: SvgPicture.asset(
+          'assets/svgs/undraw_choose_re_7d5a.svg',
         )),
         title: 'Multi-round Mode',
         body:
@@ -168,9 +162,8 @@ class _FirstPageState extends State<FirstPage> {
       ),
       PageViewModel(
         image: Center(
-            child: Image.asset(
-          'assets/pngs/undraw_select_option_re_u4qn.png',
-          scale: 0.25,
+            child: SvgPicture.asset(
+          'assets/svgs/undraw_select_option_re_u4qn.svg',
         )),
         title: 'Pilih Stage sesuai minat',
         body: 'Pilih stage di dalam game ini sesuai dengan minat',
@@ -189,9 +182,9 @@ class _FirstPageState extends State<FirstPage> {
           child: IntroductionScreen(
             pages: pages,
             showSkipButton: true,
-            skip: Text("Lewat", style:GoogleFonts.notoSans()),
-            next: Text("Lanjut", style:GoogleFonts.notoSans()),
-            done: Text("Selesai", style:GoogleFonts.notoSans()),
+            skip: Text("Lewat", style: GoogleFonts.notoSans()),
+            next: Text("Lanjut", style: GoogleFonts.notoSans()),
+            done: Text("Selesai", style: GoogleFonts.notoSans()),
             isProgress: true,
             onSkip: () {
               Navigator.pushReplacement(context,

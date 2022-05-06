@@ -121,15 +121,18 @@ class _MenuPageState extends State<MenuPage> {
                 child: Column(
               children: <Widget>[
                 Text(name ?? '',
-                    style: GoogleFonts.openSans(fontSize: 12, color: Colors.white)),
+                    style: GoogleFonts.openSans(
+                        fontSize: 12, color: Colors.white)),
                 Text(email ?? '',
-                    style: GoogleFonts.openSans(fontSize: 12, color: Colors.white)),
+                    style: GoogleFonts.openSans(
+                        fontSize: 12, color: Colors.white)),
               ],
             )),
             ListTile(
               leading: Icon(Icons.info, color: Colors.white),
               title: Text("Tentang Game",
-                  style: GoogleFonts.openSans(fontSize: 12, color: Colors.white)),
+                  style:
+                      GoogleFonts.openSans(fontSize: 12, color: Colors.white)),
               onTap: () {
                 showGeneralDialog(
                     pageBuilder: (context, an1, an2) {},
@@ -165,7 +168,8 @@ class _MenuPageState extends State<MenuPage> {
               },
               leading: Icon(Icons.open_in_browser, color: Colors.white),
               title: Text("Survey tentang Game",
-                  style: GoogleFonts.openSans(fontSize: 12, color: Colors.white)),
+                  style:
+                      GoogleFonts.openSans(fontSize: 12, color: Colors.white)),
             ),
             ListTile(
               onTap: () {
@@ -190,12 +194,14 @@ class _MenuPageState extends State<MenuPage> {
               },
               leading: Icon(Icons.help_rounded, color: Colors.white),
               title: Text("Bantuan",
-                  style: GoogleFonts.openSans(fontSize: 12, color: Colors.white)),
+                  style:
+                      GoogleFonts.openSans(fontSize: 12, color: Colors.white)),
             ),
             ListTile(
               leading: Icon(Icons.logout, color: Colors.white),
               title: Text("Signout",
-                  style: GoogleFonts.openSans(fontSize: 12, color: Colors.white)),
+                  style:
+                      GoogleFonts.openSans(fontSize: 12, color: Colors.white)),
               onTap: () {
                 showGeneralDialog(
                     barrierDismissible: false,

@@ -1,7 +1,9 @@
 part of 'pages.dart';
 
 class SelectGamePage extends StatelessWidget {
-  const SelectGamePage({Key key}) : super(key: key);
+  const SelectGamePage({Key key, this.stagemode}) : super(key: key);
+
+  final int stagemode;
 
   @override
   Widget build(BuildContext context) {
@@ -31,57 +33,7 @@ class SelectGamePage extends StatelessWidget {
       "assets/docs/GEKomnon_SistemOperasi.pdf",
       "assets/docs/GEKomnon_SistemOperasi.pdf"
     ];
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView(
-        child: SizedBox(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                ListTile(
-                  title: Text("Multi Round",
-                      style: GoogleFonts.notoSans(
-                          fontSize: 18, fontWeight: FontWeight.bold)),
-                  subtitle: Text(
-                      "Uji kepahaman komputer dengan 3 babak yang berbeda",
-                      style: GoogleFonts.notoSans(fontSize: 14)),
-                  trailing: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/pngs/hierarchy-300x300.png'),
-                  ),
-                ),
-                Divider(
-                  color: Colors.greenAccent,
-                  thickness: 5,
-                  endIndent: 100,
-                ),
-                ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: judul.length,
-                  itemBuilder: (context, index) {
-                    return ListMenuGameplay2(
-                        judul: judul[index],
-                        deskripsijudul: deskripsijudul[index],
-                        juduldenganmode: juduldenganmode[index],
-                        deskripsi: deskripsi[index],
-                        tourstage: tourstage[index],
-                        assetfolder: assetfolder[index]);
-                  },
-                ),
-              ]),
-        ),
-      ),
-    );
-  }
-}
-
-class SelectGamePage2 extends StatelessWidget {
-  const SelectGamePage2({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    List<String> judul = [
+    List<String> judul2 = [
       "Komputer Dasar",
       "Sistem Operasi",
       "Keamanan Komputer",
@@ -90,7 +42,7 @@ class SelectGamePage2 extends StatelessWidget {
       "True False Komputer Dasar",
       "True False Windows"
     ];
-    List<String> deskripsijudul = [
+    List<String> deskripsijudul2 = [
       "Latihan Quiz Komputer Dasar",
       "Latihan Quiz Sistem Operasi",
       "Latihan Quiz Keamanan Komputer",
@@ -99,7 +51,7 @@ class SelectGamePage2 extends StatelessWidget {
       "Latihan Quiz Komputer Dasar dalam True False",
       "Latihan Quiz Windows dalam True False",
     ];
-    List<String> juduldenganmode = [
+    List<String> juduldenganmode2 = [
       "Single Round - Komputer Dasar",
       "Single Round - Sistem Operasi",
       "Single Round - Keamanan Komputer",
@@ -108,7 +60,7 @@ class SelectGamePage2 extends StatelessWidget {
       "True False - Komputer Dasar",
       "True False - Windows",
     ];
-    List<String> deskripsi = [
+    List<String> deskripsi2 = [
       "Tentang Komputer Dasar mengenai komponen komputer serta definisi dasar tentang komputer",
       "Tentang Sistem Operasi mengenai OS-OS jenis serta contohnya",
       "Tentang Keamanan Komputer seperti Virus dan sejenisnya",
@@ -117,7 +69,7 @@ class SelectGamePage2 extends StatelessWidget {
       "Latihan Quiz Komputer Dasar dalam True False",
       "Latihan Quiz Windows dalam True False",
     ];
-    List<List<Question>> tourstage = [
+    List<List<Question>> tourstage2 = [
       tourstage111,
       tourstage121,
       tourstage122,
@@ -130,40 +82,52 @@ class SelectGamePage2 extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: SizedBox(
-          height: MediaQuery.of(context).size.height,
           child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ListTile(
-                  title: Text("Single Round",
-                      style: GoogleFonts.notoSans(
-                          fontSize: 18, fontWeight: FontWeight.bold)),
-                  subtitle: Text("Cocok untuk latihan dan basic",
-                      style: GoogleFonts.notoSans(fontSize: 14)),
-                  trailing: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/pngs/category-300x300.png'),
+                if (stagemode == 0) ...[
+                  JudulMode(
+                    mode: "Multi Round",
+                    deskripsimode:
+                        "Uji kepahaman komputer dengan 3 babak yang berbeda",
+                    imageasset: 'assets/pngs/hierarchy-300x300.png',
+                    warnagaris: Colors.greenAccent,
                   ),
-                ),
-                Divider(
-                  color: Colors.blueAccent,
-                  thickness: 5,
-                  endIndent: 100,
-                ),
-                ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: judul.length,
-                  itemBuilder: (context, index) {
-                    return ListMenuGameplay1(
-                      judul: judul[index],
-                      deskripsijudul: deskripsijudul[index],
-                      juduldenganmode: juduldenganmode[index],
-                      deskripsi: deskripsi[index],
-                      tourstage: tourstage[index],
-                    );
-                  },
-                ),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: judul.length,
+                    itemBuilder: (context, index) {
+                      return ListMenuGameplay2(
+                          judul: judul[index],
+                          deskripsijudul: deskripsijudul[index],
+                          juduldenganmode: juduldenganmode[index],
+                          deskripsi: deskripsi[index],
+                          tourstage: tourstage[index],
+                          assetfolder: assetfolder[index]);
+                    },
+                  ),
+                ] else if (stagemode == 1) ...[
+                  JudulMode(
+                    mode: "Single Round",
+                    deskripsimode: "Cocok untuk latihan dan basic",
+                    imageasset: 'assets/pngs/category-300x300.png',
+                    warnagaris: Colors.blueAccent,
+                  ),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: judul2.length,
+                    itemBuilder: (context, index) {
+                      return ListMenuGameplay1(
+                        judul: judul2[index],
+                        deskripsijudul: deskripsijudul2[index],
+                        juduldenganmode: juduldenganmode2[index],
+                        deskripsi: deskripsi2[index],
+                        tourstage: tourstage2[index],
+                      );
+                    },
+                  ),
+                ]
               ]),
         ),
       ),
@@ -229,7 +193,10 @@ class _SelectPageState extends State<SelectPage>
             ),
           ],
         ),
-        body: const TabBarView(children: [SelectGamePage(), SelectGamePage2()]),
+        body: const TabBarView(children: [
+          SelectGamePage(stagemode: 0),
+          SelectGamePage(stagemode: 1)
+        ]),
       ),
     );
   }
